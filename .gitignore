@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.next/
+.env
+.env.*
+.DS_Store
+apps/*/node_modules/
+apps/*/dist/
+apps/*/.next/
+docker-compose.override.yml
