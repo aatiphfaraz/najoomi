@@ -1,18 +1,45 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-
 import { practitioners } from "../../constants/practitioners";
-import { notFound } from "next/navigation";
 import Button from "@/app/components/ui/Button";
 import PractitionerStandardsGrid from "@/app/components/PractitionerStandardsGrid";
 
-// Accept params from Next.js
-export default function BookingPage({ params }: { params: { id: string } }) {
-  const { id } = React.use(params as any);
+// @ts-expect-error Ignore type for Next.js dynamic route props
+export default function BookingPage(props) {
+  const { id } = props.params;
   const practitioner = practitioners.find((p) => p.id === id);
   const [selectedDay, setSelectedDay] = useState(0);
   const [selectedTime, setSelectedTime] = useState(0);
+  // Calendly API integration
+  const [days, setDays] = useState<{ date: string; active: boolean }[]>([]);
+  const [slots, setSlots] = useState<Record<string, { start: string; end: string }[]>>({});
+  const [loading, setLoading] = useState(true);
+
+  React.useEffect(() => {
+    const fetchAvailability = async () => {
+      setLoading(true);
+      try {
+        const userId = "de340638-e06c-4ed4-ba5b-007b023b8ab4";
+        const res = await fetch(`/api/calendly/availability?userId=${userId}`);
+        const data = await res.json();
+        if (data.error) throw new Error(data.error);
+        const slotDates = Object.keys(data.slots);
+        setDays(slotDates.map((d, i) => ({ date: d, active: i === 0 })));
+        setSlots(data.slots);
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          console.error(err.message);
+        } else {
+          console.error(err);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchAvailability();
+  }, []);
+
 
   if (!practitioner) {
     return (
@@ -52,32 +79,6 @@ export default function BookingPage({ params }: { params: { id: string } }) {
     description: practitioner.description,
   };
 
-  // Calendly API integration
-  const [days, setDays] = useState<{ date: string; active: boolean }[]>([]);
-  const [slots, setSlots] = useState<Record<string, { start: string; end: string }[]>>({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  React.useEffect(() => {
-    const fetchAvailability = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const userId = "de340638-e06c-4ed4-ba5b-007b023b8ab4";
-        const res = await fetch(`/api/calendly/availability?userId=${userId}`);
-        const data = await res.json();
-        if (data.error) throw new Error(data.error);
-        const slotDates = Object.keys(data.slots);
-        setDays(slotDates.map((d, i) => ({ date: d, active: i === 0 })));
-        setSlots(data.slots);
-      } catch (err: any) {
-        setError(err.message || 'Failed to load availability');
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchAvailability();
-  }, []);
 
   // Get times for selected day
   const selectedDayDate = days[selectedDay]?.date;

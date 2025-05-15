@@ -1,5 +1,3 @@
-import { NextRequest } from 'next/server';
-
 export async function GET() {
   const CALENDLY_TOKEN = process.env.CALENDLY_TOKEN;
 

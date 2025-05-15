@@ -13,7 +13,7 @@ export default function AboutPage() {
         <div className="relative bg-white/95 rounded-2xl shadow-2xl mx-auto p-8 md:p-12 mb-12 flex flex-col items-center border-l-8 border-[#15577a] animate-fade-in" style={{ boxShadow: '0 8px 32px 0 rgba(34, 40, 80, 0.10)' }}>
 
           <p className="mb-4 text-gray-800 text-[1rem]">
-            <span className="font-bold text-primary">Najoomi</span> began with a heartfelt need — the kind that lives quietly in Muslim homes. In times of uncertainty, illness, heartbreak, or spiritual unease, we often turn to Allah for answers. But finding <span className="font-semibold text-brand-gold">authentic, inclusive, and compassionate Islamic guidance</span> isn't always easy.
+            <span className="font-bold text-primary">Najoomi</span> began with a heartfelt need — the kind that lives quietly in Muslim homes. In times of uncertainty, illness, heartbreak, or spiritual unease, we often turn to Allah for answers. But finding <span className="font-semibold text-brand-gold">authentic, inclusive, and compassionate Islamic guidance</span> isn&rsquo;t always easy.
           </p>
           <p className="text-center text-brand-gold font-medium mb-2 ">
             Najoomi was created to change that.

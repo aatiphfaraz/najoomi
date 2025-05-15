@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function MissionSection() {
   return (
     <section className="w-full py-20 px-4 flex flex-col items-center bg-white">
@@ -30,7 +31,7 @@ export default function MissionSection() {
         {/* Image */}
         <div className="flex justify-end">
           <div className="w-full max-w-md rounded-3xl overflow-hidden shadow-lg">
-            <img src="/missions.png" alt="Mosque domes" className="object-cover w-full h-[28rem] md:h-[40rem]" />
+            <Image width={500} height={500} src="/missions.png" alt="Mosque domes" className="object-cover w-full h-[28rem] md:h-[40rem]" />
           </div>
         </div>
       </div>

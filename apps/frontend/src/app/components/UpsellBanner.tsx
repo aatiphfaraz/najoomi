@@ -1,4 +1,3 @@
-import { FaRegCalendarCheck } from "react-icons/fa";
 import React from "react";
 import Button from "./ui/Button";
 

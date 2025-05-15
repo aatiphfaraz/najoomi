@@ -39,7 +39,7 @@ export async function GET(req: NextRequest) {
     const availability = await calendlyRes.json();
     const durationMinutes = Number(data.collection[0].duration) || 0;
     const slotsByDate: SlotsByDate = {};
-    availability.collection.forEach((slot: any) => {
+    availability.collection.forEach((slot: { start_time: string }) => {
       const startDate = new Date(slot.start_time);
       const endDate = new Date(startDate.getTime() + durationMinutes * 60000);
       const dateKey = startDate.toLocaleDateString('en-GB'); // DD/MM/YYYY

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Button from "./ui/Button";
 import PractitionerCard from "./PractitionerCard";
 import { practitioners } from "../constants/practitioners";
 
@@ -27,7 +26,7 @@ export default function PractitionersSection() {
           .slice(0, 3)
           .map((p) => (
             <PractitionerCard key={p.name} {...p} />
-        ))}
+          ))}
       </div>
       <div className="flex justify-center mt-10">
         <Link href="/practitioners" className="text-[#15577a] text-lg font-semibold underline underline-offset-4 decoration-[#b6894a] hover:decoration-2 hover:text-[#b6894a] transition-all duration-150">

@@ -1,6 +1,7 @@
 import { FaEnvelope, FaPhoneAlt, FaClock, FaStar } from "react-icons/fa";
 import FooterIslamicDecor from "./FooterIslamicDecor";
 import "./footerStars.css";
+import Image from "next/image";
 
 function FloatingStars() {
   // Array of random positions, sizes, icons, and opacities (mix of stars and moons)
@@ -46,7 +47,7 @@ export default function Footer() {
         <div>
           <div className="text-2xl font-bold mb-2 flex items-center">
             {/* Logo - replace src if you have a custom logo */}
-            <img src="/najoomi-logo.png" alt="Najoomi Logo" className="w-8 h-8 drop-shadow-md mr-2" style={{ minWidth: 32 }} />
+            <Image width={32} height={32} src="/najoomi-logo.png" alt="Najoomi Logo" className="w-8 h-8 drop-shadow-md mr-2" style={{ minWidth: 32 }} />
             Najoomi<span className="text-brand-gold">.in</span>
           </div>
           <p className="text-sm text-white/80">

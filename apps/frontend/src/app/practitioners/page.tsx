@@ -1,7 +1,6 @@
 import React from "react";
 import { FaStar, FaUserMd } from "react-icons/fa";
 import Link from "next/link";
-import UpsellBanner from "../components/UpsellBanner";
 
 export default function PractitionersPage() {
   return (

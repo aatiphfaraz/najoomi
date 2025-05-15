@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./ui/Button";
+import Image from "next/image";
 
 interface PractitionerCardProps {
   image: string;
@@ -44,8 +45,10 @@ const PractitionerCard: React.FC<PractitionerCardProps> = ({ image, name, title,
             )}
           </div>
         )}
-        <img
+        <Image
           src={image}
+          width={500}
+          height={500}
           alt={name}
           className="object-cover w-full h-full rounded-t-2xl border-b border-[#fde68a]/30"
         />

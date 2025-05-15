@@ -33,7 +33,6 @@ const services = [
   },
 ];
 
-import Button from "./ui/Button";
 import ServiceCard from "./ServiceCard";
 import Link from "next/link";
 export default function ServicesSection() {
@@ -44,7 +43,7 @@ export default function ServicesSection() {
         Discover our range of authentic spiritual services designed to provide guidance, healing, and clarity through an Islamic perspective.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-        {services.map((service, idx) => (
+        {services.map((service) => (
           <ServiceCard key={service.title} icon={service.icon} title={service.title} description={service.description} />
         ))}
       </div>

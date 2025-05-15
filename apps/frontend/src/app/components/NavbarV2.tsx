@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Button from "./ui/Button";
-
+import Image from "next/image";
 export default function NavbarV2() {
   // Floating stars config
   const stars = [
@@ -41,7 +41,7 @@ export default function NavbarV2() {
         {/* Logo */}
         <Link href="/" className="flex items-center flex-shrink-0 group" aria-label="Najoomi Home">
           <span className="relative flex items-center">
-            <img src="/najoomi-logo.png" alt="Najoomi Logo" className="h-10 w-auto object-contain pr-2 drop-shadow-md transition-transform group-hover:scale-105" />
+            <Image width={100} height={100} src="/najoomi-logo.png" alt="Najoomi Logo" className="h-10 w-auto object-contain pr-2 drop-shadow-md transition-transform group-hover:scale-105" />
           </span>
           <span className="text-2xl font-bold text-primary transition group-hover:text-[#0c3750]">Najoomi</span>
           <span className="text-2xl font-bold text-[#b6894a] tracking-tight">.in</span>
