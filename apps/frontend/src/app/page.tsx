@@ -1,8 +1,8 @@
-
 import ServicesSection from "./components/ServicesSection";
 import HeroSection from "./components/HeroSection";
 import MissionSection from "./components/MissionSection";
 import PractitionersSection from "./components/PractitionersSection";
+import TherapistsSection from "./components/TherapistsSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 
 export default function HomePage() {
@@ -13,6 +13,7 @@ export default function HomePage() {
       <ServicesSection />
       <MissionSection />
       <PractitionersSection />
+      <TherapistsSection />
       <TestimonialsSection />
     </main>
   );

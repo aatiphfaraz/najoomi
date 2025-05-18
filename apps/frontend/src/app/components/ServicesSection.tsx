@@ -1,40 +1,6 @@
-import { FaRegLightbulb, FaRegComments, FaRegCompass, FaRegChartBar, FaRegGem, FaHandHoldingMedical } from "react-icons/fa";
-
-const services = [
-  {
-    icon: <FaRegLightbulb className="text-2xl text-[#eab308]" />,
-    title: "Islamic Dream Interpretation",
-    description: "In-depth interpretations based on classical Islamic texts and scholarly opinions.",
-  },
-  {
-    icon: <FaRegComments className="text-2xl text-[#eab308]" />,
-    title: "Spiritual Counseling",
-    description: "Personalized advice for navigating life's challenges through an Islamic lens.",
-  },
-  {
-    icon: <FaRegCompass className="text-2xl text-[#eab308]" />,
-    title: "Ruqyah & Spiritual Cleansing",
-    description: "Protection from evil influences through Quranic recitations and spiritual purification.",
-  },
-  {
-    icon: <FaRegChartBar className="text-2xl text-[#eab308]" />,
-    title: "Istikhara Guidance",
-    description: "Assistance in performing Istikhara and interpreting the signs that follow.",
-  },
-  {
-    icon: <FaRegGem className="text-2xl text-[#eab308]" />,
-    title: "Ilm-e-Adad (Numerology)",
-    description: "Guidance on using numerological insights rooted in Islamic traditions.",
-  },
-  {
-    icon: <FaHandHoldingMedical className="text-2xl text-[#eab308]" />,
-    title: "Rohani Healing",
-    description: "Prayers and spiritual interventions to address personal and family issues.",
-  },
-];
-
 import ServiceCard from "./ServiceCard";
 import Link from "next/link";
+import { allServices } from "../constants/services";
 export default function ServicesSection() {
   return (
     <section className="w-full bg-gradient-to-br from-white to-[#F1E1C6] py-20 px-4 flex flex-col items-center">
@@ -43,8 +9,8 @@ export default function ServicesSection() {
         Discover our range of authentic spiritual services designed to provide guidance, healing, and clarity through an Islamic perspective.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-        {services.map((service) => (
-          <ServiceCard key={service.title} icon={service.icon} title={service.title} description={service.description} />
+        {allServices.slice(0, 6).map((service) => (
+          <ServiceCard key={service.title} icon={service.icon} title={service.title} description={service.description} subTitle={service.subTitle} href={service.href} />
         ))}
       </div>
       <div className="flex justify-center mt-10">

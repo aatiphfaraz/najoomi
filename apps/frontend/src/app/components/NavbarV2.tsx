@@ -110,11 +110,42 @@ export default function NavbarV2() {
         {menuOpen && (
           <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded-b-xl md:hidden animate-fade-in z-40 backdrop-blur-md px-6">
             <ul className="flex flex-col items-start py-4 space-y-2">
-              <li><Link href="/" className="block w-full text-left py-2 text-gray-700 hover:text-primary text-lg font-bold tracking-wide transition-colors hover:underline underline-offset-4" onClick={() => setMenuOpen(false)}>Home</Link></li>
-              <li><Link href="/services" className="block w-full text-left py-2 text-gray-700 hover:text-primary text-lg font-bold tracking-wide transition-colors hover:underline underline-offset-4" onClick={() => setMenuOpen(false)}>Services</Link></li>
-              <li><Link href="/practitioners" className="block w-full text-left py-2 text-gray-700 hover:text-primary text-lg font-bold tracking-wide transition-colors hover:underline underline-offset-4" onClick={() => setMenuOpen(false)}>Practitioners</Link></li>
-              <li><Link href="/resources" className="block w-full text-left py-2 text-gray-700 hover:text-primary text-lg font-bold tracking-wide transition-colors hover:underline underline-offset-4" onClick={() => setMenuOpen(false)}>Resources</Link></li>
-              <li><Link href="/about" className="block w-full text-left py-2 text-gray-700 hover:text-primary text-lg font-bold tracking-wide transition-colors hover:underline underline-offset-4" onClick={() => setMenuOpen(false)}>About</Link></li>
+              {/* Add usePathname to highlight active links */}
+              {(() => {
+                // Import usePathname at the top: import { usePathname } from "next/navigation";
+                // Place this in the component body:
+                // const pathname = usePathname();
+                // Active class: text-brand-gold underline underline-offset-8 decoration-2
+                const pathname = typeof window !== "undefined" ? window.location.pathname : "";
+                const navLinks = [
+                  { href: "/", label: "Home" },
+                  { href: "/services", label: "Services" },
+                  { href: "/practitioners", label: "Practitioners" },
+                  { href: "/resources", label: "Resources" },
+                  { href: "/about", label: "About" },
+                ];
+                return navLinks.map(({ href, label }) => {
+                  const isActive = href === "/" ? pathname === "/" : pathname.startsWith(href);
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className={
+                          `block w-full text-left py-2 text-lg font-bold tracking-wide transition-colors underline-offset-4 ` +
+                          (isActive
+                            ? "text-brand-gold underline decoration-brand-gold decoration-2"
+                            : "text-gray-700 hover:text-primary hover:underline")
+                        }
+                        onClick={() => setMenuOpen(false)}
+                        aria-current={isActive ? "page" : undefined}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  );
+                });
+              })()}
+
               <li className="w-full mt-2 flex justify-center">
                 <Link href="/book" className="block w-full" onClick={() => setMenuOpen(false)}>
                   <Button variant="primary" className="w-full py-2 rounded-md">

@@ -27,7 +27,7 @@ export default function UpsellBanner({
       </div>
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">{title}</h2>
       <p className="mb-8 text-[#e0e7ff] text-base md:text-lg max-w-2xl mx-auto">{description}</p>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a href={primaryCtaHref}>
           <Button variant="golden"><div>
             <span className="mr-1">🗓️</span> {primaryCtaText}

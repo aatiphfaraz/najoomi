@@ -1,7 +1,9 @@
 import { FaEnvelope, FaPhoneAlt, FaClock, FaStar } from "react-icons/fa";
+import { CONTACT_DETAILS } from "../constants/contact";
 import FooterIslamicDecor from "./FooterIslamicDecor";
 import "./footerStars.css";
 import Image from "next/image";
+import Link from "next/link";
 
 function FloatingStars() {
   // Array of random positions, sizes, icons, and opacities (mix of stars and moons)
@@ -58,10 +60,11 @@ export default function Footer() {
         <div>
           <div className="font-semibold mb-3 text-brand-gold">Quick Links</div>
           <ul className="space-y-1 text-sm">
-            <li><a href="/services" className="hover:text-[#eab308] transition">• Services</a></li>
-            <li><a href="/practitioners" className="hover:text-[#eab308] transition">• Practitioners</a></li>
-            <li><a href="/consultation" className="hover:text-[#eab308] transition">• Book a Consultation</a></li>
-            <li><a href="/about" className="hover:text-[#eab308] transition">• About Us</a></li>
+            <li><Link href="/services" className="hover:text-[#eab308] transition">• Services</Link></li>
+            <li><Link href="/practitioners" className="hover:text-[#eab308] transition">• Practitioners</Link></li>
+            <li><Link href="/consultation" className="hover:text-[#eab308] transition">• Book a Consultation</Link></li>
+            <li><Link href="/about" className="hover:text-[#eab308] transition">• About Us</Link></li>
+            <li><Link href="/contact" className="hover:text-[#eab308] transition">• Contact</Link></li>
           </ul>
         </div>
         {/* Services */}
@@ -78,9 +81,20 @@ export default function Footer() {
         <div>
           <div className="font-semibold mb-3 text-brand-gold">Contact</div>
           <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2"><FaEnvelope className="text-brand-gold" /> info@najoomi.in</li>
-            <li className="flex items-center gap-2"><FaPhoneAlt className="text-brand-gold" /> +91 98765 43210</li>
-            <li className="flex items-center gap-2"><FaClock className="text-brand-gold" /> 10:00 AM – 7:00 PM IST</li>
+            {CONTACT_DETAILS.filter(
+              (d: { type: string }) => ["Email", "Phone", "Hours"].includes(d.type)
+            ).map((detail: { type: string; icon: string; value: string[] }) => {
+              let Icon;
+              if (detail.icon === "email") Icon = FaEnvelope;
+              else if (detail.icon === "phone") Icon = FaPhoneAlt;
+              else if (detail.icon === "hours") Icon = FaClock;
+              else return null;
+              return detail.value.map((v: string, i: number) => (
+                <li className="flex items-center gap-2" key={detail.type + i}>
+                  <Icon className="text-brand-gold" /> {v}
+                </li>
+              ));
+            })}
           </ul>
         </div>
       </div>
@@ -88,9 +102,9 @@ export default function Footer() {
       <div className="mt-12 border-t border-white/20 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-white/70">
         <div className="mb-2 md:mb-0">© 2025 <span className="font-semibold text-white">Najoomi.in</span>. All rights reserved.</div>
         <div className="flex space-x-4">
-          <a href="/privacy-policy" className="hover:text-[#eab308] transition">Privacy Policy</a>
+          <Link href="/privacy-policy" className="hover:text-[#eab308] transition">Privacy Policy</Link>
           <span>|</span>
-          <a href="/terms-of-service" className="hover:text-[#eab308] transition">Terms of Service</a>
+          <Link href="/terms-of-service" className="hover:text-[#eab308] transition">Terms of Service</Link>
         </div>
       </div>
     </footer>

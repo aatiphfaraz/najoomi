@@ -3,12 +3,12 @@ import UpsellBanner from "../components/UpsellBanner";
 
 export default function AboutPage() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-white to-[#F1E1C6] pb-20 overflow-x-hidden px-4">
+    <main className="relative min-h-screen bg-gradient-to-br from-white to-[#F1E1C6] pb-20 overflow-x-hidden">
       {/* Gold gradient accent background */}
       <div className="absolute left-0 top-0 w-full h-96  opacity-70 pointer-events-none z-0" />
       <section className="relative max-w-6xl mx-auto px-4 pt-12 z-10 flex flex-col items-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-center text-primary mb-8 tracking-tight drop-shadow-lg">
-          Our Story <span className="text-brand-gold">– The Heart Behind Najoomi</span>
+          Our Story <span>– The Heart Behind Najoomi</span>
         </h1>
         <div className="relative bg-white/95 rounded-2xl shadow-2xl mx-auto p-8 md:p-12 mb-12 flex flex-col items-center border-l-8 border-[#15577a] animate-fade-in" style={{ boxShadow: '0 8px 32px 0 rgba(34, 40, 80, 0.10)' }}>
 

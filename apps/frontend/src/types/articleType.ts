@@ -1,0 +1,27 @@
+export type Article = {
+    id: string;
+    title: string;
+    description: string;
+    date: string;
+    image: string;
+    publisher: string;
+    category: string;
+    keywords: string;
+    rating: string;
+    audience: string;
+    subject: string;
+    summary: string;
+    classification: string;
+    appleMobileWebAppCapable: string;
+    appleMobileWebAppTitle: string;
+    appleMobileWebAppStatusBarStyle: string;
+    contentLanguage: string;
+    xUaCompatible: string;
+    dcTitle: string;
+    dcDescription: string;
+    dcPublisher: string;
+    dcLanguage: string;
+    dcSubject: string;
+    contentBody: React.ReactNode;
+    faqs: { question: string, answer: string }[];
+};

@@ -1,6 +1,6 @@
 export const practitioners = [
     {
-        id: "najoomi-1",
+        id: "de340638-e06c-4ed4-ba5b-007b023b8ab4",
         name: "Mufti Abdul Raheem",
         title: "Islamic Scholar & Spiritual Guide",
         image: "/missions.png",
@@ -15,34 +15,34 @@ export const practitioners = [
         description: "Book a 1:1 session with Mufti Abdul Raheem for dream interpretation, istikhara, and spiritual guidance rooted in Islamic wisdom. Experience clarity and peace through authentic spiritual counsel."
 
     },
-    {
-        id: "najoomi-2",
-        name: "Shaykha Amina Hassan",
-        duration: "15 minutes",
-        description: "Connect with Shaykha Amina Hassan for ruqyah, spiritual cleansing, and family counseling. Receive compassionate guidance and protection through Quranic healing and Islamic tradition.",
-        title: "Ruqyah Specialist & Counselor",
-        image: "/missions.png",
-        experience: "12+ years",
-        specialties: ["Ruqyah", "Spiritual Cleansing", "Family Counseling"],
-        rating: 5,
-        price: "1000",
-        discountPrice: "800",
-        type: "najoomi"
-    },
-    {
-        id: "najoomi-3",
-        name: "Ustadh Ibrahim Malik",
-        duration: "15 minutes",
-        description: "Book a session with Ustadh Ibrahim Malik for ilm-e-adad (Islamic numerology), rohani healing, and meaningful baby naming. Discover spiritual insights and solutions tailored to your unique journey.",
-        title: "Numerologist & Spiritual Healer",
-        image: "/missions.png",
-        experience: "20+ years",
-        specialties: ["Ilm-e-Adad", "Rohani Healing", "Baby Naming"],
-        rating: 5,
-        price: "1000",
-        discountPrice: "800",
-        type: "najoomi"
-    },
+    // {
+    //     id: "najoomi-2",
+    //     name: "Shaykha Amina Hassan",
+    //     duration: "15 minutes",
+    //     description: "Connect with Shaykha Amina Hassan for ruqyah, spiritual cleansing, and family counseling. Receive compassionate guidance and protection through Quranic healing and Islamic tradition.",
+    //     title: "Ruqyah Specialist & Counselor",
+    //     image: "/missions.png",
+    //     experience: "12+ years",
+    //     specialties: ["Ruqyah", "Spiritual Cleansing", "Family Counseling"],
+    //     rating: 5,
+    //     price: "1000",
+    //     discountPrice: "800",
+    //     type: "najoomi"
+    // },
+    // {
+    //     id: "najoomi-3",
+    //     name: "Ustadh Ibrahim Malik",
+    //     duration: "15 minutes",
+    //     description: "Book a session with Ustadh Ibrahim Malik for ilm-e-adad (Islamic numerology), rohani healing, and meaningful baby naming. Discover spiritual insights and solutions tailored to your unique journey.",
+    //     title: "Numerologist & Spiritual Healer",
+    //     image: "/missions.png",
+    //     experience: "20+ years",
+    //     specialties: ["Ilm-e-Adad", "Rohani Healing", "Baby Naming"],
+    //     rating: 5,
+    //     price: "1000",
+    //     discountPrice: "800",
+    //     type: "najoomi"
+    // },
     {
         id: "therapist-1",
         name: "Dr. Sara Qureshi",

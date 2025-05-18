@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import PaymentModal from "./PaymentModal";
 import { practitioners } from "../../constants/practitioners";
 import Button from "@/app/components/ui/Button";
 import PractitionerStandardsGrid from "@/app/components/PractitionerStandardsGrid";
+import Link from "next/link";
 
 // @ts-expect-error Ignore type for Next.js dynamic route props
 export default function BookingPage(props) {
@@ -16,12 +18,15 @@ export default function BookingPage(props) {
   const [slots, setSlots] = useState<Record<string, { start: string; end: string }[]>>({});
   const [loading, setLoading] = useState(true);
 
+  // Payment Modal Form State
+  const [showPaymentForm, setShowPaymentForm] = useState(false);
+
+
   React.useEffect(() => {
     const fetchAvailability = async () => {
       setLoading(true);
       try {
-        const userId = "de340638-e06c-4ed4-ba5b-007b023b8ab4";
-        const res = await fetch(`/api/calendly/availability?userId=${userId}`);
+        const res = await fetch(`/api/calendly/availability?userId=${practitioner?.id}`);
         const data = await res.json();
         if (data.error) throw new Error(data.error);
         const slotDates = Object.keys(data.slots);
@@ -38,7 +43,7 @@ export default function BookingPage(props) {
       }
     };
     fetchAvailability();
-  }, []);
+  }, [practitioner?.id]);
 
 
   if (!practitioner) {
@@ -58,7 +63,7 @@ export default function BookingPage(props) {
           </div>
           <p className="text-base text-gray-700 font-normal">We could not find the practitioner you were looking for.<br />Please check the link or return to the previous page.</p>
           <div className="mt-6 flex justify-center">
-            <a href="/services" className="inline-block px-6 py-2 rounded-full bg-brand-gold text-white font-semibold shadow hover:bg-yellow-600 transition">View All Services</a>
+            <Link href="/services" className="inline-block px-6 py-2 rounded-full bg-brand-gold text-white font-semibold shadow hover:bg-yellow-600 transition">View All Services</Link>
           </div>
         </div>
       </main>
@@ -190,9 +195,19 @@ export default function BookingPage(props) {
                   (GMT+5:30) Chennai, Kolkata, Mumbai, New Delhi (IST)
                 </div>
               </div> */}
-              <Button variant="primary" className="w-full">
+              <Button variant="primary" className="w-full" onClick={() => setShowPaymentForm(true)}>
                 Continue
               </Button>
+
+              {/* Payment Form Modal */}
+              {showPaymentForm && <PaymentModal
+                onClose={() => setShowPaymentForm(false)}
+                price={Number(session.price)}
+                practitionerId={practitioner.id}
+                date={selectedDayDate}
+                slot={times[selectedTime]}
+              />}
+
             </div>
           </section>
 
