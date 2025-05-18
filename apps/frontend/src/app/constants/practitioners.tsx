@@ -36,7 +36,7 @@ export const practitioners: Practitioner[] = [
     {
         id: "",
         name: "Haji Asheqeen",
-        title: "Islamic Scholar & Spiritual Guide",
+        title: "Spiritual Guide",
         image: "/practitioners/haji-asheqeen.jpg",
         experience: "6+ years",
         specialties: ["Black Magic", "Evil Eye", "Spiritual Counseling"],

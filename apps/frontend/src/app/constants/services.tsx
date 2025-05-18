@@ -35,7 +35,7 @@ export const allServices: Service[] = [
     },
     {
         icon: <FaHandHoldingMedical className="text-2xl text-brand-gold" />, // Rohani Requests (Healing hand)
-        title: "Rohani Requests",
+        title: "Roohani Requests",
         description: "Duaon aur Qurani ilaj ke zariye roohani dard, nazar aur fikr se paayein shifa aur sukoon",
         subTitle: "Sukoon aur Hifazat Qurani Ilaj ke Saath",
         href: Services.ROOHANI_REQUESTS,
@@ -49,7 +49,7 @@ export const allServices: Service[] = [
     },
     {
         icon: <FaLeaf className="text-2xl text-brand-gold" />, // Tibb-e-Nabwi (Leaf = natural healing)
-        title: "Tibb-e-Nabwi",
+        title: "Tibb-e-Nabawi",
         subTitle: "Natural ilaaj se apni sehat ka khayal rakhein",
         description: "Prophet Muhammad (PBUH) ke ilaj ke tareeqon se roohani aur jismani sehat ko behtar banayein",
         href: Services.TIBB_E_NABWI,
@@ -115,8 +115,8 @@ export const allServices: Service[] = [
 export const serviceInfo: Article[] = [
     {
         id: Services.QURAN_KHANI_AND_RECITATION,
-        title: "Quran Khani & Recitation Services — Blessings & Barakah with Quranic Recitations | Najoomi.in",
-        description: "Experience the blessings of the Holy Quran with personalized recitations, group khatams, spiritual gatherings, and healing recitations at Najoomi.in.",
+        title: "Quran Khani & Recitation Services — Blessings & Barakah with Quranic Recitations",
+        description: "Experience the blessings of the Holy Quran through personalized recitations, group khatams, and spiritual gatherings arranged with sincerity and ease.",
         date: "2025-05-18",
         image: "/services/quran-khani.jpg",
         publisher: "Najoomi",
@@ -133,21 +133,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Quran Khani & Recitation Services — Blessings & Barakah with Quranic Recitations | Najoomi.in",
-        dcDescription: "Experience the blessings of the Holy Quran with personalized recitations, group khatams, spiritual gatherings, and healing recitations at Najoomi.in.",
+        dcDescription: "Experience the blessings of the Holy Quran through personalized recitations, group khatams, and spiritual gatherings arranged with sincerity and ease.",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Quran Khani & Recitation Services",
         contentBody: (
             <>
-                {/* Decorative crescent, Quran, sparkles, and geometric pattern */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2" role="img" aria-label="crescent">🌙</span>
-                    <span className="inline-block text-brand-gold text-2xl mx-2"><FaQuran /></span>
-                    <span className="inline-block text-brand-gold text-xl mx-2">&#x2728;</span>
-                    <span className="inline-block text-brand-gold text-xl mx-2">&#x25C6;</span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Quran Khani & Recitation Services — Bringing Barakah to Your Home and Heart</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Experience the blessings of the Holy Quran through personalized recitations, group khatams, and spiritual gatherings arranged with sincerity and ease.</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">Why Quran Khani Matters</h3>
                     <p>The recitation of the Quran brings light into our lives — it soothes the soul, wards off evil, and invites divine mercy. Whether for a special occasion, a loved one who has passed, or for your own spiritual upliftment, Quran Khani is a source of immense reward. The sacred verses bring peace, barakah, and blessings to your home and life.</p>
@@ -254,7 +245,7 @@ export const serviceInfo: Article[] = [
     {
         id: Services.TIBB_E_NABWI,
         title: "Tibb-e-Nabawi — Prophetic Medicine for Holistic Healing | Sunnah-Based Remedies & Wellness",
-        description: "Discover the healing traditions of Tibb-e-Nabawi (Prophetic Medicine) through natural remedies, Quranic verses, Sunnah-based wellness, and spiritual guidance to heal your body, mind, and soul.",
+        description: "Reconnect with the healing traditions of Prophet Muhammad (PBUH) through natural remedies, spiritual guidance, and Sunnah-based wellness practices.",
         date: "2025-05-18",
         image: "/services/tibb-e-nabwi.jpg",
         publisher: "Najoomi",
@@ -271,22 +262,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Tibb-e-Nabawi — Prophetic Medicine for Holistic Healing | Sunnah-Based Remedies & Wellness",
-        dcDescription: "Discover the healing traditions of Tibb-e-Nabawi (Prophetic Medicine) through natural remedies, Quranic verses, Sunnah-based wellness, and spiritual guidance to heal your body, mind, and soul.",
+        dcDescription: "Reconnect with the healing traditions of Prophet Muhammad (PBUH) through natural remedies, spiritual guidance, and Sunnah-based wellness practices.",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Tibb-e-Nabawi (Prophetic Medicine)",
         contentBody: (
             <>
-                {/* Decorative elements: Kaaba, sparkles, geometric pattern, capsule/pill, leaf for natural healing */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2" role="img" aria-label="kaaba">🕋</span>
-                    <span className="inline-block text-brand-gold text-2xl mx-2">✨</span>
-                    <span className="inline-block text-brand-gold text-2xl mx-2">◆</span>
-                    <span className="inline-block text-brand-gold text-2xl ml-2" role="img" aria-label="pill">💊</span>
-                    <span className="inline-block text-brand-gold text-2xl ml-2"><FaLeaf /></span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Tibb-e-Nabawi — Prophetic Medicine for Holistic Healing</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Reconnect with the healing traditions of Prophet Muhammad (PBUH) through natural remedies, spiritual guidance, and Sunnah-based wellness practices.</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">🕋 What is Tibb-e-Nabawi?</h3>
                     <p>
@@ -398,7 +379,7 @@ export const serviceInfo: Article[] = [
     {
         id: Services.MARRIAGE_AND_RELATIONSHIP_GUIDANCE,
         title: "Marriage & Relationship Guidance — Build Strong Bonds with Faith & Wisdom | Islamic Relationship Advice",
-        description: "Strengthen your relationships with authentic Islamic marriage counseling at Najoomi.in. Get pre-marital guidance, conflict resolution, and dua-based spiritual support to build strong, faith-filled bonds.",
+        description: "Whether you're seeking a spouse, facing marital challenges, or looking to deepen your relationship, Najoomi.in offers faith-centered advice rooted in the Quran and Sunnah.",
         date: "2025-05-18",
         image: "/services/marriage-guidance.jpg",
         publisher: "Najoomi",
@@ -415,23 +396,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Marriage & Relationship Guidance — Build Strong Bonds with Faith & Wisdom | Islamic Relationship Advice",
-        dcDescription: "Strengthen your relationships with authentic Islamic marriage counseling at Najoomi.in. Get pre-marital guidance, conflict resolution, and dua-based spiritual support to build strong, faith-filled bonds.",
+        dcDescription: "Whether you're seeking a spouse, facing marital challenges, or looking to deepen your relationship, Najoomi.in offers faith-centered advice rooted in the Quran and Sunnah.",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Marriage & Relationship Guidance",
         contentBody: (
             <>
-                {/* Decorative elements: couple icons, book, sparkles, geometric pattern, leaf for peace */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2" role="img" aria-label="woman">🧕🏽</span>
-                    <span className="inline-block text-brand-gold text-3xl mx-2" role="img" aria-label="man">🧔🏽</span>
-                    <span className="inline-block text-brand-gold text-2xl mx-2">✨</span>
-                    <span className="inline-block text-brand-gold text-2xl mx-2">◆</span>
-                    <span className="inline-block text-brand-gold text-2xl ml-2"><FaBook /></span>
-                    <span className="inline-block text-brand-gold text-2xl ml-2"><FaLeaf /></span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Marriage & Relationship Guidance — Strengthen Your Bonds the Islamic Way</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Whether you're seeking a spouse, facing marital challenges, or looking to deepen your relationship, Najoomi.in offers faith-centered advice rooted in the Quran and Sunnah.</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">🧕🏽🧔🏽 Why Relationship Guidance Matters in Islam</h3>
                     <p>
@@ -543,8 +513,8 @@ export const serviceInfo: Article[] = [
     },
     {
         id: Services.BABY_NAMING,
-        title: "Baby Naming & Life Path Guidance — Meaningful Islamic Names & Life Insights | Najoomi.in",
-        description: "Discover personalized Islamic baby names and gain life path guidance based on Ilm-e-Adad (Islamic numerology). Give your child a blessed start with meaningful names rooted in tradition and faith.",
+        title: "Baby Naming & Life Path Guidance — Meaningful Islamic Names & Life Insights",
+        description: "Give your child a blessed start with names inspired by Islamic tradition and insights into their life journey through Ilm-e-Adad (Islamic numerology).",
         date: "2025-05-18",
         image: "/services/baby-naming.jpg",
         publisher: "Najoomi",
@@ -561,21 +531,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Baby Naming & Life Path Guidance — Meaningful Islamic Names & Life Insights | Najoomi.in",
-        dcDescription: "Discover personalized Islamic baby names and gain life path guidance based on Ilm-e-Adad (Islamic numerology). Give your child a blessed start with meaningful names rooted in tradition and faith.",
+        dcDescription: "Give your child a blessed start with names inspired by Islamic tradition and insights into their life journey through Ilm-e-Adad (Islamic numerology).",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Baby Naming & Life Path Guidance",
         contentBody: (
             <>
-                {/* Decorative crescent, sparkles, geometric pattern, and baby icon */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2" role="img" aria-label="crescent">🌙</span>
-                    <span className="inline-block text-brand-gold text-2xl mx-2">✨</span>
-                    <span className="inline-block text-brand-gold text-2xl mx-2">◆</span>
-                    <span className="inline-block text-brand-gold text-2xl ml-2" role="img" aria-label="baby">👶</span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Baby Naming & Life Path Guidance — Rooted in Faith, Guided by Meaning</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Give your child a blessed start with names inspired by Islamic tradition and insights into their life journey through Ilm-e-Adad (Islamic numerology).</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">Why Names Matter in Islam</h3>
                     <p>
@@ -682,8 +643,8 @@ export const serviceInfo: Article[] = [
     },
     {
         id: Services.ROOHANI_REQUESTS,
-        title: "Roohani Healing & Requests — Divine Protection, Healing, and Peace | Najoomi.in",
-        description: "Experience divine healing and spiritual support with Roohani healing services. Personalized dua requests, protection from harm, and emotional relief with Quranic recitations at Najoomi.in.",
+        title: "Roohani Healing & Requests — Divine Protection, Healing, and Peace",
+        description: "Experience the power of spiritual healing through divine words and Islamic practices. Our personalized Roohani healing and prayer requests provide protection, emotional relief, and spiritual growth.",
         date: "2025-01-01",
         image: "/services/roohani-requests.jpg",
         publisher: "Najoomi",
@@ -700,21 +661,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Roohani Healing & Requests — Divine Protection, Healing, and Peace | Najoomi.in",
-        dcDescription: "Experience divine healing and spiritual support with Roohani healing services. Personalized dua requests, protection from harm, and emotional relief with Quranic recitations at Najoomi.in.",
+        dcDescription: "Experience the power of spiritual healing through divine words and Islamic practices. Our personalized Roohani healing and prayer requests provide protection, emotional relief, and spiritual growth.",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Roohani Healing & Requests",
         contentBody: (
             <>
-                {/* Decorative crescent, sparkles, diamond, leaf */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2">&#x1F319;</span>
-                    <span className="inline-block text-brand-gold text-xl">&#x2728;</span>
-                    <span className="inline-block text-brand-gold text-xl mx-2">&#x25C6;</span>
-                    <span className="inline-block text-brand-gold text-xl ml-2">&#x1F343;</span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Roohani Healing & Requests — Divine Interventions for Inner Peace and Protection</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Experience the power of spiritual healing through divine words and Islamic practices. Our personalized Roohani healing and prayer requests provide protection, emotional relief, and spiritual growth.</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">What is Roohani Healing & Requests?</h3>
                     <p>
@@ -740,7 +692,7 @@ export const serviceInfo: Article[] = [
                     </ul>
                     <h3 className="text-brand-gold font-semibold mt-6">How It Works</h3>
                     <ul className="list-decimal ml-6">
-                        <li><b>Submit Your Healing Request:</b> Share your concerns, spiritual struggles, or needs for protection through our simple form.</li>
+                        <li><b>Share Your Healing Request:</b> Share your concerns, spiritual struggles, or needs for protection through our simple form.</li>
                         <li><b>Personalized Roohani Plan:</b> We craft a customized healing or dua plan, drawing from authentic Islamic sources and powerful supplications.</li>
                         <li><b>Healing & Dua Session:</b> Receive your personalized duas and healing recitations.</li>
                         <li><b>Follow-Up Support:</b> We offer follow-up guidance, check-ins, and additional dua support to help you maintain peace and protection in your life.</li>
@@ -796,8 +748,8 @@ export const serviceInfo: Article[] = [
 
     {
         id: Services.ILM_E_ADAD,
-        title: "Ilm-e-Adad: Islamic Numerology for Life Guidance, Compatibility & Divine Insight | Najoomi.in",
-        description: "Explore Ilm-e-Adad, the sacred science of Islamic numerology, to uncover your life path, relationship compatibility, and divine purpose. Personalized reports based on name and birth date.",
+        title: "Ilm-e-Adad: Islamic Numerology for Life Guidance, Compatibility & Divine Insight",
+        description: "Discover the hidden meanings of numbers in Islam with Ilm-e-Adad. Decode your name, birth date, and life path using the spiritual science of Islamic numerology to align with your divine destiny.",
         date: "2025-01-01",
         image: "/services/ilm-e-adad.jpg",
         publisher: "Najoomi",
@@ -814,21 +766,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Ilm-e-Adad: Islamic Numerology for Life Guidance, Compatibility & Divine Insight | Najoomi.in",
-        dcDescription: "Explore Ilm-e-Adad, the sacred science of Islamic numerology, to uncover your life path, relationship compatibility, and divine purpose. Personalized reports based on name and birth date.",
+        dcDescription: "Discover the hidden meanings of numbers in Islam with Ilm-e-Adad. Decode your name, birth date, and life path using the spiritual science of Islamic numerology to align with your divine destiny.",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Islamic Numerology (Ilm-e-Adad)",
         contentBody: (
             <>
-                {/* Decorative crescent, sparkles, diamond, leaf */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2">&#x1F319;</span>
-                    <span className="inline-block text-brand-gold text-xl">&#x2728;</span>
-                    <span className="inline-block text-brand-gold text-xl mx-2">&#x25C6;</span>
-                    <span className="inline-block text-brand-gold text-xl ml-2">&#x1F343;</span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Ilm-e-Adad: Islamic Numerology for Life Guidance, Compatibility & Divine Insight</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Discover the hidden meanings of numbers in Islam with Ilm-e-Adad. Decode your name, birth date, and life path using the spiritual science of Islamic numerology to align with your divine destiny.</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">What is Ilm-e-Adad (Islamic Numerology)?</h3>
                     <p>
@@ -854,7 +797,7 @@ export const serviceInfo: Article[] = [
                     </ul>
                     <h3 className="text-brand-gold font-semibold mt-6">How It Works</h3>
                     <ul className="list-decimal ml-6">
-                        <li><b>Submit Your Details:</b> Provide your full name (Arabic preferred), birth date, and any specific questions or concerns.</li>
+                        <li><b>Share Your Details:</b> Provide your full name (Arabic preferred), birth date, and any specific questions or concerns.</li>
                         <li><b>Personalized Numerology Report:</b> We create a detailed Islamic numerology profile using Ilm-e-Adad principles, analyzing your key numbers and spiritual energy.</li>
                         <li><b>Result:</b> Our expert will explain your results, helping you apply this sacred knowledge to your daily life, goals, and challenges.</li>
                     </ul>
@@ -909,8 +852,8 @@ export const serviceInfo: Article[] = [
 
     {
         id: Services.ISLAMIC_COUNSELING,
-        title: "Spiritual Counseling — Navigate Life Through the Light of Islam",
-        description: "Confidential, Shariah-compliant Islamic counseling for anxiety, relationships, parenting, grief, and life challenges. Trained advisors. Trusted across the Muslim world.",
+        title: "Islamic Counseling — Navigate Life Through the Light of Islam",
+        description: "Faith-centered support for your emotional, mental, and spiritual well-being — guided by Islamic values, prophetic wisdom, and compassionate care.",
         date: "2025-01-01",
         image: "/services/islamic-councelling.jpg",
         publisher: "Najoomi",
@@ -927,21 +870,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Spiritual Counseling — Navigate Life Through the Light of Islam",
-        dcDescription: "Confidential, Shariah-compliant Islamic counseling for anxiety, relationships, parenting, grief, and life challenges. Trained advisors. Trusted across the Muslim world.",
+        dcDescription: "Faith-centered support for your emotional, mental, and spiritual well-being — guided by Islamic values, prophetic wisdom, and compassionate care.",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Islamic Spiritual Counseling",
         contentBody: (
             <>
-                {/* Decorative crescent, star, leaf, and sparkles */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2">&#x1F319;</span>
-                    <span className="inline-block text-brand-gold text-xl">&#x2727;</span>
-                    <span className="inline-block text-brand-gold text-xl ml-2">&#x1F343;</span>
-                    <span className="inline-block text-brand-gold text-xl ml-2">&#x2728;</span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Spiritual Counseling — Navigate Life Through the Light of Islam</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Faith-centered support for your emotional, mental, and spiritual well-being — guided by Islamic values, prophetic wisdom, and compassionate care.</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">What Is Islamic Spiritual Counseling?</h3>
                     <p>
@@ -1018,7 +952,7 @@ export const serviceInfo: Article[] = [
     {
         id: Services.PERSONALISED_DUA_AND_QURANIC_HEALING,
         title: "Personalized Dua & Quranic Healing — Divine Remedies for Every Challenge | Custom Duas for Healing & Protection",
-        description: "Receive personalized dua and Quranic healing at Najoomi.in. Custom duas for healing, protection, guidance, and success, tailored to your needs with authenticity and spiritual wisdom.",
+        description: "Receive custom-written duas and Quranic supplications tailored to your life circumstances — guided by Islamic scholarship and spiritual wisdom.",
         date: "2025-05-18",
         image: "/services/personalised-dua.jpg",
         publisher: "Najoomi",
@@ -1035,21 +969,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Personalized Dua & Quranic Healing — Divine Remedies for Every Challenge | Custom Duas for Healing & Protection",
-        dcDescription: "Receive personalized dua and Quranic healing at Najoomi.in. Custom duas for healing, protection, guidance, and success, tailored to your needs with authenticity and spiritual wisdom.",
+        dcDescription: "Receive custom-written duas and Quranic supplications tailored to your life circumstances — guided by Islamic scholarship and spiritual wisdom.",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Personalized Dua & Quranic Healing",
         contentBody: (
             <>
-                {/* Decorative crescent, Quran, sparkles, and geometric pattern */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2" role="img" aria-label="crescent">🌙</span>
-                    <span className="inline-block text-brand-gold text-2xl mx-2"><FaQuran /></span>
-                    <span className="inline-block text-brand-gold text-xl mx-2">&#x2728;</span>
-                    <span className="inline-block text-brand-gold text-xl mx-2">&#x25C6;</span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Personalized Dua & Quranic Healing — Divine Remedies for Every Challenge</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Receive custom-written duas and Quranic supplications tailored to your life circumstances — guided by Islamic scholarship and spiritual wisdom.</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">What is Personalized Dua & Healing?</h3>
                     <p>
@@ -1073,10 +998,9 @@ export const serviceInfo: Article[] = [
                     </ul>
                     <h3 className="text-brand-gold font-semibold mt-6">What You Receive</h3>
                     <ul className="list-disc ml-6">
-                        <li>A unique, personalized dua in Arabic with English translation</li>
+                        <li>A unique, personalized dua in Arabic</li>
                         <li>Relevant ayat or surahs for recitation</li>
                         <li>Time & method of reciting (e.g., after Fajr, before sleep)</li>
-                        <li>Optional audio recording (upon request)</li>
                     </ul>
                     <h3 className="text-[#1e293b] font-semibold mt-6">Why Najoomi.in?</h3>
                     <ul className="list-disc ml-6">
@@ -1161,7 +1085,7 @@ export const serviceInfo: Article[] = [
     {
         id: Services.ISTIKHARA_GUIDANCE,
         title: "Istikhara Guidance — Let Faith Lead Your Decision",
-        description: "Perform Istikhara with confidence through Najoomi.in. Get authentic Islamic guidance, step-by-step instructions, dream interpretations, and private consultations — all online.",
+        description: "Receive expert, Islamic Istikhara guidance online — learn how to perform Salat al-Istikhara, recognize the signs, and make life decisions with confidence and tawakkul (trust in Allah).",
         date: "2025-01-01",
         image: "/services/istikhara.jpg",
         publisher: "Najoomi",
@@ -1178,20 +1102,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Istikhara Guidance",
-        dcDescription: "Perform Istikhara with confidence through Najoomi.in. Get authentic Islamic guidance, step-by-step instructions, dream interpretations, and private consultations — all online.",
+        dcDescription: "Receive expert, Islamic Istikhara guidance online — learn how to perform Salat al-Istikhara, recognize the signs, and make life decisions with confidence and tawakkul (trust in Allah).",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Istikhara Guidance",
         contentBody: (
             <>
-                {/* Decorative crescent, star, and sparkle */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2">&#x1F319;</span>
-                    <span className="inline-block text-brand-gold text-xl">&#x2727;</span>
-                    <span className="inline-block text-brand-gold text-xl ml-2">&#x2728;</span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Istikhara Guidance — Let Faith Lead Your Decision</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Receive expert, Islamic Istikhara guidance online — learn how to perform Salat al-Istikhara, recognize the signs, and make life decisions with confidence and tawakkul (trust in Allah).</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">What is Istikhara?</h3>
                     <p>
@@ -1271,7 +1187,7 @@ export const serviceInfo: Article[] = [
     {
         id: Services.ISLAMIC_DREAM_INTERPRETATION,
         title: "Islamic Dream Interpretation — Uncover the Messages from Allah",
-        description: "Submit your dream and get authentic Islamic interpretation rooted in Quran, Hadith, and classical scholarship. 100% confidential, accurate, and spiritually guided.",
+        description: "Discover the deeper meanings behind your dreams with guidance from the Quran, Hadith, and the insights of scholars like Ibn Sirin (RA).",
         date: "2025-01-01",
         image: "/services/dream-interpretation.jpg",
         publisher: "Najoomi",
@@ -1288,20 +1204,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Islamic Dream Interpretation",
-        dcDescription: "Submit your dream and get authentic Islamic interpretation rooted in Quran, Hadith, and classical scholarship. 100% confidential, accurate, and spiritually guided.",
+        dcDescription: "Discover the deeper meanings behind your dreams with guidance from the Quran, Hadith, and the insights of scholars like Ibn Sirin (RA).",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Islamic Dream Interpretation",
         contentBody: (
             <>
-                {/* Decorative crescent, star, and subtle sparkle */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2">&#x1F319;</span>
-                    <span className="inline-block text-brand-gold text-xl">&#x2727;</span>
-                    <span className="inline-block text-brand-gold text-xl ml-2">&#x2728;</span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Islamic Dream Interpretation — Uncover the Messages from Allah</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Discover the deeper meanings behind your dreams with guidance from the Quran, Hadith, and the insights of scholars like Ibn Sirin (RA).</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">What Does Islam Say About Dreams?</h3>
                     <p>
@@ -1313,7 +1221,7 @@ export const serviceInfo: Article[] = [
                     </blockquote>
                     <h3 className="text-[#1e293b] font-semibold mt-6">How Our Interpretation Works</h3>
                     <ul className="list-disc ml-6">
-                        <li><b>Submit Your Dream:</b> Write out your dream in detail — including setting, emotions, people, and key symbols.</li>
+                        <li><b>Share Your Dream:</b> Share your dream in detail — including setting, emotions, people, and key symbols.</li>
                         <li><b>Scholarly Islamic Analysis:</b> Our trained interpreters reference Quran, Sahih Hadith, and classical works by scholars like Ibn Sirin to analyze your dream's spiritual significance.</li>
                         <li><b>Personalized Response:</b> You’ll receive a detailed interpretation, possible meanings, and recommended duas or Sunnah actions for guidance.</li>
                     </ul>
@@ -1408,13 +1316,6 @@ export const serviceInfo: Article[] = [
         dcSubject: "Ruqyah and Spiritual Cleansing",
         contentBody: (
             <>
-                {/* Decorative crescent and star pattern */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2">&#x1F319;</span>
-                    <span className="inline-block text-brand-gold text-xl">&#x2727;</span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Ruqyah and Spiritual Cleansing — Protection Through the Power of the Quran</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">Quranic healing and protection for emotional, mental, and spiritual well-being</h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">What is Ruqyah?</h3>
                     <p>
@@ -1478,8 +1379,8 @@ export const serviceInfo: Article[] = [
     },
     {
         id: Services.SPIRITUAL_GUIDANCE,
-        title: "Spiritual Guidance for Life Decisions | Roohani Support by Najoomi.in",
-        description: "Find clarity, peace, and purpose with faith-centered spiritual guidance at Najoomi.in. Get roohani support for life’s emotional and personal challenges with expert advice rooted in sacred knowledge.",
+        title: "Spiritual Guidance for Life Decisions",
+        description: "Reconnect with your inner peace and divine direction through sincere guidance rooted in sacred teachings, heartfelt listening, and personalized spiritual wisdom.",
         date: "2025-05-18",
         image: "/services/spritual-guidance.jpg",
         publisher: "Najoomi",
@@ -1496,24 +1397,12 @@ export const serviceInfo: Article[] = [
         contentLanguage: "en",
         xUaCompatible: "IE=edge",
         dcTitle: "Spiritual Guidance for Life Decisions | Roohani Support by Najoomi.in",
-        dcDescription: "Find clarity, peace, and purpose with faith-centered spiritual guidance at Najoomi.in. Get roohani support for life’s emotional and personal challenges with expert advice rooted in sacred knowledge.",
+        dcDescription: "Reconnect with your inner peace and divine direction through sincere guidance rooted in sacred teachings, heartfelt listening, and personalized spiritual wisdom.",
         dcPublisher: "Najoomi",
         dcLanguage: "en",
         dcSubject: "Spiritual Guidance",
         contentBody: (
             <>
-                {/* Decorative elements: crescent, sparkles, geometric pattern, lightbulb, open book */}
-                <div className="flex justify-center items-center mb-6">
-                    <span className="inline-block text-brand-gold text-3xl mr-2" role="img" aria-label="crescent">🌙</span>
-                    <span className="inline-block text-brand-gold text-2xl mx-2">✨</span>
-                    <span className="inline-block text-brand-gold text-2xl mx-2">◆</span>
-                    <span className="inline-block text-brand-gold text-2xl ml-2"><FaRegLightbulb /></span>
-                    <span className="inline-block text-brand-gold text-2xl ml-2"><FaBook /></span>
-                </div>
-                <h1 className="text-3xl font-bold text-center text-[#1e293b] mb-2">Spiritual Guidance & Clarity — Navigate Life Through the Light of Faith</h1>
-                <h2 className="text-xl text-center text-brand-gold font-semibold mb-4">
-                    Reconnect with your inner peace and divine direction through sincere guidance rooted in sacred teachings, heartfelt listening, and personalized spiritual wisdom.
-                </h2>
                 <div className="prose prose-lg max-w-none mx-auto mb-6">
                     <h3 className="text-[#1e293b] font-semibold">🌙 What is Spiritual Guidance?</h3>
                     <p>
@@ -1531,8 +1420,8 @@ export const serviceInfo: Article[] = [
                     </ul>
                     <h3 className="text-[#1e293b] font-semibold mt-6">🧭 How It Works</h3>
                     <ul className="list-decimal ml-6">
-                        <li><b>Submit Your Concern:</b> Share your struggle, confusion, or area where you need spiritual clarity.</li>
-                        <li><b>Get Matched with a Guide:</b> We connect you with a compassionate advisor trained in Islamic spirituality and emotional wellness.</li>
+                        <li><b>Share Your Concern:</b> Share your struggle, confusion, or area where you need spiritual clarity.</li>
+                        <li><b>Choose a Guide:</b> We connect you with a compassionate advisor trained in Islamic spirituality and emotional wellness.</li>
                         <li><b>Personalized Guidance & Tools:</b> Receive reflections from the Quran and Hadith, practical spiritual routines, and recommended duas.</li>
                         <li><b>Optional Follow-Up Support:</b> Schedule future sessions or seek additional clarity as your journey evolves.</li>
                     </ul>
