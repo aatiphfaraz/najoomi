@@ -16,7 +16,7 @@ export default function PractitionersPage() {
             <FaStar className="text-4xl text-brand-gold group-hover:text-primary transition-colors" />
           </span>
           <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2 text-center">Najumis</h2>
-          <p className="text-gray-700 text-center mb-2">Our expert Najumis specialize in spiritual guidance, dream interpretation, ruqyah, istikhara, and holistic Islamic support rooted in Quran and Sunnah.</p>
+          <p className="text-gray-700 text-center mb-2">Our expert Najumis specialize in spiritual guidance, dream interpretation, ruqyah, istikhara, and holistic Islamic support rooted in Quran and Sunnah</p>
           <span className="mt-4 text-brand-gold font-semibold group-hover:underline group-hover:underline-offset-4 transition-all">Explore Najumis →</span>
         </Link>
         {/* Therapists Card */}
@@ -25,7 +25,7 @@ export default function PractitionersPage() {
             <FaUserMd className="text-4xl text-primary group-hover:text-brand-gold transition-colors" />
           </span>
           <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2 text-center">Therapists</h2>
-          <p className="text-gray-700 text-center mb-2">Our licensed therapists offer confidential, faith-aligned counseling for emotional, mental, and relational well-being, blending expertise with compassion.</p>
+          <p className="text-gray-700 text-center mb-2">Our licensed therapists offer confidential, faith-aligned counseling for emotional, mental, and relational well-being, blending expertise with compassion</p>
           <span className="mt-4 text-primary font-semibold group-hover:underline group-hover:underline-offset-4 transition-all">Explore Therapists →</span>
         </Link>
       </div>

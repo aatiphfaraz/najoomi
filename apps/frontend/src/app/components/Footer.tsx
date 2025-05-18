@@ -53,7 +53,7 @@ export default function Footer() {
             Najoomi<span className="text-brand-gold">.in</span>
           </div>
           <p className="text-sm text-white/80">
-            Empowering the Muslim community with authentic, spiritually enriching guidance rooted in the timeless wisdom of Islam.
+            Empowering the Muslim community with authentic, spiritually enriching guidance rooted in the timeless wisdom of Islam
           </p>
         </div>
         {/* Quick Links */}

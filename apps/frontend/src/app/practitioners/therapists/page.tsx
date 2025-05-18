@@ -51,7 +51,7 @@ export default function TherapistsPage() {
     <section className="w-full py-12 flex flex-col items-center">
       <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8 tracking-tight drop-shadow-lg">Our Therapists</h1>
       <p className="mb-10 text-gray-700 text-center max-w-2xl">
-        Meet our licensed therapists, dedicated to your mental and emotional well-being with a blend of modern and spiritual techniques.
+        Meet our licensed therapists, dedicated to your mental and emotional well-being with a blend of modern and spiritual techniques
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
         {therapists.map((p) => (

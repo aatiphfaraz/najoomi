@@ -21,7 +21,7 @@ export default function ResourcesPage() {
                         Resources & Knowledge
                     </h1>
                     <p className="text-gray-700 max-w-2xl mx-auto text-base md:text-lg">
-                        Explore our collection of articles, guides, and insights on Islamic spiritual practices, dream interpretation, and personal development.
+                        Explore our collection of articles, guides, and insights on Islamic spiritual practices, dream interpretation, and personal development
                     </p>
                 </header>
 
@@ -90,10 +90,7 @@ export default function ResourcesPage() {
                                         </div>
                                     </div>
                                 </div>
-                                {/* Decorative star/sparkle */}
-                                <svg className="absolute top-4 right-4 w-6 h-6 text-[#fde68a] opacity-50 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                                    <polygon points="10,1 12,7 19,8 13.5,12.5 15,19 10,15.5 5,19 6.5,12.5 1,8 8,7" />
-                                </svg>
+
                             </div>
                         </Link>
                     ))}

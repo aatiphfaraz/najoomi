@@ -1,8 +1,10 @@
 import React from "react";
 import Button from "./ui/Button";
 import Image from "next/image";
+import Link from "next/link";
 
 interface PractitionerCardProps {
+  id?: string;
   image: string;
   name: string;
   title: string;
@@ -14,7 +16,7 @@ interface PractitionerCardProps {
   starPractitioner?: boolean;
 }
 
-const PractitionerCard: React.FC<PractitionerCardProps> = ({ image, name, title, experience, specialties, rating, price, discountPrice, starPractitioner }) => {
+const PractitionerCard: React.FC<PractitionerCardProps> = ({ id, image, name, title, experience, specialties, rating, price, discountPrice, starPractitioner }) => {
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-[#fde68a]/40 flex flex-col overflow-hidden min-h-[390px] relative transition-transform hover:scale-[1.025] hover:shadow-2xl group">
       <div className="relative h-44 bg-[#fafafa] flex items-center justify-center overflow-hidden rounded-t-2xl">
@@ -78,7 +80,13 @@ const PractitionerCard: React.FC<PractitionerCardProps> = ({ image, name, title,
           ))}
         </div>
         <div className="mt-auto">
-          <Button variant="primary" className="w-full text-sm py-1.5">Book a Session</Button>
+          {id ? (
+            <Link href={`/booking/${id}`}>
+              <Button variant="primary" className="w-full text-sm py-1.5">Book a Session</Button>
+            </Link>
+          ) : (
+            <Button variant="primary" className="w-full text-sm py-1.5" disabled>Coming Soon</Button>
+          )}
         </div>
       </div>
     </div>

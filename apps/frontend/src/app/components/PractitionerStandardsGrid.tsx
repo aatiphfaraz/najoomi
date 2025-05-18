@@ -4,22 +4,22 @@ const standards = [
   {
     icon: '📚',
     title: 'Authentic Islamic Knowledge',
-    description: 'All our practitioners have formal education in Islamic sciences from recognized institutions and continue their studies through established scholarly networks.'
+    description: 'All our practitioners have formal education in Islamic sciences from recognized institutions and continue their studies through established scholarly networks'
   },
   {
     icon: '🏅',
     title: 'Extensive Experience',
-    description: 'Every practitioner has a minimum of 5 years of experience providing spiritual guidance and has demonstrated a track record of positive client outcomes.'
+    description: 'Every practitioner has a minimum of 5 years of experience providing spiritual guidance and has demonstrated a track record of positive client outcomes'
   },
   {
     icon: '🛡️',
     title: 'Ethical Standards',
-    description: 'Our practitioners adhere to a strict code of ethics that ensures client confidentiality, respectful practice, and guidance that aligns with authentic Islamic teachings.'
+    description: 'Our practitioners adhere to a strict code of ethics that ensures client confidentiality, respectful practice, and guidance that aligns with authentic Islamic teachings'
   },
   {
     icon: '🌱',
     title: 'Continued Learning',
-    description: 'We require all practitioners to engage in ongoing education to refine their skills and deepen their knowledge in their areas of specialization.'
+    description: 'We require all practitioners to engage in ongoing education to refine their skills and deepen their knowledge in their areas of specialization'
   },
 ];
 
@@ -32,7 +32,7 @@ const PractitionerStandardsGrid: React.FC = () => (
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
       {/* Decorative gold sparkle in background */}
-      <svg className="absolute -top-6 right-10 opacity-20 pointer-events-none" width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" fill="#FFD700"/><circle cx="40" cy="12" r="2" fill="#E5C07B"/><circle cx="10" cy="40" r="1.5" fill="#F6E27A"/></svg>
+      <svg className="absolute -top-6 right-10 opacity-20 pointer-events-none" width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" fill="#FFD700" /><circle cx="40" cy="12" r="2" fill="#E5C07B" /><circle cx="10" cy="40" r="1.5" fill="#F6E27A" /></svg>
       {standards.map((std, idx) => (
         <div key={idx} className="bg-white/95 rounded-2xl shadow-2xl border-l-4 border-[#15577a] p-8 animate-fade-in-up relative">
           <div className="flex items-center gap-3 mb-2">

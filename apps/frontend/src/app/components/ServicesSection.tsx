@@ -6,7 +6,7 @@ export default function ServicesSection() {
     <section className="w-full bg-gradient-to-br from-white to-[#F1E1C6] py-20 px-4 flex flex-col items-center">
       <h2 className="text-3xl md:text-4xl font-bold text-[#15577a] mb-2">Our Services</h2>
       <p className="mb-10 text-gray-700 text-center max-w-2xl">
-        Discover our range of authentic spiritual services designed to provide guidance, healing, and clarity through an Islamic perspective.
+        Discover our range of authentic spiritual services designed to provide guidance, healing, and clarity through an Islamic perspective
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
         {allServices.slice(0, 6).map((service) => (

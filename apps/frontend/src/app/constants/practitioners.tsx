@@ -1,90 +1,108 @@
-export const practitioners = [
+// Types for practitioners
+export type PractitionerType = 'najoomi' | 'therapist';
+
+export interface Practitioner {
+    id: string;
+    name: string;
+    title: string;
+    image: string;
+    experience: string;
+    specialties: string[];
+    rating: number;
+    price: string;
+    discountPrice: string;
+    type: PractitionerType;
+    duration: string;
+    description: string;
+    starPractitioner?: boolean;
+}
+
+export const practitioners: Practitioner[] = [
     {
         id: "de340638-e06c-4ed4-ba5b-007b023b8ab4",
-        name: "Mufti Abdul Raheem",
+        name: "Alim Aatif Faraz",
         title: "Islamic Scholar & Spiritual Guide",
         image: "/missions.png",
-        experience: "15+ years",
+        experience: "5+ years",
         specialties: ["Dream Interpretation", "Istikhara", "Spiritual Counseling"],
         rating: 5,
         price: "599",
-        discountPrice: "299",
+        discountPrice: "399",
         starPractitioner: true,
         type: "najoomi",
         duration: "15 minutes",
-        description: "Book a 1:1 session with Mufti Abdul Raheem for dream interpretation, istikhara, and spiritual guidance rooted in Islamic wisdom. Experience clarity and peace through authentic spiritual counsel."
-
+        description: "Book a 1:1 session with Alim Aatif Faraz for dream interpretation, istikhara, and spiritual guidance rooted in Islamic wisdom. Experience clarity and peace through authentic spiritual counsel."
     },
-    // {
-    //     id: "najoomi-2",
-    //     name: "Shaykha Amina Hassan",
-    //     duration: "15 minutes",
-    //     description: "Connect with Shaykha Amina Hassan for ruqyah, spiritual cleansing, and family counseling. Receive compassionate guidance and protection through Quranic healing and Islamic tradition.",
-    //     title: "Ruqyah Specialist & Counselor",
-    //     image: "/missions.png",
-    //     experience: "12+ years",
-    //     specialties: ["Ruqyah", "Spiritual Cleansing", "Family Counseling"],
-    //     rating: 5,
-    //     price: "1000",
-    //     discountPrice: "800",
-    //     type: "najoomi"
-    // },
-    // {
-    //     id: "najoomi-3",
-    //     name: "Ustadh Ibrahim Malik",
-    //     duration: "15 minutes",
-    //     description: "Book a session with Ustadh Ibrahim Malik for ilm-e-adad (Islamic numerology), rohani healing, and meaningful baby naming. Discover spiritual insights and solutions tailored to your unique journey.",
-    //     title: "Numerologist & Spiritual Healer",
-    //     image: "/missions.png",
-    //     experience: "20+ years",
-    //     specialties: ["Ilm-e-Adad", "Rohani Healing", "Baby Naming"],
-    //     rating: 5,
-    //     price: "1000",
-    //     discountPrice: "800",
-    //     type: "najoomi"
-    // },
     {
-        id: "therapist-1",
-        name: "Dr. Sara Qureshi",
+        id: "",
+        name: "Haji Asheqeen",
+        title: "Islamic Scholar & Spiritual Guide",
+        image: "/practitioners/haji-asheqeen.jpg",
+        experience: "6+ years",
+        specialties: ["Black Magic", "Evil Eye", "Spiritual Counseling"],
+        rating: 5,
+        price: "599",
+        discountPrice: "399",
+        starPractitioner: true,
+        type: "najoomi",
+        duration: "15 minutes",
+        description: "Offers authentic Islamic guidance and solutions for challenges such as black magic, evil eye, and various spiritual ailments, drawing upon traditional wisdom and compassionate support."
+    },
+    {
+        id: "",
+        name: "Saleha Visal",
         duration: "45 minutes",
-        description: "Consult with Dr. Sara Qureshi, a clinical psychologist blending modern therapy with Islamic values. Address anxiety, depression, and emotional challenges in a safe, faith-centered environment.",
-        title: "Clinical Psychologist",
+        description: "My name is Saleha Visal. I'm a Counselling Psychologist, CBT Practitioner and a Graphologist. I've previously worked with organizations like Cheshire Home (organization for people with disabilities) and National association for blind women (NAB India).My work experience includes preparing case studies of people with various disabilities and providing them counselling therapy accordingly. I've also worked as a Research Psychologist at GoodPsyche (Mental Health Organization). Currently I'm working as a Counselling Psychologist ( private practice) and taking online therapy session. Along with all this I'm conducting workshops with young school going children to raise awareness about Mental Health.",
+        title: "Islamic Counselor",
         image: "/missions.png",
-        experience: "8+ years",
+        experience: "3+ years",
         specialties: ["CBT", "Anxiety", "Depression"],
         rating: 5,
-        price: "1500",
-        discountPrice: "1200",
+        price: "1200",
+        discountPrice: "1000",
         type: "therapist",
-        starPractitioner: true,
     },
     {
-        id: "therapist-2",
-        name: "Adeel Khan",
-        title: "Licensed Therapist",
+        id: "",
+        name: "Irfana Begum",
+        title: "Islamic Counselor",
+        image: "/practitioners/irfana-begum.jpg",
+        experience: "1+ years",
+        specialties: ["SFBT", "CBT", "Psychodynamic Principles", "Islamic Faith-Based Perspectives"],
+        rating: 5,
+        price: "800",
+        discountPrice: "499",
+        type: "therapist",
+        duration: "45 minutes",
+        description: "Passionate Counseling Psychologist with a Master’s in Psychology, practicing for over a year. My approach blends CBT, SFBT, psychodynamic principles, and Islamic faith-based perspectives,p focusing on emotional well-being and fostering self-reliance in diverse populations."
+    },
+    {
+        id: "",
+        name: "Abdul Rehman",
+        duration: "45 minutes",
+        description: "Abdul Rehman is a postgraduate in Applied Psychology with a deep interest in faith-integrated counselling. He brings a compassionate, non-judgmental approach rooted in both psychological principles and Islamic values. He aims to support individuals through empathetic listening, practical guidance, and a spiritually grounded perspective.",
+        title: "Islamic Counselor",
         image: "/missions.png",
-        experience: "10+ years",
-        specialties: ["Relationship Counseling", "Stress Management", "Mindfulness"],
+        experience: "3+ years",
+        specialties: ["Anxiety", "Family Therapy", "Behavioral Issues", "Stress Management"],
         rating: 5,
         price: "1200",
-        discountPrice: "950",
-        type: "therapist",
-        duration: "45 minutes",
-        description: "Book with Adeel Khan for relationship counseling, stress management, and mindfulness. Benefit from licensed therapy that honors your emotional and spiritual well-being."
+        discountPrice: "1000",
+        type: "therapist"
     },
     {
-        id: "therapist-3",
-        name: "Fatima Siddiqui",
+        id: "",
+        name: "Asifa Bano",
         duration: "45 minutes",
-        description: "Connect with Fatima Siddiqui, specialist in child and adolescent therapy. Support your family with expert guidance on behavioral issues and holistic, faith-inspired care.",
-        title: "Child & Adolescent Therapist",
-        image: "/missions.png",
-        experience: "6+ years",
-        specialties: ["Child Therapy", "Family Therapy", "Behavioral Issues"],
+        description: "As a compassionate islamic psychologist, I provide a safe and non-judgmental space for individuals to explore their thoughts, feelings, and experiences. With empathy and expertise, I help clients navigate life's challenges, build resilience, and foster emotional well-being according to Quran and Sunnah.",
+        title: "Islamic Counselor",
+        image: "/practitioners/asifa-bano.jpg",
+        experience: "1+ years",
+        specialties: ["CBT", "Anxiety", "Depression"],
         rating: 5,
-        price: "1300",
-        discountPrice: "1100",
-        type: "therapist"
+        price: "800",
+        discountPrice: "499",
+        type: "therapist",
     },
 
 ];

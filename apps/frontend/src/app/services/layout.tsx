@@ -4,10 +4,10 @@ import UpsellBanner from "../components/UpsellBanner";
 
 export const metadata: Metadata = {
     title: "All Services | Najoomi",
-    description: "Explore our comprehensive range of spiritual and wellness services designed to guide, heal, and empower you.",
+    description: "Explore our comprehensive range of spiritual and wellness services designed to guide, heal, and empower you",
     openGraph: {
         title: "All Services | Najoomi",
-        description: "Explore our comprehensive range of spiritual and wellness services designed to guide, heal, and empower you.",
+        description: "Explore our comprehensive range of spiritual and wellness services designed to guide, heal, and empower you",
     },
 };
 

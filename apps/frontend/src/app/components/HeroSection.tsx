@@ -8,7 +8,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 -z-10">
                 <Image
                     fill
-                    src="/missions.png"
+                    src="/hero-section.jpg"
                     alt="Mosque domes background"
                     className="w-full h-full object-cover object-center"
                     priority
@@ -22,7 +22,7 @@ export default function HeroSection() {
                     Guidance Beyond <span className="text-brand-gold">Boundaries</span>
                 </h1>
                 <p className="mb-8 text-base md:text-lg text-gray-200 max-w-xl drop-shadow">
-                    Authentic Islamic spiritual guidance connecting you with trusted practitioners for personalized consultations, dream interpretations, and spiritual healing.
+                    Embrace the light of divine guidance. Najoomi offers soulful healing and faith-rooted counselling to help you reconnect with your purpose, peace, and the blessings of Allah - wherever you are
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                     <Link href="/practitioners">
