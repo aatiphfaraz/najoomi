@@ -2,6 +2,7 @@ import React from "react";
 import UpsellBanner from "../components/UpsellBanner";
 
 export default function AboutPage() {
+  console.log("AboutPage");
   return (
     <main className="relative min-h-screen bg-gradient-to-br from-white to-[#F1E1C6] pb-20 overflow-x-hidden">
       {/* Gold gradient accent background */}
