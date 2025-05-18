@@ -11,7 +11,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ icon, title, description, subTitle, href }: ServiceCardProps) {
   return (
-    <Link href={href}>
+    <Link href={`/services/${href}`}>
       <div
         className="bg-white/60 backdrop-blur-lg rounded-2xl border border-[#eab308]/20 shadow-lg p-8 flex flex-col gap-4 min-h-[340px] max-h-[380px] h-full hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-200"
         style={{ boxShadow: '0 8px 32px 0 rgba(34, 40, 49, 0.07)' }}

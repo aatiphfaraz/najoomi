@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { articles } from "./constants/articles";
+import { allServices } from "./constants/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -55,5 +56,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   //   lastModified: new Date().toISOString(),
   // }));
 
-  return [...staticRoutes, ...resourceRoutes];
+  // Service detail routes
+  const serviceRoutes = allServices.map((service) => ({
+    url: `https://najoomi.in/services/${service.href}`,
+    lastModified: new Date().toISOString(),
+  }));
+
+  return [...staticRoutes, ...resourceRoutes, ...serviceRoutes];
 }

@@ -14,7 +14,7 @@ export default function UpsellBanner({
   title = "Begin Your Spiritual Journey Today",
   description = "Take the first step towards clarity, healing, and guidance with our authentic Islamic spiritual services.",
   primaryCtaText = "Book a Consultation",
-  primaryCtaHref = "/book",
+  primaryCtaHref = "/practitioners",
   secondaryCtaText = "Learn More About Our Services",
   secondaryCtaHref = "/services",
 }: UpsellBannerProps) {

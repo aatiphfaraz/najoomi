@@ -71,7 +71,7 @@ export default function NavbarV2() {
         </div>
         {/* Desktop Book Consultation Button */}
         <div className="hidden md:block ml-6">
-          <Link href="/book">
+          <Link href="/practitioners">
             <Button variant="primary">
               <span className="relative inline-block w-5 h-5 align-middle mr-1">
                 <svg aria-hidden="true" className="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 24 24">

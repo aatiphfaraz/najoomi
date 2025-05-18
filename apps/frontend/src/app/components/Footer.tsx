@@ -62,8 +62,8 @@ export default function Footer() {
           <ul className="space-y-1 text-sm">
             <li><Link href="/services" className="hover:text-[#eab308] transition">• Services</Link></li>
             <li><Link href="/practitioners" className="hover:text-[#eab308] transition">• Practitioners</Link></li>
-            <li><Link href="/consultation" className="hover:text-[#eab308] transition">• Book a Consultation</Link></li>
             <li><Link href="/about" className="hover:text-[#eab308] transition">• About Us</Link></li>
+            <li><Link href="/resources" className="hover:text-[#eab308] transition">• Resources</Link></li>
             <li><Link href="/contact" className="hover:text-[#eab308] transition">• Contact</Link></li>
           </ul>
         </div>
@@ -71,10 +71,21 @@ export default function Footer() {
         <div>
           <div className="font-semibold mb-3 text-brand-gold">Services</div>
           <ul className="space-y-1 text-sm">
-            <li>• Dream Interpretation</li>
-            <li>• Spiritual Counseling</li>
-            <li>• Ruqyah & Cleansing</li>
-            <li>• Istikhara Guidance</li>
+            <li>
+              <Link href="/services/dream-interpretation" className="hover:text-[#eab308] transition">• Dream Interpretation</Link>
+            </li>
+            <li>
+              <Link href="/services/spiritual-guidance" className="hover:text-[#eab308] transition">• Spiritual Counseling</Link>
+            </li>
+            <li>
+              <Link href="/services/ruqyah-and-spiritual-cleansing" className="hover:text-[#eab308] transition">• Ruqyah & Cleansing</Link>
+            </li>
+            <li>
+              <Link href="/services/istikhara-guidance" className="hover:text-[#eab308] transition">• Istikhara Guidance</Link>
+            </li>
+            <li>
+              <Link href="/services" className="hover:text-[#eab308] transition">• More Services</Link>
+            </li>
           </ul>
         </div>
         {/* Contact */}

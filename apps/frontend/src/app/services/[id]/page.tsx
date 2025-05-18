@@ -56,7 +56,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
         metadataBase: new URL("https://najoomi.in"),
         category: "Religion, Spirituality, Islamic Guidance",
         other: {
-            "theme-color": "#fde68a",
             "copyright": `Najoomi © ${year}`,
             "generator": "Next.js",
             "revisit-after": "7 days",
@@ -81,8 +80,13 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     };
 }
 
+export const viewport = {
+    themeColor: "#fde68a",
+};
+
 export default async function ServiceDetailPage({ params }: any) {
     const { id } = await params;
+
     const service = serviceInfo.find((r) => r.id === id);
     if (!service) return notFound();
 
