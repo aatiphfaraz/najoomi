@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Clarity from '@microsoft/clarity';
+import { ClarityProvider } from "./ClarityProvider";
 
 import "./globals.css";
-
-const projectId = "rlhzu2thj4"
-
-Clarity.init(projectId);
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -95,6 +91,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavbarV2 />
+        <ClarityProvider projectId="rlhzu2thj4" />
         {children}
         <Footer />
       </body>
