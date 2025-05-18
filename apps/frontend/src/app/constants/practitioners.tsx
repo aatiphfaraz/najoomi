@@ -43,7 +43,6 @@ export const practitioners: Practitioner[] = [
         rating: 5,
         price: "599",
         discountPrice: "399",
-        starPractitioner: true,
         type: "najoomi",
         duration: "15 minutes",
         description: "Offers authentic Islamic guidance and solutions for challenges such as black magic, evil eye, and various spiritual ailments, drawing upon traditional wisdom and compassionate support."
