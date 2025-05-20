@@ -50,7 +50,7 @@ export async function POST(
       },
       order_meta: {
         return_url: `${isSandbox ? "http://localhost:3000" : "https://najoomi.in"}/booking/success/${booking_id}`,
-        notify_url: `${isSandbox ? "https://c126-2401-4900-1c5e-dfda-807c-4ad8-e6c5-ceca.ngrok-free.app" : "https://c126-2401-4900-1c5e-dfda-807c-4ad8-e6c5-ceca.ngrok-free.app/"}/api/cashfree-webhook`,
+        notify_url: `${isSandbox ? "https://c126-2401-4900-1c5e-dfda-807c-4ad8-e6c5-ceca.ngrok-free.app" : "https://najoomi.in"}/api/cashfree-webhook`,
       },
       order_note: "Najoomi Booking Payment",
     };
