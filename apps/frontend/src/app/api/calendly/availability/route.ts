@@ -26,10 +26,11 @@ export async function GET(req: NextRequest) {
     (availability.collection || []).forEach((slot: { start_time: string }) => {
       const startDate = new Date(slot.start_time);
       const endDate = new Date(startDate.getTime() + durationMinutes * 60000);
-      const dateKey = startDate.toLocaleDateString('en-GB'); // DD/MM/YYYY
+      // Format dateKey and times in IST
+      const dateKey = startDate.toLocaleDateString('en-GB', { timeZone: 'Asia/Kolkata' }); // DD/MM/YYYY IST
       const slotObj: Slot = {
-        start: startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        end: endDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        start: startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' }),
+        end: endDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' }),
       };
       if (!slotsByDate[dateKey]) slotsByDate[dateKey] = [];
       slotsByDate[dateKey].push(slotObj);
