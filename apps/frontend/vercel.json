@@ -8,8 +8,8 @@
             "destination": "/api/hello"
         },
         {
-            "source": "/api/cashfree-webhook/",
-            "destination": "/api/cashfree-webhook"
+            "source": "/api/webhook/",
+            "destination": "/api/webhook"
         }
     ],
     "headers": []
