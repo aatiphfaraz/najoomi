@@ -1,5 +1,5 @@
 import { COLLECTION_NAME } from '@/app/constants/schema';
-// import { getBookingById } from '@/app/lib/booking';
+import { getBookingById } from '@/app/lib/booking';
 import { getCalendlySchedulingLink } from '@/app/lib/calendly';
 import { sendNajoomiSchedulingEmail } from '@/app/lib/email';
 import { getMongoDb } from '@/app/lib/mongo';
@@ -38,21 +38,20 @@ export async function ensureCalendlyLink(booking: any): Promise<string | null> {
 }
 
 export async function handleWebhook(body: any) {
-  console.log(body)
   // Extract booking_id
-  // const booking_id = extractBookingId(body);
-  // if (!booking_id) {
-  //   return { status: 'error', message: 'Missing booking_id in webhook', statusCode: 400 };
-  // }
+  const booking_id = extractBookingId(body);
+  if (!booking_id) {
+    return { status: 'error', message: 'Missing booking_id in webhook', statusCode: 400 };
+  }
   // Lookup booking
-  // const booking = await getBookingById(booking_id);
-  // if (!booking) {
-  //   return { status: 'error', message: 'Booking not found', statusCode: 404 };
-  // }
+  const booking = await getBookingById(booking_id);
+  if (!booking) {
+    return { status: 'error', message: 'Booking not found', statusCode: 404 };
+  }
   // Ensure Calendly link exists and update booking if needed
-  // const calendly_link = await ensureCalendlyLink(booking);
-  // if (!calendly_link) {
-  //   return { status: 'error', message: 'Failed to get scheduling link', statusCode: 500 };
-  // }
+  const calendly_link = await ensureCalendlyLink(booking);
+  if (!calendly_link) {
+    return { status: 'error', message: 'Failed to get scheduling link', statusCode: 500 };
+  }
   return { status: 'ok', message: 'Webhook received successfully', statusCode: 200 };
 }
