@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getMongoDb } from '@/app/lib/mongo';
+
+import { getBookingById } from '@/app/lib/booking';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -7,12 +8,8 @@ export async function GET(req: NextRequest) {
   if (!order_id) {
     return NextResponse.json({ error: 'Missing order_id' }, { status: 400 });
   }
-  const db = await getMongoDb();
-  console.log(db, "db");
-  const bookings = db.collection('bookings');
-  console.log(bookings);
-  const booking = await bookings.findOne({ cashfree_order_id: order_id });
-  console.log(booking);
+  const booking = await getBookingById(order_id);
+
   if (!booking) {
     return NextResponse.json({ error: 'Booking not found' }, { status: 404 });
   }

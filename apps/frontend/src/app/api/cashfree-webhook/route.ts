@@ -1,49 +1,72 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-// Cashfree recommends verifying the signature for security. You can add that logic here if needed.
-// For now, this simply logs and acknowledges the webhook.
-
 import { getMongoDb } from "@/app/lib/mongo";
+import { getCalendlySchedulingLink } from '@/app/lib/calendly';
+import { sendNajoomiSchedulingEmail } from '@/app/lib/email';
+import { getBookingById } from '@/app/lib/booking';
+import { COLLECTION_NAME } from '@/app/constants/schema';
+
+// Helper: Extract booking_id from webhook body
+function extractBookingId(body: any): string | null {
+  return body?.data?.customer_details?.customer_id || null;
+}
+
+// Helper: Generate and update Calendly link if needed
+async function ensureCalendlyLink(booking: any): Promise<string | null> {
+  if (booking.calendly_link) return booking.calendly_link;
+  const practitioner_id = booking.practitioner_id;
+  if (!practitioner_id) throw new Error('Missing practitioner_id in booking');
+  const CALENDLY_TOKEN = process.env.CALENDLY_TOKEN;
+  if (!CALENDLY_TOKEN) throw new Error('Missing CALENDLY_TOKEN');
+  // Generate link
+  let calendly_link = '';
+  try {
+    calendly_link = await getCalendlySchedulingLink(practitioner_id, CALENDLY_TOKEN);
+    if (booking.email) {
+      try {
+        await sendNajoomiSchedulingEmail(booking.email, calendly_link);
+      } catch (e) {
+        console.warn('Failed to send email with Calendly link:', e);
+      }
+    }
+  } catch (e) {
+    console.warn('Failed to fetch Calendly link', e);
+    return null;
+  }
+  if (!calendly_link) return null;
+  // Update booking in DB
+  const db = await getMongoDb();
+  const bookings = db.collection(COLLECTION_NAME);
+  await bookings.updateOne({ booking_id: booking.booking_id }, {
+    $set: { calendly_link, status: 'scheduled', updatedAt: new Date() },
+  });
+  return calendly_link;
+}
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     console.log('[Cashfree Webhook] Received:', body);
 
-    // 1. Extract booking_id from webhook (adjust key as per actual webhook structure)
-    const booking_id = body.booking_id || body.order_id || body.data?.order?.order_id;
+    // Extract booking_id
+    const booking_id = extractBookingId(body);
     if (!booking_id) {
       return NextResponse.json({ status: 'error', message: 'Missing booking_id in webhook' }, { status: 400 });
     }
 
-    // 2. Lookup the booking in MongoDB
-    const db = await getMongoDb();
-    const bookings = db.collection('bookings');
-    const booking = await bookings.findOne({ booking_id });
+    // Lookup booking
+    const booking = await getBookingById(booking_id);
     if (!booking) {
       return NextResponse.json({ status: 'error', message: 'Booking not found' }, { status: 404 });
     }
 
-    // 3. Call the Calendly scheduling link endpoint (needs practitioner_id)
-    const practitioner_id = booking.practitioner_id;
-    if (!practitioner_id) {
-      return NextResponse.json({ status: 'error', message: 'Missing practitioner_id in booking' }, { status: 400 });
-    }
-    // Call internal API to get scheduling link
-    const calendlyRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/calendly/scheduling-link?userId=${practitioner_id}`);
-    const calendlyData = await calendlyRes.json();
-    const scheduling_link = calendlyData.resource?.booking_url || calendlyData.booking_url || calendlyData.scheduling_link || null;
-    if (!scheduling_link) {
-      return NextResponse.json({ status: 'error', message: 'Failed to get scheduling link', calendlyData }, { status: 500 });
+    // Ensure Calendly link exists and update booking if needed
+    const calendly_link = await ensureCalendlyLink(booking);
+    if (!calendly_link) {
+      return NextResponse.json({ status: 'error', message: 'Failed to get scheduling link' }, { status: 500 });
     }
 
-    // 4. Update booking with scheduling link
-    await bookings.updateOne({ booking_id }, { $set: { calendly_link: scheduling_link, status: 'scheduled', updatedAt: new Date() } });
-
-    // 5. Respond OK
-    return NextResponse.json({ status: 'ok', scheduling_link }, { status: 200 });
+    return NextResponse.json({ status: 'ok' }, { status: 200 });
   } catch (error) {
-    console.error('[Cashfree Webhook] Error:', error);
     return NextResponse.json({ status: 'error', message: (error as Error).message }, { status: 400 });
   }
 }

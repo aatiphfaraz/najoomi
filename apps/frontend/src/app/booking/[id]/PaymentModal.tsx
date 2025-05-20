@@ -12,9 +12,10 @@ interface PaymentModalProps {
 }
 
 let cashfree: { checkout: (arg0: { paymentSessionId: string; redirectTarget: string; }) => void; };
+
 const initializeSDK = async function () {
   cashfree = await load({
-    mode: "sandbox"
+    mode: "production"
   });
 }
 initializeSDK();
@@ -30,6 +31,22 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = React.useState("");
+
+  // Phone validation: Accepts Indian (+91XXXXXXXXXX, XXXXXXXXXX) and International (+<countrycode><number>)
+  function isPhoneValid(phone: string): boolean {
+    // Remove spaces, dashes, parentheses
+    const sanitized = phone.replace(/[\s\-()]/g, "");
+    // Indian: +91XXXXXXXXXX or XXXXXXXXXX (10 digits, may start with 0)
+    const indian = /^(\+91)?[6-9]\d{9}$/;
+    // International: +<countrycode><number> (min 10 digits after +)
+    const intl = /^\+\d{10,15}$/;
+    return indian.test(sanitized) || intl.test(sanitized);
+  }
+
+  // Optionally sanitize phone before sending to backend
+  function sanitizePhone(phone: string): string {
+    return phone.replace(/[\s\-()]/g, "");
+  }
   const [touched, setTouched] = React.useState<{ name: boolean; email: boolean; phone: boolean }>({ name: false, email: false, phone: false });
 
   const [loading, setLoading] = React.useState(false);
@@ -39,11 +56,18 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
   function isFormValid(): boolean {
-    return name.trim() !== "" && isEmailValid(email) && phone.trim() !== "";
+    return name.trim() !== "" && isEmailValid(email) && isPhoneValid(phone);
   }
 
   async function handlePayment() {
     setLoading(true);
+    // Sanitize phone before sending
+    const safePhone = sanitizePhone(phone);
+    if (!isPhoneValid(safePhone)) {
+      setError("Please enter a valid phone number. Example: +919090407368, 9090407368, or +16014635923");
+      setLoading(false);
+      return;
+    }
     setError(null);
     try {
       const res = await fetch('/api/payment-link', {
@@ -61,7 +85,6 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
         }),
       });
       const data = await res.json();
-      console.log(data, "data")
       if (res.ok && data.payment_session_id) {
         const checkoutOptions = {
           paymentSessionId: data.payment_session_id,
@@ -152,6 +175,9 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             {touched.phone && !phone && (
               <div className="text-xs text-red-500 mt-1">Phone number is required.</div>
             )}
+            {touched.phone && phone && !isPhoneValid(phone) && (
+              <div className="text-xs text-red-500 mt-1">Please enter a valid phone number. Example: +919090407368, 9090407368, or +16014635923</div>
+            )}
           </div>
           {/* Price Summary Card */}
           <div className="bg-[#fffde6] rounded-xl p-4 shadow border border-[#fde68a] flex flex-col gap-2 mt-2">
@@ -174,7 +200,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             variant="primary"
             className="w-full mt-4 text-lg font-bold"
             type="submit"
-            disabled={!isFormValid() || loading}
+            disabled={loading}
           >
             {loading ? "Processing..." : "Confirm and Pay"}
           </Button>

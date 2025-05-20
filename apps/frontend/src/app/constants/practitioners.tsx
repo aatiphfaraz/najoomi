@@ -27,7 +27,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Dream Interpretation", "Istikhara", "Spiritual Counseling"],
         rating: 5,
         price: "599",
-        discountPrice: "399",
+        discountPrice: "1",
         starPractitioner: true,
         type: "najoomi",
         duration: "15 minutes",

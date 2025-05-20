@@ -47,9 +47,9 @@ export default function NavbarV2() {
           <span className="text-2xl font-bold text-[#b6894a] tracking-tight">.in</span>
         </Link>
         {/* Divider */}
-        <div className="hidden md:block h-8 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent mx-6" />
+        <div className="hidden min-[1078px]:block h-8 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent mx-6" />
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex flex-1 justify-end">
+        <div className="hidden min-[1078px]:flex flex-1 justify-end">
           <ul className="flex space-x-2">
             {[
               { href: '/', label: 'Home' },
@@ -70,7 +70,7 @@ export default function NavbarV2() {
           </ul>
         </div>
         {/* Desktop Book Consultation Button */}
-        <div className="hidden md:block ml-6">
+        <div className="hidden min-[1078px]:block ml-6">
           <Link href="/practitioners">
             <Button variant="primary">
               <span className="relative inline-block w-5 h-5 align-middle mr-1">
@@ -94,7 +94,7 @@ export default function NavbarV2() {
         </div>
         {/* Hamburger menu button (mobile) */}
         <button
-          className="md:hidden ml-auto p-2 rounded"
+          className="max-[1077px]:block min-[1078px]:hidden ml-auto p-2 rounded"
           aria-label="Toggle navigation menu"
           onClick={() => setMenuOpen((open) => !open)}
         >
@@ -108,7 +108,7 @@ export default function NavbarV2() {
         </button>
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded-b-xl md:hidden animate-fade-in z-40 backdrop-blur-md px-6">
+          <div className="absolute top-full left-0 w-full bg-white shadow-lg rounded-b-xl max-[1077px]:block min-[1078px]:hidden animate-fade-in z-40 backdrop-blur-md px-6">
             <ul className="flex flex-col items-start py-4 space-y-2">
               {/* Add usePathname to highlight active links */}
               {(() => {
@@ -147,7 +147,7 @@ export default function NavbarV2() {
               })()}
 
               <li className="w-full mt-2 flex justify-center">
-                <Link href="/book" className="block w-full" onClick={() => setMenuOpen(false)}>
+                <Link href="/practitioners" className="block w-full" onClick={() => setMenuOpen(false)}>
                   <Button variant="primary" className="w-full py-2 rounded-md">
                     <svg aria-hidden="true" className="w-5 h-5 text-brand-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79z"></path></svg>
                     <span className="text-lg font-bold w-full">
