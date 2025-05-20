@@ -40,7 +40,7 @@ export async function POST(
     const booking_id = crypto.randomUUID();
     // 1. Create a Cashfree order
     const orderRequest = {
-      order_amount: 1,
+      order_amount: amount,
       order_currency: "INR",
       customer_details: {
         customer_id: booking_id,
