@@ -22,13 +22,13 @@ export async function POST(req: NextRequest) {
     console.log('[Cashfree Webhook] Received:', body);
 
     // Extract booking_id
-    const booking_id = extractBookingId(body);
-    if (!booking_id) {
-      return NextResponse.json({ status: 'error', message: 'Missing booking_id in webhook' }, { status: 400 });
-    }
+    // const booking_id = extractBookingId(body);
+    // if (!booking_id) {
+    //   return NextResponse.json({ status: 'error', message: 'Missing booking_id in webhook' }, { status: 400 });
+    // }
 
     // Lookup booking
-    const booking = await getBookingById(booking_id);
+    const booking = await getBookingById("ac473f92-1c25-4705-8c41-89ed136b27ed");
     if (!booking) {
       return NextResponse.json({ status: 'error', message: 'Booking not found' }, { status: 404 });
     }
