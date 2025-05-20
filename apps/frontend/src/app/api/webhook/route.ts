@@ -1,7 +1,10 @@
+import { getBookingById } from '@/app/lib/booking';
 import { CFEnvironment, Cashfree } from 'cashfree-pg';
 import { NextRequest, NextResponse } from "next/server";
-
-// const COLLECTION_NAME = "bookings";
+// Helper: Extract booking_id from webhook body
+function extractBookingId(body: any): string | null {
+  return body?.data?.customer_details?.customer_id || null;
+}
 
 const isSandbox = process.env.CASHFREE_ENV === 'SANDBOX';
 
@@ -18,18 +21,18 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     console.log('[Cashfree Webhook] Received:', body);
 
-    // // Extract booking_id
-    // const booking_id = extractBookingId(body);
-    // if (!booking_id) {
-    //   return NextResponse.json({ status: 'error', message: 'Missing booking_id in webhook' }, { status: 400 });
-    // }
+    // Extract booking_id
+    const booking_id = extractBookingId(body);
+    if (!booking_id) {
+      return NextResponse.json({ status: 'error', message: 'Missing booking_id in webhook' }, { status: 400 });
+    }
 
-    // // Lookup booking
-    // const booking = await getBookingById(booking_id);
-    // if (!booking) {
-    //   return NextResponse.json({ status: 'error', message: 'Booking not found' }, { status: 404 });
-    // }
-
+    // Lookup booking
+    const booking = await getBookingById(booking_id);
+    if (!booking) {
+      return NextResponse.json({ status: 'error', message: 'Booking not found' }, { status: 404 });
+    }
+    console.log(booking);
     // // Ensure Calendly link exists and update booking if needed
     // const calendly_link = await ensureCalendlyLink(booking);
     // if (!calendly_link) {
