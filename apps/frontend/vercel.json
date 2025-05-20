@@ -2,6 +2,15 @@
     "cleanUrls": true,
     "trailingSlash": false,
     "redirects": [],
-    "rewrites": [],
+    "rewrites": [
+        {
+            "source": "/api/hello/",
+            "destination": "/api/hello"
+        },
+        {
+            "source": "/api/cashfree-webhook/",
+            "destination": "/api/cashfree-webhook"
+        }
+    ],
     "headers": []
 }
