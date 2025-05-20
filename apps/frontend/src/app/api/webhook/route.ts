@@ -10,7 +10,7 @@ const cashfree = new Cashfree(
   isSandbox ? process.env.CASHFREE_CLIENT_ID_SANDBOX : process.env.CASHFREE_CLIENT_ID,
   isSandbox ? process.env.CASHFREE_CLIENT_SECRET_SANDBOX : process.env.CASHFREE_CLIENT_SECRET,
 );
-
+console.log(cashfree);
 
 // GET /api/hello
 export async function POST() {
