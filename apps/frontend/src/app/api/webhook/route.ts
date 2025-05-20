@@ -1,7 +1,7 @@
 import { CFEnvironment, Cashfree } from 'cashfree-pg';
 import { NextResponse } from "next/server";
 
-const COLLECTION_NAME = "bookings";
+// const COLLECTION_NAME = "bookings";
 
 const isSandbox = process.env.CASHFREE_ENV === 'SANDBOX';
 
