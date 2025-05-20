@@ -49,9 +49,9 @@ export async function handleWebhook(body: any) {
     return { status: 'error', message: 'Booking not found', statusCode: 404 };
   }
   // Ensure Calendly link exists and update booking if needed
-  const calendly_link = await ensureCalendlyLink(booking);
-  if (!calendly_link) {
-    return { status: 'error', message: 'Failed to get scheduling link', statusCode: 500 };
-  }
+  // const calendly_link = await ensureCalendlyLink(booking);
+  // if (!calendly_link) {
+  //   return { status: 'error', message: 'Failed to get scheduling link', statusCode: 500 };
+  // }
   return { status: 'ok', message: 'Webhook received successfully', statusCode: 200 };
 }
