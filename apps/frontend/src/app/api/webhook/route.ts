@@ -2,10 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 // import { handleWebhook } from '@/app/lib/webhook';
 
 // POST /api/webhook
-export async function POST(req: NextRequest) {
+export async function POST() {
   try {
-    const body = await req.json();
-    console.log('[Cashfree Webhook] Received:', body);
+    // const body = await req.json();
+    // console.log('[Cashfree Webhook] Received:', body);
     // await handleWebhook(body);
     return NextResponse.json({ status: 'ok', message: "Webhook received successfully" }, { status: 200 });
   } catch (error) {
