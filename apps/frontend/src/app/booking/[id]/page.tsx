@@ -146,11 +146,24 @@ export default function BookingPage(props) {
                         <div key={i} className="w-full h-10 bg-gray-100 rounded-lg animate-pulse" />
                       ))
                       : days.map((d, i) => {
-                        const [dd, mm, yyyy] = d.date.split('/');
-                        const jsDate = new Date(`${yyyy}-${mm}-${dd}`);
-                        const weekday = jsDate.toLocaleDateString('en-US', { weekday: 'short' });
-                        const dayNum = jsDate.getDate();
-                        const month = jsDate.toLocaleDateString('en-US', { month: 'short' });
+                        let weekday = '', dayNum = '', month = '';
+                        try {
+                          const [dd, mm, yyyy] = d.date.split('/').map(s => s.trim());
+                          if (dd && mm && yyyy) {
+                            const gmtDate = new Date(Date.UTC(Number(yyyy), Number(mm) - 1, Number(dd)));
+                            if (!isNaN(gmtDate.getTime())) {
+                              weekday = gmtDate.toLocaleDateString('en-US', { weekday: 'short', timeZone: 'Asia/Kolkata' });
+                              dayNum = gmtDate.toLocaleDateString('en-US', { day: 'numeric', timeZone: 'Asia/Kolkata' });
+                              month = gmtDate.toLocaleDateString('en-US', { month: 'short', timeZone: 'Asia/Kolkata' });
+                            } else {
+                              dayNum = d.date;
+                            }
+                          } else {
+                            dayNum = d.date;
+                          }
+                        } catch {
+                          dayNum = d.date;
+                        }
                         return (
                           <button
                             key={d.date}
@@ -158,7 +171,7 @@ export default function BookingPage(props) {
                             className={`px-4 py-2 rounded-lg font-semibold text-sm border transition-all duration-150 cursor-pointer flex flex-col items-center justify-center ${selectedDay === i ? 'bg-brand-gold text-[#15577a] border-[#15577a] shadow' : 'bg-white border-gray-200 text-gray-700'}`}
                             style={{ minWidth: 50 }}
                           >
-                            <span className="block leading-tight">{weekday}, </span>
+                            <span className="block leading-tight">{weekday}{weekday && ','}</span>
                             <span className="block">{dayNum} {month}</span>
                           </button>
                         );
@@ -176,13 +189,26 @@ export default function BookingPage(props) {
                       ))
                       : times.map((t, i) => {
                         const [start] = t.split('-');
+                        // Always display slot in IST, regardless of server or client
+                        let istTime = start;
+                        // Validate HH:mm
+                        const match = /^([01]?\d|2[0-3]):([0-5]\d)$/.exec(start);
+                        if (match) {
+                          const hour = parseInt(match[1], 10);
+                          const minute = parseInt(match[2], 10);
+                          const utcDate = new Date(Date.UTC(1970, 0, 1, hour, minute));
+                          if (!isNaN(utcDate.getTime())) {
+                            istTime = utcDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Asia/Kolkata' }) + ' IST';
+                          }
+                        }
+                        // else fallback to raw
                         return (
                           <button
                             key={t}
                             onClick={() => setSelectedTime(i)}
                             className={`px-4 py-2 rounded-lg font-semibold text-sm border transition-all duration-150 cursor-pointer ${selectedTime === i ? 'bg-brand-gold text-[#15577a] border-[#15577a] shadow' : 'bg-white border-gray-200 text-gray-700'}`}
                           >
-                            {start}
+                            {istTime}
                           </button>
                         )
                       })}
