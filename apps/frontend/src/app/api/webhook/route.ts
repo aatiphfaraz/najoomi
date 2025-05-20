@@ -2,9 +2,9 @@ import { getBookingById } from '@/app/lib/booking';
 import { CFEnvironment, Cashfree } from 'cashfree-pg';
 import { NextRequest, NextResponse } from "next/server";
 // Helper: Extract booking_id from webhook body
-function extractBookingId(body: any): string | null {
-  return body?.data?.customer_details?.customer_id || null;
-}
+// function extractBookingId(body: any): string | null {
+//   return body?.data?.customer_details?.customer_id || null;
+// }
 
 const isSandbox = process.env.CASHFREE_ENV === 'SANDBOX';
 
