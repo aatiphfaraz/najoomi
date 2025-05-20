@@ -50,7 +50,7 @@ export async function POST(
       },
       order_meta: {
         return_url: `${isSandbox ? "http://localhost:3000" : "https://najoomi.in"}/booking/success/${booking_id}`,
-        notify_url: `https://najoomi.vercel.app/api/webhook`,
+        notify_url: `https://najoomi.vercel.app/api/cashfree-webhook`,
       },
       order_note: "Najoomi Booking Payment",
     };
