@@ -23,9 +23,17 @@ enum Services {
     RUQYYAH_AND_SPIRITUAL_CLEANSING = "ruqyah-and-spiritual-cleansing",
     ISTIKHARA_GUIDANCE = "istikhara-guidance",
     SPIRITUAL_GUIDANCE = "spiritual-guidance",
+    ILM_E_RAMAL = "ilm-e-ramal",
 }
 
 export const allServices: Service[] = [
+    {
+        icon: <FaBook className="text-2xl text-brand-gold" />, // Ilm-e-Adad (Book = knowledge)
+        title: "Ilm-e-Ramal",
+        description: "Love, career, rishte or faisle - zindagi se jude har sawaal ka jawab paiye or hal jaaniye  ilm e ramal ke zariye",
+        subTitle: "Ramal Se Poochho – Kya Kehte Hain Aapke Raaste?",
+        href: Services.ILM_E_RAMAL,
+    },
     {
         icon: <FaBook className="text-2xl text-brand-gold" />, // Ilm-e-Adad (Book = knowledge)
         title: "Ilm-e-Adad",
@@ -113,6 +121,193 @@ export const allServices: Service[] = [
 ];
 
 export const serviceInfo: Article[] = [
+    {
+        id: Services.ILM_E_RAMAL,
+        title: "Ilm-e-Ramal: Unlocking the Hidden Patterns of Fate and Guidance",
+        description: "Explore one of the most profound ancient sciences for spiritual consultation and clarity. Discover your path through Ilm-e-Ramal — rooted in Islamic mysticism and guided by tradition.",
+        date: "2025-05-18",
+        image: "/services/ilm-e-ramal.jpg",
+        publisher: "Najoomi.in",
+        category: "Spiritual Services",
+        keywords: "Ilm-e-Ramal, Islamic geomancy, spiritual readings Islam, Ramal science, Islamic sand divination, Najoomi Ramal consultation, Ramal for marriage, Ramal for career, Islamic guidance service",
+        rating: "general",
+        audience: "all",
+        subject: "Ilm-e-Ramal: Unlocking the Hidden Patterns of Fate and Guidance",
+        summary: "Ilm-e-Ramal, or Islamic geomancy, is a sacred symbolic practice used to provide divine guidance through dot patterns and intuitive readings. Najoomi.in offers personalized sessions to support decision-making, marriage compatibility, and spiritual clarity.",
+        classification: "Religion, Spirituality, Guidance",
+        appleMobileWebAppCapable: "yes",
+        appleMobileWebAppTitle: "Najoomi",
+        appleMobileWebAppStatusBarStyle: "black-translucent",
+        contentLanguage: "en",
+        xUaCompatible: "IE=edge",
+        dcTitle: "Ilm-e-Ramal: Unlocking the Hidden Patterns of Fate and Guidance | Najoomi.in",
+        dcDescription: "Explore one of the most profound ancient sciences for spiritual consultation and clarity. Discover your path through Ilm-e-Ramal — rooted in Islamic mysticism and guided by tradition.",
+        dcPublisher: "Najoomi.in",
+        dcLanguage: "en",
+        dcSubject: "Ilm-e-Ramal: Unlocking the Hidden Patterns of Fate and Guidance",
+        contentBody: (
+            <>
+                <section className="mb-6">
+                    <h2 className="text-xl font-semibold text-[#b6894a] flex items-center mb-2">
+                        <span className="mr-2">📜</span> What is Ilm-e-Ramal (Islamic Geomancy)?
+                    </h2>
+                    <p>
+                        Ilm-e-Ramal, also known as Islamic geomancy, is a sacred and intuitive science practiced for centuries by Islamic scholars and mystics. It involves interpreting patterns drawn through dots, lines, or sand — traditionally linked to divine signs — to understand life events, emotional energies, and possible outcomes.<br />
+                        Often called "the knowledge of the sand," Ilm-e-Ramal was practiced by many Islamic sages for guidance in matters of life, marriage, travel, conflict, and unseen influences. It offers deep symbolic insight and a divine lens into unfolding events.
+                    </p>
+                </section>
+
+                <section className="mb-6">
+                    <h2 className="text-xl font-semibold text-[#b6894a] flex items-center mb-2">
+                        <span className="mr-2">💫</span> Our Ilm-e-Ramal Services Include
+                    </h2>
+                    <ul className="list-disc ml-6">
+                        <li><b>Spiritual Symbol Reading</b>: Receive interpretations of Ramal patterns to understand past influences, present blocks, and potential outcomes.</li>
+                        <li><b>Decision-Making Assistance</b>: Use Ilm-e-Ramal to gain clarity in decisions related to career, relationships, relocation, or financial investments.</li>
+                        <li><b>Blockage & Pathway Reading</b>: Identify unseen obstacles and learn spiritual solutions through the energy reflected in your Ramal chart.</li>
+                        <li><b>Marriage & Compatibility Consultation</b>: Assess energetic and spiritual alignment between potential partners using Ramal signs and symbolic insights.</li>
+                        <li><b>Business or Legal Outlook</b>: Explore potential risks, opportunities, and divine timing for new ventures or disputes.</li>
+                        <li><b>Life Path Clarity</b>: A comprehensive Ramal reading to uncover deeper personal patterns, spiritual lessons, and destiny insights.</li>
+                    </ul>
+                </section>
+
+                <section className="mb-6">
+                    <h2 className="text-xl font-semibold text-[#b6894a] flex items-center mb-2">
+                        <span className="mr-2">🌿</span> Ideal For
+                    </h2>
+                    <ul className="list-disc ml-6">
+                        <li>Those facing confusion or major life decisions</li>
+                        <li>Individuals wanting spiritual clarity on love, career, or personal challenges</li>
+                        <li>Seekers interested in ancient Islamic sciences and divinatory arts</li>
+                        <li>People affected by unseen obstacles or spiritual blockages</li>
+                        <li>Couples needing harmony and alignment before marriage</li>
+                    </ul>
+                </section>
+
+                <section className="mb-6">
+                    <h2 className="text-xl font-semibold text-[#b6894a] flex items-center mb-2">
+                        <span className="mr-2">🕊️</span> How It Works
+                    </h2>
+                    <ol className="list-decimal ml-6">
+                        <li><b>Share Your Request</b>: Share your full name, mother's name, and key question or concern.</li>
+                        <li><b>Expert Ramal Casting</b>: A trained practitioner performs a traditional Ramal casting (symbol generation).</li>
+                        <li><b>Interpretation & Guidance</b>: Receive a comprehensive analysis with meaning, insight, and spiritual advice.</li>
+                    </ol>
+                </section>
+
+                <section className="mb-6">
+                    <h2 className="text-xl font-semibold text-[#b6894a] flex items-center mb-2">
+                        <span className="mr-2">🕌</span> Why Choose Najoomi.in for Ilm-e-Ramal?
+                    </h2>
+                    <ul className="list-disc ml-6">
+                        <li><b>Islamic Wisdom-Centered:</b> All readings are based on authentic spiritual methods—aligned with traditional Islamic practice and ethics.</li>
+                        <li><b>Trained & Trusted Experts:</b> Our Ramal practitioners are deeply experienced in symbolic reading, numerology, and spiritual advisory.</li>
+                        <li><b>Confidential & Ethical Practice:</b> Every session is handled with discretion, compassion, and sincere intention to guide, not predict.</li>
+                        <li><b>Modern + Traditional:</b> We blend ancient Ramal methodology with intuitive insight for relevant, real-life application today.</li>
+                    </ul>
+                </section>
+
+                {/* Decorative divider with sparkles and crescent */}
+                <div className="flex justify-center items-center my-8">
+                    <span className="inline-block text-brand-gold text-2xl mx-2">✨</span>
+                    <svg width="32" height="32" viewBox="0 0 32 32" className="mx-2" fill="none">
+                        <path d="M24 16a8 8 0 1 1-8-8c0 4.418 3.582 8 8 8z" fill="#fde68a" />
+                    </svg>
+                    <span className="inline-block text-brand-gold text-2xl mx-2">★</span>
+                </div>
+
+                <section className="text-center my-8">
+                    <h2 className="text-2xl font-semibold mb-2 text-brand-gold">✨ Seek Clarity from the Ancient Signs of Ilm-e-Ramal ✨</h2>
+                    <ul className="my-6 grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-6xl mx-auto">
+                        <li className="flex items-center px-5 py-3 rounded-xl bg-gradient-to-br from-[#fde68a]/80 to-[#b6894a]/30 shadow-md border border-[#fbbf24] text-[#15577a] font-semibold gap-2">
+                            <span className="text-xl">🧿</span>
+                            Request a Ramal Reading
+                            <span className="ml-2 text-lg">✨</span>
+                        </li>
+                        <li className="flex items-center px-5 py-3 rounded-xl bg-gradient-to-br from-[#e0c97f]/70 to-[#fffbe6]/90 shadow border border-[#fde68a] text-[#15577a] font-semibold gap-2">
+                            <span className="text-xl">🌙</span>
+                            Ask a Question Through Ramal
+                            <span className="ml-2 text-lg">✦</span>
+                        </li>
+                        <li className="flex items-center px-5 py-3 rounded-xl bg-gradient-to-br from-[#a7f3d0]/30 to-[#f0fdfa]/60 shadow border border-[#60a5fa] text-[#15577a] font-semibold gap-2">
+                            <span className="text-xl">📚</span>
+                            Learn More About This Sacred Science
+                            <span className="ml-2 text-lg">✧</span>
+                        </li>
+                    </ul>
+                    <blockquote className="italic text-[#1e293b] border-l-4 border-brand-gold pl-4">
+                        “Say, 'Nothing will happen to us except what Allah has decreed for us: He is our protector.'”<br />
+                        <span className="text-sm">— Surah At-Tawbah (9:51)</span>
+                    </blockquote>
+                </section>
+
+                {/* Subtle decorative calligraphy and stars */}
+                <div className="flex justify-center items-center mt-6 gap-2">
+                    <span className="text-3xl text-[#fbbf24]">★</span>
+                    <span className="text-2xl text-[#a3e635]">✦</span>
+                    <span className="text-2xl text-[#60a5fa]">✧</span>
+                    <span className="text-xl text-[#b6894a] font-cursive">الحكمة</span>
+                </div>
+
+                {/* Schema Markup (Article) */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Article",
+                            "headline": "Ilm-e-Ramal: Unlocking the Hidden Patterns of Fate and Guidance",
+                            "description": "Ilm-e-Ramal, or Islamic geomancy, is a sacred symbolic practice used to provide divine guidance through dot patterns and intuitive readings. Najoomi.in offers personalized sessions to support decision-making, marriage compatibility, and spiritual clarity.",
+                            "author": {
+                                "@type": "Organization",
+                                "name": "Najoomi.in"
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "Najoomi.in",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://najoomi.in/logo.png"
+                                }
+                            },
+                            "mainEntityOfPage": {
+                                "@type": "WebPage",
+                                "@id": "https://najoomi.in/services/ilm-e-ramal"
+                            },
+                            "datePublished": "2025-05-18",
+                            "dateModified": "2025-05-18"
+                        })
+                    }}
+                />
+            </>
+        ),
+        faqs: [
+            {
+                question: "What is Ilm-e-Ramal in Islam?",
+                answer: "Ilm-e-Ramal is an ancient Islamic practice of geomancy that interprets divine signs through symbols or dots to guide decisions, reveal spiritual insights, and assess unseen influences."
+            },
+            {
+                question: "Is Ilm-e-Ramal permissible in Islam?",
+                answer: "When practiced within the boundaries of Islamic ethics and without fortune-telling or superstition, Ilm-e-Ramal is accepted as a reflective tool used by some scholars and spiritual practitioners."
+            },
+            {
+                question: "Can Ilm-e-Ramal help with marriage compatibility?",
+                answer: "Yes, Ilm-e-Ramal is often used to assess emotional and spiritual alignment between potential spouses, helping them understand their energetic harmony."
+            },
+            {
+                question: "What kind of questions can I ask in a Ramal session?",
+                answer: "You can seek guidance on marriage, relationships, business, emotional confusion, career decisions, and personal obstacles."
+            },
+            {
+                question: "How accurate is Ilm-e-Ramal?",
+                answer: "Ilm-e-Ramal is a spiritual tool for reflection and guidance, not prediction. Its accuracy depends on sincere intention, the practitioner’s knowledge, and alignment with divine will."
+            },
+            {
+                question: "How can I book an Ilm-e-Ramal reading at Najoomi.in?",
+                answer: "Visit our Ilm-e-Ramal page and fill out the form with your name, mother’s name, and your query. Our spiritual expert will review and respond with a personalized consultation."
+            }
+        ],
+    },
     {
         id: Services.QURAN_KHANI_AND_RECITATION,
         title: "Quran Khani & Recitation Services — Blessings & Barakah with Quranic Recitations",
