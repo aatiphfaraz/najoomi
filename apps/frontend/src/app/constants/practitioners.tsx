@@ -81,7 +81,7 @@ export const practitioners: Practitioner[] = [
         duration: "45 minutes",
         description: "Abdul Rehman is a postgraduate in Applied Psychology with a deep interest in faith-integrated counselling. He brings a compassionate, non-judgmental approach rooted in both psychological principles and Islamic values. He aims to support individuals through empathetic listening, practical guidance, and a spiritually grounded perspective.",
         title: "Islamic Counselor",
-        image: "/missions.png",
+        image: "/practitioners/abdul-rehman.jpg",
         experience: "3+ years",
         specialties: ["Anxiety", "Family Therapy", "Behavioral Issues", "Stress Management"],
         rating: 5,

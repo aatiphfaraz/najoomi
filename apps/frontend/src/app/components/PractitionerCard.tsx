@@ -47,13 +47,26 @@ const PractitionerCard: React.FC<PractitionerCardProps> = ({ id, image, name, ti
             )}
           </div>
         )}
-        <Image
-          src={image}
-          width={500}
-          height={500}
-          alt={name}
-          className="object-cover w-full h-full rounded-t-2xl border-b border-[#fde68a]/30"
-        />
+        <div className="relative flex flex-col items-center justify-center w-full h-44 bg-[#fafafa] rounded-t-2xl overflow-hidden">
+          {/* Premium magical/Islamic rectangle background accents */}
+          <svg className="absolute left-4 top-3 w-20 h-20 text-[#fde68a]/70 opacity-50" viewBox="0 0 100 100" fill="none" style={{ zIndex: 1 }}>
+            <polygon points="50,10 61,39 92,39 66,59 76,89 50,71 24,89 34,59 8,39 39,39" fill="currentColor" />
+          </svg>
+          <svg className="absolute right-6 bottom-2 w-14 h-14 text-[#217ebd]/30 opacity-60" viewBox="0 0 32 32" fill="none" style={{ zIndex: 1 }}>
+            <path d="M28 16c0 6.627-5.373 12-12 12a12 12 0 0 1 0-24c.343 0 .682.017 1.018.05C13.34 5.576 12 8.632 12 12c0 5.523 4.477 10 10 10 1.37 0 2.676-.276 3.882-.779A11.985 11.985 0 0 1 28 16z" fill="currentColor" />
+          </svg>
+          {/* Optionally add more subtle sparkles or patterns here */}
+          <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-[#fde68a] bg-white z-10 flex items-center justify-center mt-4 mb-2">
+            <Image
+              src={image}
+              width={144}
+              height={144}
+              alt={name}
+              className="rounded-full object-cover w-full h-full"
+              style={{ objectPosition: 'center' }}
+            />
+          </div>
+        </div>
       </div>
       <div className="p-4 flex flex-col flex-1">
         {/* Info block */}
