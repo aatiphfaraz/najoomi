@@ -58,7 +58,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["CBT", "Anxiety", "Depression"],
         rating: 5,
         price: "1200",
-        discountPrice: "1000",
+        discountPrice: "999",
         type: "therapist",
     },
     {
@@ -86,7 +86,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Anxiety", "Family Therapy", "Behavioral Issues", "Stress Management"],
         rating: 5,
         price: "1200",
-        discountPrice: "1000",
+        discountPrice: "999",
         type: "therapist"
     },
     {
