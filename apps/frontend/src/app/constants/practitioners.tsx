@@ -36,7 +36,7 @@ export const practitioners: Practitioner[] = [
     {
         id: "",
         name: "Dr Anees Ahmad",
-        title: "Spiritual Guide",
+        title: "Ramal Expert",
         image: "/practitioners/dr-anees.jpg",
         experience: "10+ years",
         specialties: ["Ramal", "Naturopathy", "Dream Interpretation", "Marriage & Family"],
@@ -75,6 +75,7 @@ export const practitioners: Practitioner[] = [
         price: "1200",
         discountPrice: "999",
         type: "therapist",
+        starPractitioner: true
     },
     {
         id: "",

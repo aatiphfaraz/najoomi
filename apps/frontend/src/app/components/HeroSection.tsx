@@ -22,7 +22,7 @@ export default function HeroSection() {
                     Guidance Beyond <span className="text-brand-gold">Boundaries</span>
                 </h1>
                 <p className="mb-8 text-base md:text-lg text-gray-200 max-w-xl drop-shadow">
-                    Embrace the light of divine guidance. Najoomi offers soulful healing and faith-rooted counselling to help you reconnect with your purpose, peace, and the blessings of Allah - wherever you are
+                    Embrace the light of divine guidance. Najoomi offers soulful healing and faith-rooted counselling to help you reconnect with your purpose, peace, and the blessings of Allah
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                     <Link href="/practitioners">

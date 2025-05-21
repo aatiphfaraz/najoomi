@@ -229,10 +229,10 @@ export const serviceInfo: Article[] = [
                             Ask a Question Through Ramal
                             <span className="ml-2 text-lg">✦</span>
                         </li>
-                        <li className="flex items-center px-5 py-3 rounded-xl bg-gradient-to-br from-[#a7f3d0]/30 to-[#f0fdfa]/60 shadow border border-[#60a5fa] text-[#15577a] font-semibold gap-2">
+                        <li className="flex items-center px-5 py-3 rounded-xl bg-gradient-to-br from-[#fde68a]/80 to-[#b6894a]/30 shadow-md border border-[#fbbf24] text-[#15577a] font-semibold gap-2">
                             <span className="text-xl">📚</span>
-                            Learn More About This Sacred Science
-                            <span className="ml-2 text-lg">✧</span>
+                            Get Guidance From This Sacred Science
+                            <span className="ml-2 text-lg">✨</span>
                         </li>
                     </ul>
                     <blockquote className="italic text-[#1e293b] border-l-4 border-brand-gold pl-4">
@@ -241,13 +241,6 @@ export const serviceInfo: Article[] = [
                     </blockquote>
                 </section>
 
-                {/* Subtle decorative calligraphy and stars */}
-                <div className="flex justify-center items-center mt-6 gap-2">
-                    <span className="text-3xl text-[#fbbf24]">★</span>
-                    <span className="text-2xl text-[#a3e635]">✦</span>
-                    <span className="text-2xl text-[#60a5fa]">✧</span>
-                    <span className="text-xl text-[#b6894a] font-cursive">الحكمة</span>
-                </div>
 
                 {/* Schema Markup (Article) */}
                 <script
