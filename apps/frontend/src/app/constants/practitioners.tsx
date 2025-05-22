@@ -56,11 +56,25 @@ export const practitioners: Practitioner[] = [
         experience: "6+ years",
         specialties: ["Black Magic", "Evil Eye", "Spiritual Counseling"],
         rating: 5,
-        price: "599",
+        price: "600",
         discountPrice: "399",
         type: "najoomi",
         duration: "15 minutes",
         description: "Offers authentic Islamic guidance and solutions for challenges such as black magic, evil eye, and various spiritual ailments, drawing upon traditional wisdom and compassionate support."
+    },
+    {
+        id: "e7fa7a3d-9f7c-4c8b-b288-b92cad2418ea",
+        name: "Mufti Saqib",
+        title: "Islamic Scholar",
+        image: "/practitioners/mufti-saqib.jpg",
+        experience: "10+ years",
+        specialties: ["Spritual Guidance"],
+        rating: 5,
+        price: "500",
+        discountPrice: "299",
+        type: "najoomi",
+        duration: "15 minutes",
+        description: "Mufti Saqib is a learned scholar with deep expertise in Islamic jurisprudence and spiritual sciences. With years of experience in providing ethical, faith-based guidance, they offer personalized support through spiritual consultations, helping individuals make decisions aligned with divine wisdom and Islamic principles."
     },
     {
         id: "",
