@@ -34,7 +34,7 @@ export const practitioners: Practitioner[] = [
     //     description: "Book a 1:1 session with Alim Aatif Faraz for dream interpretation, istikhara, and spiritual guidance rooted in Islamic wisdom. Experience clarity and peace through authentic spiritual counsel."
     // },
     {
-        id: "",
+        id: "a549f587-5e1c-4ad6-9f62-15567b856ba7",
         name: "Dr Anees Ahmad",
         title: "Ramal Expert",
         image: "/practitioners/dr-anees.jpg",
