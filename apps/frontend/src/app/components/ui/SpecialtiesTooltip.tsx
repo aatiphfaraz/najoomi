@@ -35,12 +35,14 @@ const SpecialtiesTooltip: React.FC<SpecialtiesTooltipProps> = ({ specialties, co
       ref={ref}
       className="relative group cursor-pointer bg-[#f7f7fa] text-[#b68900] px-1.5 py-0.5 rounded-full text-[10px] font-semibold border border-[#fde68a] shadow-sm ml-0.5 select-none"
       tabIndex={0}
-      onClick={() => setOpen((v) => !v)}
+      onPointerDown={e => { e.preventDefault(); e.stopPropagation(); }}
+      onMouseDown={e => { e.preventDefault(); e.stopPropagation(); }}
+      onClick={e => { e.preventDefault(); e.stopPropagation(); setOpen(v => !v); }}
       {...(!isTouch && {
-        onMouseEnter: () => setOpen(true),
-        onMouseLeave: () => setOpen(false),
-        onFocus: () => setOpen(true),
-        onBlur: () => setOpen(false),
+        onMouseEnter: (e: React.MouseEvent) => { e.stopPropagation(); setOpen(true); },
+        onMouseLeave: (e: React.MouseEvent) => { e.stopPropagation(); setOpen(false); },
+        onFocus: (e: React.FocusEvent) => { e.stopPropagation(); setOpen(true); },
+        onBlur: (e: React.FocusEvent) => { e.stopPropagation(); setOpen(false); },
       })}
       aria-label={`More specialties: ${specialties.join(', ')}`}
     >
