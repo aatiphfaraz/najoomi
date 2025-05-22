@@ -11,9 +11,9 @@ export default function HomePage() {
     <main className="relative min-h-[60vh] flex flex-col items-stretch justify-start bg-black/70">
       <HeroSection />
       <ServicesSection />
-      <MissionSection />
       <PractitionersSection />
       <TherapistsSection />
+      <MissionSection />
       <TestimonialsSection />
     </main>
   );

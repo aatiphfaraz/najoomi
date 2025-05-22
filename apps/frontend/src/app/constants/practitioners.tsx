@@ -49,7 +49,7 @@ export const practitioners: Practitioner[] = [
         starPractitioner: true
     },
     {
-        id: "",
+        id: "b9601518-0d28-4616-b204-a00b3f9ff6ff",
         name: "Haji Asheqeen",
         title: "Spiritual Guide",
         image: "/practitioners/haji-asheqeen.jpg",
