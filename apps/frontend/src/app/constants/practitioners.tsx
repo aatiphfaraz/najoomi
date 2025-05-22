@@ -62,7 +62,7 @@ export const practitioners: Practitioner[] = [
         description: "Mufti Saqib is a learned scholar with deep expertise in Islamic jurisprudence and spiritual sciences. With years of experience in providing ethical, faith-based guidance, they offer personalized support through spiritual consultations, helping individuals make decisions aligned with divine wisdom and Islamic principles."
     },
     {
-        id: "coming-soon",
+        id: "ed867891-a66f-4771-be06-e9d47cddbb80",
         name: "Saleha Visal",
         duration: "45 minutes",
         description: "My name is Saleha Visal. I'm a Counselling Psychologist, CBT Practitioner and a Graphologist. I've previously worked with organizations like Cheshire Home (organization for people with disabilities) and National association for blind women (NAB India).My work experience includes preparing case studies of people with various disabilities and providing them counselling therapy accordingly. I've also worked as a Research Psychologist at GoodPsyche (Mental Health Organization). Currently I'm working as a Counselling Psychologist ( private practice) and taking online therapy session. Along with all this I'm conducting workshops with young school going children to raise awareness about Mental Health.",
@@ -91,7 +91,7 @@ export const practitioners: Practitioner[] = [
         description: "Passionate Counseling Psychologist with a Master’s in Psychology, practicing for over a year. My approach blends CBT, SFBT, psychodynamic principles, and Islamic faith-based perspectives,p focusing on emotional well-being and fostering self-reliance in diverse populations."
     },
     {
-        id: "coming-soon",
+        id: "8ae2b138-f7d6-4dda-98ab-7acb1cf03e23",
         name: "Asifa Bano",
         duration: "45 minutes",
         description: "As a compassionate islamic psychologist, I provide a safe and non-judgmental space for individuals to explore their thoughts, feelings, and experiences. With empathy and expertise, I help clients navigate life's challenges, build resilience, and foster emotional well-being according to Quran and Sunnah.",
