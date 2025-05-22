@@ -18,21 +18,21 @@ export interface Practitioner {
 }
 
 export const practitioners: Practitioner[] = [
-    {
-        id: "de340638-e06c-4ed4-ba5b-007b023b8ab4",
-        name: "Alim Aatif Faraz",
-        title: "Islamic Scholar & Spiritual Guide",
-        image: "/missions.png",
-        experience: "5+ years",
-        specialties: ["Dream Interpretation", "Istikhara", "Spiritual Counseling"],
-        rating: 5,
-        price: "599",
-        discountPrice: "1",
-        starPractitioner: true,
-        type: "najoomi",
-        duration: "15 minutes",
-        description: "Book a 1:1 session with Alim Aatif Faraz for dream interpretation, istikhara, and spiritual guidance rooted in Islamic wisdom. Experience clarity and peace through authentic spiritual counsel."
-    },
+    // {
+    //     id: "de340638-e06c-4ed4-ba5b-007b023b8ab4",
+    //     name: "Alim Aatif Faraz",
+    //     title: "Islamic Scholar & Spiritual Guide",
+    //     image: "/missions.png",
+    //     experience: "5+ years",
+    //     specialties: ["Dream Interpretation", "Istikhara", "Spiritual Counseling"],
+    //     rating: 5,
+    //     price: "599",
+    //     discountPrice: "1",
+    //     starPractitioner: true,
+    //     type: "najoomi",
+    //     duration: "15 minutes",
+    //     description: "Book a 1:1 session with Alim Aatif Faraz for dream interpretation, istikhara, and spiritual guidance rooted in Islamic wisdom. Experience clarity and peace through authentic spiritual counsel."
+    // },
     {
         id: "",
         name: "Dr Anees Ahmad",
@@ -93,20 +93,6 @@ export const practitioners: Practitioner[] = [
     },
     {
         id: "",
-        name: "Abdul Rehman",
-        duration: "45 minutes",
-        description: "Abdul Rehman is a postgraduate in Applied Psychology with a deep interest in faith-integrated counselling. He brings a compassionate, non-judgmental approach rooted in both psychological principles and Islamic values. He aims to support individuals through empathetic listening, practical guidance, and a spiritually grounded perspective.",
-        title: "Islamic Counselor",
-        image: "/practitioners/abdul-rehman.jpg",
-        experience: "3+ years",
-        specialties: ["Anxiety", "Family Therapy", "Behavioral Issues", "Stress Management"],
-        rating: 5,
-        price: "1200",
-        discountPrice: "999",
-        type: "therapist"
-    },
-    {
-        id: "",
         name: "Asifa Bano",
         duration: "45 minutes",
         description: "As a compassionate islamic psychologist, I provide a safe and non-judgmental space for individuals to explore their thoughts, feelings, and experiences. With empathy and expertise, I help clients navigate life's challenges, build resilience, and foster emotional well-being according to Quran and Sunnah.",
@@ -119,5 +105,20 @@ export const practitioners: Practitioner[] = [
         discountPrice: "499",
         type: "therapist",
     },
+    {
+        id: "8761a981-83e8-4b14-b9f1-cf0ac66bedf9",
+        name: "Abdul Rehman",
+        duration: "45 minutes",
+        description: "Abdul Rehman is a postgraduate in Applied Psychology with a deep interest in faith-integrated counselling. He brings a compassionate, non-judgmental approach rooted in both psychological principles and Islamic values. He aims to support individuals through empathetic listening, practical guidance, and a spiritually grounded perspective.",
+        title: "Islamic Counselor",
+        image: "/practitioners/abdul-rehman.jpg",
+        experience: "3+ years",
+        specialties: ["Anxiety", "Family Therapy", "Behavioral Issues", "Stress Management"],
+        rating: 5,
+        price: "1200",
+        discountPrice: "999",
+        type: "therapist"
+    },
+
 
 ];
