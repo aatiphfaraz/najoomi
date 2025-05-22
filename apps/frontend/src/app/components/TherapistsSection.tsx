@@ -28,7 +28,7 @@ export default function TherapistsSection() {
       {/* Regular cards for md+ */}
       <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8 w-full max-w-6xl">
         {practitioners
-          .filter((p) => p.type === "najoomi")
+          .filter((p) => p.type === "therapist")
           .sort((a, b) => {
             if ((b.starPractitioner ? 1 : 0) !== (a.starPractitioner ? 1 : 0)) {
               return (b.starPractitioner ? 1 : 0) - (a.starPractitioner ? 1 : 0);

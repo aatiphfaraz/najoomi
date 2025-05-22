@@ -78,7 +78,7 @@ export const practitioners: Practitioner[] = [
         starPractitioner: true
     },
     {
-        id: "",
+        id: "84cc6628-2ba4-4472-992c-65da7eea8ad0",
         name: "Irfana Begum",
         title: "Islamic Counselor",
         image: "/practitioners/irfana-begum.jpg",
