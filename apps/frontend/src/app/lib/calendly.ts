@@ -56,7 +56,7 @@ export async function fetchCalendlyEventType(userId: string, token: string) {
   if (!res.ok) throw new Error('Failed to fetch event types');
   const data = await res.json();
   if (!data.collection || !data.collection[0]?.uri) throw new Error('No event types found for user');
-  return data.collection[0];
+  return data.collection.find((eventType: any) => eventType.name === 'Counseling' || eventType.name === 'Consultation');
 }
 
 // Helper: Fetch available times for an event type
