@@ -18,21 +18,6 @@ export interface Practitioner {
 }
 
 export const practitioners: Practitioner[] = [
-    // {
-    //     id: "de340638-e06c-4ed4-ba5b-007b023b8ab4",
-    //     name: "Alim Aatif Faraz",
-    //     title: "Islamic Scholar & Spiritual Guide",
-    //     image: "/missions.png",
-    //     experience: "5+ years",
-    //     specialties: ["Dream Interpretation", "Istikhara", "Spiritual Counseling"],
-    //     rating: 5,
-    //     price: "599",
-    //     discountPrice: "1",
-    //     starPractitioner: true,
-    //     type: "najoomi",
-    //     duration: "15 minutes",
-    //     description: "Book a 1:1 session with Alim Aatif Faraz for dream interpretation, istikhara, and spiritual guidance rooted in Islamic wisdom. Experience clarity and peace through authentic spiritual counsel."
-    // },
     {
         id: "a549f587-5e1c-4ad6-9f62-15567b856ba7",
         name: "Dr Anees Ahmad",
@@ -77,7 +62,7 @@ export const practitioners: Practitioner[] = [
         description: "Mufti Saqib is a learned scholar with deep expertise in Islamic jurisprudence and spiritual sciences. With years of experience in providing ethical, faith-based guidance, they offer personalized support through spiritual consultations, helping individuals make decisions aligned with divine wisdom and Islamic principles."
     },
     {
-        id: "",
+        id: "coming-soon",
         name: "Saleha Visal",
         duration: "45 minutes",
         description: "My name is Saleha Visal. I'm a Counselling Psychologist, CBT Practitioner and a Graphologist. I've previously worked with organizations like Cheshire Home (organization for people with disabilities) and National association for blind women (NAB India).My work experience includes preparing case studies of people with various disabilities and providing them counselling therapy accordingly. I've also worked as a Research Psychologist at GoodPsyche (Mental Health Organization). Currently I'm working as a Counselling Psychologist ( private practice) and taking online therapy session. Along with all this I'm conducting workshops with young school going children to raise awareness about Mental Health.",
@@ -106,7 +91,7 @@ export const practitioners: Practitioner[] = [
         description: "Passionate Counseling Psychologist with a Master’s in Psychology, practicing for over a year. My approach blends CBT, SFBT, psychodynamic principles, and Islamic faith-based perspectives,p focusing on emotional well-being and fostering self-reliance in diverse populations."
     },
     {
-        id: "",
+        id: "coming-soon",
         name: "Asifa Bano",
         duration: "45 minutes",
         description: "As a compassionate islamic psychologist, I provide a safe and non-judgmental space for individuals to explore their thoughts, feelings, and experiences. With empathy and expertise, I help clients navigate life's challenges, build resilience, and foster emotional well-being according to Quran and Sunnah.",

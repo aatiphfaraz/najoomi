@@ -20,8 +20,9 @@ interface PractitionerCardMiniProps {
 
 
 const PractitionerCardMini: React.FC<PractitionerCardMiniProps> = ({ id, image, name, title, experience, specialties, rating, price, discountPrice, starPractitioner }) => {
+  const isComingSoon = id === "coming-soon";
   return (
-    <div className="bg-white rounded-xl shadow border border-[#fde68a]/30 flex flex-row items-center gap-3 px-2 py-2 sm:py-3 w-full min-h-[92px] relative overflow-hidden">
+    <Link href={`/booking/${id}`} className="bg-white rounded-xl shadow border border-[#fde68a]/30 flex flex-row items-center gap-3 px-2 py-2 sm:py-3 w-full min-h-[92px] relative overflow-hidden">
       {/* Price badge */}
       {(price || discountPrice) && (
         <div className="absolute top-2 right-2 z-10">
@@ -86,12 +87,12 @@ const PractitionerCardMini: React.FC<PractitionerCardMiniProps> = ({ id, image, 
         </div>
       </div>
       {/* Book button */}
-      {id && (
-        <Link href={`/booking/${id}`} className="ml-2 mt-[2rem]">
-          <Button variant="primary" >Book</Button>
-        </Link>
+      {!isComingSoon && (
+        // <Link href={`/booking/${id}`}>
+        <Button variant="primary" className="ml-2 mt-[2rem]" >Book</Button>
+        // </Link>
       )}
-    </div>
+    </Link>
   );
 };
 
