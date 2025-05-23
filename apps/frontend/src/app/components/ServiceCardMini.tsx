@@ -28,6 +28,17 @@ export default function ServiceCardMini({ icon, title, href }: ServiceCardMiniPr
         <span className="absolute right-2 top-2 opacity-10 pointer-events-none select-none">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#b6894a" strokeWidth="1.1" /><circle cx="9" cy="9" r="3" stroke="#eab308" strokeWidth="0.7" /></svg>
         </span>
+        {/* Subtle Clickable/Navigation Indicator */}
+        <span className="absolute right-2.5 top-2.5 z-20 select-none pointer-events-none">
+          <svg
+            width="15" height="15" viewBox="0 0 15 15" fill="none"
+            className="opacity-50 group-hover:opacity-90 group-hover:drop-shadow-[0_0_4px_rgba(234,179,8,0.25)] transition-all duration-150"
+            style={{ pointerEvents: 'none' }}
+          >
+            <circle cx="7.5" cy="7.5" r="6" stroke="#eab308" strokeWidth="1.1" fill="none" />
+            <path d="M6.5 5.5l3 2-3 2" stroke="#b6894a" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
         <span className="w-9 h-9 flex items-center justify-center rounded-full bg-[#fef9c3] shadow-inner">
           {icon}
         </span>
