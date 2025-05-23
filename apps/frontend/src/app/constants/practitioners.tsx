@@ -27,7 +27,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Ramal", "Naturopathy", "Dream Interpretation", "Marriage & Family"],
         rating: 5,
         price: "700",
-        discountPrice: "499",
+        discountPrice: "299",
         type: "najoomi",
         duration: "15 minutes",
         description: "Discover the ancient science of Ilm-e-Ramal with Dr Anees Ahmad — one of the region’s foremost practitioners. Dr Anees offers in-depth Ramal readings rooted in centuries-old Islamic tradition, providing profound spiritual insights and practical guidance for life’s challenges. Alongside Ramal, he specializes in holistic naturopathy, dream interpretation, and compassionate marriage & family advice. With over a decade of experience, Dr Anees blends authentic spiritual wisdom with modern care, helping you find clarity, healing, and harmony in every aspect of your journey.",
@@ -42,7 +42,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Black Magic", "Evil Eye", "Spiritual Counseling"],
         rating: 5,
         price: "600",
-        discountPrice: "399",
+        discountPrice: "299",
         type: "najoomi",
         duration: "15 minutes",
         description: "Offers authentic Islamic guidance and solutions for challenges such as black magic, evil eye, and various spiritual ailments, drawing upon traditional wisdom and compassionate support."
@@ -56,7 +56,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Spritual Guidance"],
         rating: 5,
         price: "500",
-        discountPrice: "299",
+        discountPrice: "199",
         type: "najoomi",
         duration: "15 minutes",
         description: "Mufti Saqib is a learned scholar with deep expertise in Islamic jurisprudence and spiritual sciences. With years of experience in providing ethical, faith-based guidance, they offer personalized support through spiritual consultations, helping individuals make decisions aligned with divine wisdom and Islamic principles."
