@@ -76,20 +76,20 @@ export const practitioners: Practitioner[] = [
         type: "therapist",
         starPractitioner: true
     },
-    {
-        id: "84cc6628-2ba4-4472-992c-65da7eea8ad0",
-        name: "Irfana Begum",
-        title: "Islamic Counselor",
-        image: "/practitioners/irfana-begum.jpg",
-        experience: "1+ years",
-        specialties: ["SFBT", "CBT", "Psychodynamic Principles", "Islamic Faith-Based Perspectives"],
-        rating: 5,
-        price: "800",
-        discountPrice: "499",
-        type: "therapist",
-        duration: "45 minutes",
-        description: "Passionate Counseling Psychologist with a Master’s in Psychology, practicing for over a year. My approach blends CBT, SFBT, psychodynamic principles, and Islamic faith-based perspectives,p focusing on emotional well-being and fostering self-reliance in diverse populations."
-    },
+    // {
+    //     id: "84cc6628-2ba4-4472-992c-65da7eea8ad0",
+    //     name: "Irfana Begum",
+    //     title: "Islamic Counselor",
+    //     image: "/practitioners/irfana-begum.jpg",
+    //     experience: "1+ years",
+    //     specialties: ["SFBT", "CBT", "Psychodynamic Principles", "Islamic Faith-Based Perspectives"],
+    //     rating: 5,
+    //     price: "800",
+    //     discountPrice: "499",
+    //     type: "therapist",
+    //     duration: "45 minutes",
+    //     description: "Passionate Counseling Psychologist with a Master’s in Psychology, practicing for over a year. My approach blends CBT, SFBT, psychodynamic principles, and Islamic faith-based perspectives,p focusing on emotional well-being and fostering self-reliance in diverse populations."
+    // },
     {
         id: "8ae2b138-f7d6-4dda-98ab-7acb1cf03e23",
         name: "Asifa Bano",
