@@ -182,7 +182,7 @@ export default function HeroSection() {
                 <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight mb-2">
                     {slide.title}
                 </h1>
-                <p className="mb-5 text-sm sm:text-base md:text-lg text-gray-200 max-w-lg">
+                <p className="mb-5 text-md sm:text-lg md:text-xl text-gray-200 max-w-lg">
                     {slide.description}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
