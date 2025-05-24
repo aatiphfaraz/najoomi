@@ -91,7 +91,7 @@ export const practitioners: Practitioner[] = [
     //     description: "Passionate Counseling Psychologist with a Master’s in Psychology, practicing for over a year. My approach blends CBT, SFBT, psychodynamic principles, and Islamic faith-based perspectives,p focusing on emotional well-being and fostering self-reliance in diverse populations."
     // },
     {
-        id: "8ae2b138-f7d6-4dda-98ab-7acb1cf03e23",
+        id: "eeb19399-c21a-41cb-80b9-7a94d102ae5d",
         name: "Asifa Bano",
         duration: "45 minutes",
         description: "As a compassionate islamic psychologist, I provide a safe and non-judgmental space for individuals to explore their thoughts, feelings, and experiences. With empathy and expertise, I help clients navigate life's challenges, build resilience, and foster emotional well-being according to Quran and Sunnah.",
@@ -119,7 +119,7 @@ export const practitioners: Practitioner[] = [
         type: "therapist"
     },
     {
-        id: "coming-soon",
+        id: "ebdec80b-650c-4d8b-bb07-56eeccf6c6df",
         name: "Dr. Wakeel Ahmad",
         duration: "45 minutes",
         description: "Dr. Wakeel Ahmad, PhD in Applied Psychology, blends deep psychological expertise with a heartfelt commitment to faith-integrated counseling. Guided by Islamic values and a spirit of compassion, he offers empathetic listening and practical guidance, helping individuals find clarity, healing, and resilience through a harmonious balance of mind, heart, and soul.",
