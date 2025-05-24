@@ -6,19 +6,103 @@ import Image from "next/image";
 
 const slides = [
     {
-        image: "/hero-section.jpg",
-        alt: "Mosque domes background",
+        image: "/hero/ramal.jpg",
+        alt: "Ilm-e-Ramal, Islamic numerology with subtle geometric accents",
         title: (
             <>
-                Guidance Beyond <span className="text-brand-gold">Boundaries</span>
+                Kya aapke naam <span className="text-brand-gold">ya date of birth</span> mein chhupa hai koi Raaz?
             </>
         ),
         description:
-            "Embrace the light of divine guidance. Najoomi offers soulful healing and faith-rooted counselling to help you reconnect with your purpose, peace, and the blessings of Allah",
+            "Ilm-e-Ramal se jaaniye apni spiritual energy or life path",
+        actions: (
+            <>
+                <Link href="/booking/a549f587-5e1c-4ad6-9f62-15567b856ba7">
+                    <Button variant="primary">Discover Ilm-e-Ramal</Button>
+                </Link>
+                <Link href="/services">
+                    <Button variant="secondary">Explore All Services</Button>
+                </Link>
+            </>
+        ),
+    },
+    {
+        image: "/hero/therapy.jpg",
+        alt: "Mosque domes background with subtle crescent and star",
+        title: (
+            <>
+                Dil to ro raha hai, par chehra <span className="text-brand-gold">muskura raha hai</span>... kya karun?
+            </>
+        ),
+        description:
+            "Islamic Counselling lo — sukoon paao rooh se.",
+        actions: (
+            <>
+                <Link href="/practitioners/therapists">
+                    <Button variant="primary">Book a Consultation</Button>
+                </Link>
+                <Link href="/services">
+                    <Button variant="secondary">Explore All Services</Button>
+                </Link>
+            </>
+        ),
+    },
+    {
+        image: "/hero/dreams.jpg",
+        alt: "Dream interpretation, crescent moon and Quranic stars",
+        title: (
+            <>
+                Bar-bar ek hi <span className="text-brand-gold">sapna</span> aata hai... iska kya matlab hota hai?
+            </>
+        ),
+        description:
+            "Najoomi par paayiye Quran aur Sunnah par mabni dream interpretation – by trusted experts",
+        actions: (
+            <>
+                <Link href="/practitioners/najoomis">
+                    <Button variant="primary">Interpret My Dream</Button>
+                </Link>
+                <Link href="/services">
+                    <Button variant="secondary">Explore All Services</Button>
+                </Link>
+            </>
+        ),
+    },
+    {
+        image: "/hero/ruqyah.jpg",
+        alt: "Ruqyah, protection from magic and nazar with Islamic motifs",
+        title: (
+            <>
+                Lagta hai sab kuch <span className="text-brand-gold">theek hote hote ruk jaata hai</span>?
+            </>
+        ),
+        description:
+            "Check karayein Ruqyah se. Qurani tareeqa hai – bina kisi dar ke, sirf Allah par bharosa",
+        actions: (
+            <>
+                <Link href="/practitioners/najoomis">
+                    <Button variant="primary">Check Ruqyah</Button>
+                </Link>
+                <Link href="/services">
+                    <Button variant="secondary">Explore All Services</Button>
+                </Link>
+            </>
+        ),
+    },
+    {
+        image: "/hero/dream.jpg",
+        alt: "Najoomi platform, subtle Islamic archway and sparkles",
+        title: (
+            <>
+                Sab sawaalon ka ek <span className="text-brand-gold">roohani platform</span>
+            </>
+        ),
+        description:
+            "Najoomi.in – One place for all your spiritual questions",
         actions: (
             <>
                 <Link href="/practitioners">
-                    <Button variant="primary">Book a Consultation</Button>
+                    <Button variant="primary">View Practitioners</Button>
                 </Link>
                 <Link href="/services">
                     <Button variant="secondary">Explore Services</Button>
@@ -26,78 +110,6 @@ const slides = [
             </>
         ),
     },
-    // {
-    //     image: "/missions.png",
-    //     alt: "Crescent moon and stars",
-    //     title: (
-    //         <>
-    //             Discover <span className="text-brand-gold">Spiritual Wisdom</span>
-    //         </>
-    //     ),
-    //     description:
-    //         "Unlock ancient Islamic knowledge and magical insights for a harmonious life. Our guides share wisdom tailored to your journey.",
-    //     actions: (
-    //         <>
-    //             <Link href="/wisdom">
-    //                 <Button variant="primary">Learn More</Button>
-    //             </Link>
-    //         </>
-    //     ),
-    // },
-    // {
-    //     image: "/slide3.jpg",
-    //     alt: "Geometric Islamic pattern",
-    //     title: (
-    //         <>
-    //             <span className="text-brand-gold">Healing</span> Through Faith
-    //         </>
-    //     ),
-    //     description:
-    //         "Experience soulful healing and support rooted in Islamic tradition. Our practitioners blend faith and compassion for your well-being.",
-    //     actions: (
-    //         <>
-    //             <Link href="/healing">
-    //                 <Button variant="primary">Start Healing</Button>
-    //             </Link>
-    //         </>
-    //     ),
-    // },
-    // {
-    //     image: "/slide4.jpg",
-    //     alt: "Magical sparkles and calligraphy",
-    //     title: (
-    //         <>
-    //             <span className="text-brand-gold">Enchanted</span> Guidance
-    //         </>
-    //     ),
-    //     description:
-    //         "Step into a world of subtle magic and spiritual beauty. Our platform is designed to enchant and uplift your soul.",
-    //     actions: (
-    //         <>
-    //             <Link href="/about">
-    //                 <Button variant="primary">Our Story</Button>
-    //             </Link>
-    //         </>
-    //     ),
-    // },
-    // {
-    //     image: "/slide5.jpg",
-    //     alt: "Subtle Islamic archway",
-    //     title: (
-    //         <>
-    //             <span className="text-brand-gold">Join</span> the Najoomi Community
-    //         </>
-    //     ),
-    //     description:
-    //         "Connect with like-minded souls and practitioners. Share, learn, and grow together in a spiritual community.",
-    //     actions: (
-    //         <>
-    //             <Link href="/community">
-    //                 <Button variant="primary">Join Now</Button>
-    //             </Link>
-    //         </>
-    //     ),
-    // },
 ];
 
 export default function HeroSection() {
