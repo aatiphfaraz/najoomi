@@ -41,7 +41,7 @@ export default function TherapistsSection() {
           ))}
       </div>
       <div className="flex justify-center mt-6 sm:mt-10">
-        <Link href="/practitioners/najoomis" className="text-[#15577a] text-base sm:text-lg font-semibold underline underline-offset-4 decoration-[#b6894a] hover:decoration-2 hover:text-[#b6894a] transition-all duration-150">
+        <Link href="/practitioners/therapists" className="text-[#15577a] text-base sm:text-lg font-semibold underline underline-offset-4 decoration-[#b6894a] hover:decoration-2 hover:text-[#b6894a] transition-all duration-150">
           View All Practitioners
         </Link>
       </div>
