@@ -42,7 +42,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Black Magic", "Evil Eye", "Spiritual Counseling"],
         rating: 5,
         price: "600",
-        discountPrice: "99",
+        discountPrice: "1",
         type: "najoomi",
         duration: "15 minutes",
         description: "Offers authentic Islamic guidance and solutions for challenges such as black magic, evil eye, and various spiritual ailments, drawing upon traditional wisdom and compassionate support."
@@ -56,7 +56,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Spritual Guidance"],
         rating: 5,
         price: "500",
-        discountPrice: "99",
+        discountPrice: "1",
         type: "najoomi",
         duration: "15 minutes",
         description: "Mufti Saqib is a learned scholar with deep expertise in Islamic jurisprudence and spiritual sciences. With years of experience in providing ethical, faith-based guidance, they offer personalized support through spiritual consultations, helping individuals make decisions aligned with divine wisdom and Islamic principles."
@@ -72,7 +72,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["CBT", "Anxiety", "Depression"],
         rating: 5,
         price: "1200",
-        discountPrice: "999",
+        discountPrice: "1",
         type: "therapist",
         starPractitioner: true
     },
@@ -101,7 +101,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["CBT", "Anxiety", "Depression"],
         rating: 5,
         price: "800",
-        discountPrice: "499",
+        discountPrice: "1",
         type: "therapist",
     },
     {
@@ -115,7 +115,21 @@ export const practitioners: Practitioner[] = [
         specialties: ["Anxiety", "Family Therapy", "Behavioral Issues", "Stress Management"],
         rating: 5,
         price: "1200",
-        discountPrice: "999",
+        discountPrice: "1",
+        type: "therapist"
+    },
+    {
+        id: "coming-soon",
+        name: "Dr. Wakeel Ahmad",
+        duration: "45 minutes",
+        description: "Dr. Wakeel Ahmad, PhD in Applied Psychology, blends deep psychological expertise with a heartfelt commitment to faith-integrated counseling. Guided by Islamic values and a spirit of compassion, he offers empathetic listening and practical guidance, helping individuals find clarity, healing, and resilience through a harmonious balance of mind, heart, and soul.",
+        title: "Islamic Counselor",
+        image: "/practitioners/dr-wakeel.jpg",
+        experience: "5+ years",
+        specialties: ["Anxiety", "Family Therapy", "Relationship Counseling", "Stress Management", "Depression"],
+        rating: 5,
+        price: "700",
+        discountPrice: "1",
         type: "therapist"
     },
 

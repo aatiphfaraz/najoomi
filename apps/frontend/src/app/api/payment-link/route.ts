@@ -39,7 +39,7 @@ export async function POST(
     const db = await getMongoDb();
     const bookings = db.collection(COLLECTION_NAME);
 
-    if (practitioner_id === "a549f587-5e1c-4ad6-9f62-15567b856ba7") {
+    if (practitioner_id) {
       const booking = {
         name,
         email,
