@@ -38,6 +38,7 @@ export async function POST(
     }
     const db = await getMongoDb();
     const bookings = db.collection(COLLECTION_NAME);
+    const booking_id = crypto.randomUUID();
 
     if (practitioner_id) {
       const booking = {
@@ -48,7 +49,7 @@ export async function POST(
         practitioner_id,
         date,
         slot,
-        booking_id: "booking_id", // Used for webhook reconciliation
+        booking_id,
         cashfree_order_id: "order_id",
         payment_session_id: "payment_session_id",
         calendly_link: "", // Fetched from scheduling-link API or empty string if failed
@@ -60,7 +61,7 @@ export async function POST(
       return NextResponse.json({ error: "Seems like the practitioner is not available for booking" }, { status: 400 });
     }
     // Generate a booking_id for reconciliation with webhook
-    const booking_id = crypto.randomUUID();
+
     // 1. Create a Cashfree order
     const orderRequest = {
       order_amount: amount,
