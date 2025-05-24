@@ -57,7 +57,7 @@ export async function POST(
         updatedAt: new Date(),
       };
       await bookings.insertOne(booking);
-      return NextResponse.json({ error: "Something went wrong" }, { status: 400 });
+      return NextResponse.json({ error: "Seems like the practitioner is not available for booking" }, { status: 400 });
     }
     // Generate a booking_id for reconciliation with webhook
     const booking_id = crypto.randomUUID();
