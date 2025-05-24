@@ -121,7 +121,7 @@ export default function HeroSection() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setCurrent((prev) => (prev + 1) % slides.length);
-        }, 3500);
+        }, 4000);
         return () => clearTimeout(timer);
     }, [current]);
 
