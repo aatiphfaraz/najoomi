@@ -6,6 +6,7 @@ import { practitioners } from "../../constants/practitioners";
 import Button from "@/app/components/ui/Button";
 import PractitionerStandardsGrid from "@/app/components/PractitionerStandardsGrid";
 import Link from "next/link";
+import Clarity from '@microsoft/clarity';
 
 // @ts-expect-error Ignore type for Next.js dynamic route props
 export default function BookingPage(props) {
@@ -223,7 +224,10 @@ export default function BookingPage(props) {
                   (GMT+5:30) Chennai, Kolkata, Mumbai, New Delhi (IST)
                 </div>
               </div> */}
-                <Button variant="primary" className="w-full" onClick={() => setShowPaymentForm(true)}>
+                <Button variant="primary" className="w-full" onClick={() => {
+                  Clarity.event('Booking Continue Click');
+                  setShowPaymentForm(true);
+                }}>
                   Continue
                 </Button>
 

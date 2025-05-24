@@ -27,7 +27,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Ramal", "Naturopathy", "Dream Interpretation", "Marriage & Family"],
         rating: 5,
         price: "700",
-        discountPrice: "99",
+        discountPrice: "1",
         type: "najoomi",
         duration: "15 minutes",
         description: "Discover the ancient science of Ilm-e-Ramal with Dr Anees Ahmad — one of the region’s foremost practitioners. Dr Anees offers in-depth Ramal readings rooted in centuries-old Islamic tradition, providing profound spiritual insights and practical guidance for life’s challenges. Alongside Ramal, he specializes in holistic naturopathy, dream interpretation, and compassionate marriage & family advice. With over a decade of experience, Dr Anees blends authentic spiritual wisdom with modern care, helping you find clarity, healing, and harmony in every aspect of your journey.",
