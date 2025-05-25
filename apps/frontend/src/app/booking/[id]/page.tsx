@@ -10,7 +10,9 @@ import Clarity from '@microsoft/clarity';
 
 // @ts-expect-error Ignore type for Next.js dynamic route props
 export default function BookingPage(props) {
-  const { id } = props.params;
+  type Params = { id: string };
+  const params = React.use<Params>(props.params);
+  const { id } = params;
   const practitioner = practitioners.find((p) => p.id === id);
   const [selectedDay, setSelectedDay] = useState(0);
   const [selectedTime, setSelectedTime] = useState(0);
@@ -83,6 +85,7 @@ export default function BookingPage(props) {
     price: practitioner.discountPrice || practitioner.price,
     duration: practitioner.duration,
     description: practitioner.description,
+    reviews: practitioner.reviews,
   };
 
 
@@ -245,8 +248,42 @@ export default function BookingPage(props) {
           </section>
 
         </div>
-        <PractitionerStandardsGrid />
+
       </div>
+      {/* Consultee Stories Section */}
+      <section className="max-w-6xl mx-auto mt-14 mb-6 px-2 w-full">
+        <div className="flex flex-col items-center mb-8">
+          {/* Decorative Islamic/Magical Touch */}
+          <div className="flex items-center gap-2 mb-2">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="2" fill="#FFD700" /><g opacity="0.7"><circle cx="8" cy="24" r="1" fill="#E5C07B" /><circle cx="28" cy="6" r="1.5" fill="#F6E27A" /></g></svg>
+            <span className="text-2xl md:text-3xl font-bold text-brand-gold tracking-tight">Consultee Stories</span>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="2" fill="#FFD700" /><g opacity="0.7"><circle cx="24" cy="8" r="1" fill="#E5C07B" /><circle cx="4" cy="26" r="1.5" fill="#F6E27A" /></g></svg>
+          </div>
+          <p className="text-gray-700 text-base md:text-lg text-center max-w-2xl">Real stories of healing, clarity, and transformation from our Najoomi family. Your journey to peace and purpose can begin here, too.</p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
+          {practitioner.reviews && practitioner.reviews.length > 0 ? (
+            practitioner.reviews.map((review, idx) => (
+              <div key={idx} className="bg-white/90 border border-[#fde68a] rounded-xl shadow-lg p-6 flex flex-col items-start relative">
+                {/* Subtle geometric/star accent */}
+                <svg className="absolute top-3 left-3 opacity-20" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12a7 7 0 0 1 7-7v2a5 5 0 0 0-5 5h2a3 3 0 0 1 3-3v2a1 1 0 0 0-1 1H5z" fill="#eab308" />
+                  <circle cx="19" cy="5" r="1.2" fill="#F6E27A" opacity="0.5" />
+                  <circle cx="7" cy="19" r="0.8" fill="#E5C07B" opacity="0.5" />
+                  <path d="M17 20a3 3 0 0 1 2-2.6" stroke="#eab308" strokeWidth="0.7" opacity="0.4" />
+                </svg>
+                <p className="text-gray-800 text-md md:text-lg font-medium mb-4">“{review.text}”</p>
+                <span className="text-sm text-brand-gold font-semibold mt-auto">— {review.name}</span>
+              </div>
+            ))
+          ) : (
+            <div className="col-span-full text-center text-gray-500 italic py-8">
+              No testimonials yet for this practitioner. Be the first to share your story!
+            </div>
+          )}
+        </div>
+      </section>
+      <PractitionerStandardsGrid />
     </main>
   );
 }

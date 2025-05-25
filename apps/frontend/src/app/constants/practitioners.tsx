@@ -15,6 +15,7 @@ export interface Practitioner {
     duration: string;
     description: string;
     starPractitioner?: boolean;
+    reviews: { text: string; name: string }[];
 }
 
 export const practitioners: Practitioner[] = [
@@ -30,8 +31,12 @@ export const practitioners: Practitioner[] = [
         discountPrice: "1",
         type: "najoomi",
         duration: "15 minutes",
-        description: "Discover the ancient science of Ilm-e-Ramal with Dr Anees Ahmad — one of the region’s foremost practitioners. Dr Anees offers in-depth Ramal readings rooted in centuries-old Islamic tradition, providing profound spiritual insights and practical guidance for life’s challenges. Alongside Ramal, he specializes in holistic naturopathy, dream interpretation, and compassionate marriage & family advice. With over a decade of experience, Dr Anees blends authentic spiritual wisdom with modern care, helping you find clarity, healing, and harmony in every aspect of your journey.",
-        starPractitioner: true
+        description: "Dr. Anees Ahmad – Ilm-e-Ramal Specialist | Spiritual Guide Kabhi lagta hai zindagi uljhanon se bhari hai? Dr. Anees ke Ramal readings aapko denge insight jo sirf future nahi, aapki rooh tak ko samjhe. With 10+ years of experience, unki guidance Islamic spirituality aur modern wisdom ka perfect blend hai—be it dream interpretation, holistic naturopathy, ya rishton ki samajhdaari bhari salah. Zaroori nahi har raasta akela tay kiya jaye—apni journey ko clarity, healing aur sukoon ke saath jeeyein.",
+        starPractitioner: true,
+        reviews: [
+            { text: "I came to Dr. Anees for a Ramal reading during a very confusing time. His words were not just answers, they were raah dikhane wali roshni. Today, I feel more at peace and confident in my decisions.", name: "Sameer, Lucknow" },
+            { text: "'Doctors gave up on my fatigue, but his naturopathy worked...had been feeling physically drained for years. Dr. Anees’s holistic remedies and duas gave me not just energy, but hope. Jaise zindagi fir se mil gayi ho. He truly treats the soul and body together.", name: "Fatima, Mumbai" }
+        ]
     },
     {
         id: "b9601518-0d28-4616-b204-a00b3f9ff6ff",
@@ -45,7 +50,11 @@ export const practitioners: Practitioner[] = [
         discountPrice: "1",
         type: "najoomi",
         duration: "15 minutes",
-        description: "Offers authentic Islamic guidance and solutions for challenges such as black magic, evil eye, and various spiritual ailments, drawing upon traditional wisdom and compassionate support."
+        description: "Haji Aasheqeen – Spiritual Healer | Ruqyah Expert Kabhi mehsoos hota hai jaise koi nazar, bandish ya roohani rukawat ho? Our spiritual counsellor offers authentic Islamic guidance to heal what the eyes can’t always see. With years of experience, unka ilaaj sirf duas ya wazifon tak simit nahi—yeh ek journey hai towards spiritual strength, protection, and inner peace. Be it black magic, evil eye, or unexplained anxiety, unki approach hai compassionate, confidential aur 100% Qur’an-based. Har takleef ka ilaj hai—sirf yaqeen aur sahi rehnumai ki zarurat hai. Apni roohani journey ko shifa, barkat aur sakoon ke saath aage badhaiye.",
+        reviews: [
+            { text: "I was skeptical about Ruqyah, but after my session, I felt a weight lift from my heart. The practitioner’s knowledge and faith-based approach made all the difference.", name: "Imran, Bangalore" },
+            { text: "Haji Asheqeen’s advice helped protect my family from nazar and negativity.", name: "Nida, Hyderabad" }
+        ]
     },
     {
         id: "e7fa7a3d-9f7c-4c8b-b288-b92cad2418ea",
@@ -59,7 +68,11 @@ export const practitioners: Practitioner[] = [
         discountPrice: "1",
         type: "najoomi",
         duration: "15 minutes",
-        description: "Mufti Saqib is a learned scholar with deep expertise in Islamic jurisprudence and spiritual sciences. With years of experience in providing ethical, faith-based guidance, they offer personalized support through spiritual consultations, helping individuals make decisions aligned with divine wisdom and Islamic principles."
+        description: "Mufti Saqib is a learned scholar with deep expertise in Islamic jurisprudence and spiritual sciences. With years of experience in providing ethical, faith-based guidance, they offer personalized support through spiritual consultations, helping individuals make decisions aligned with divine wisdom and Islamic principles.",
+        reviews: [
+            { text: "Mufti Saqib’s consultation brought so much peace to my heart. His advice is always rooted in faith.", name: "Zainab, Delhi" },
+            { text: "He helped me resolve a family issue with wisdom and kindness.", name: "Ahmed, Kolkata" }
+        ]
     },
     {
         id: "ed867891-a66f-4771-be06-e9d47cddbb80",
@@ -74,7 +87,11 @@ export const practitioners: Practitioner[] = [
         price: "1200",
         discountPrice: "1",
         type: "therapist",
-        starPractitioner: true
+        starPractitioner: true,
+        reviews: [
+            { text: "I was lost after my divorce, but Najoomi’s Islamic counselling helped me find hope and self-worth again. The guidance was gentle, spiritual, and truly healing.", name: "Ayesha, Delhi" },
+            { text: "Saleha’s therapy sessions helped me overcome anxiety and build confidence.", name: "Sara, Pune" }
+        ]
     },
     // {
     //     id: "84cc6628-2ba4-4472-992c-65da7eea8ad0",
@@ -103,6 +120,10 @@ export const practitioners: Practitioner[] = [
         price: "800",
         discountPrice: "1",
         type: "therapist",
+        reviews: [
+            { text: "Asifa helped me understand my emotions and find peace through Islamic teachings.", name: "Maryam, Bhopal" },
+            { text: "Her sessions are safe, supportive, and always confidential.", name: "Sana, Hyderabad" }
+        ]
     },
     {
         id: "8761a981-83e8-4b14-b9f1-cf0ac66bedf9",
@@ -116,7 +137,11 @@ export const practitioners: Practitioner[] = [
         rating: 5,
         price: "1200",
         discountPrice: "1",
-        type: "therapist"
+        type: "therapist",
+        reviews: [
+            { text: "Abdul Rehman’s therapy sessions helped me understand my thoughts and emotions better. He provided practical guidance and spiritual insights that resonated with me.", name: "Neha, Delhi" },
+            { text: "His approach was gentle and non-judgmental, making it easier for me to open up about my struggles.", name: "Mohammed, Mumbai" }
+        ]
     },
     {
         id: "ebdec80b-650c-4d8b-bb07-56eeccf6c6df",
@@ -130,7 +155,12 @@ export const practitioners: Practitioner[] = [
         rating: 5,
         price: "700",
         discountPrice: "1",
-        type: "therapist"
+        type: "therapist",
+        reviews: [
+            { text: "Dr. Wakeel’s guidance helped me navigate a difficult relationship with wisdom and compassion.", name: "Rashid, Mumbai" },
+            { text: "His sessions are a perfect blend of psychology and Islamic values.", name: "Amir, Ahmedabad" }
+        ]
+        ,
     },
 
 
