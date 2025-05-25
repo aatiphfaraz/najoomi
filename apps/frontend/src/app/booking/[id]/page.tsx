@@ -107,7 +107,7 @@ export default function BookingPage(props) {
     return `${hours}:${pad(minutes)} ${ampm}`;
   }
   // Generate time slots for the next 20 slots with 15-minute increments
-  const now = new Date('2025-05-26T02:06:29+05:30');
+  const now = new Date();
   const slotsCount = 20;
   const slotDuration = 15; // minutes
   const times = Array.from({ length: slotsCount }).map((_, i) => {
