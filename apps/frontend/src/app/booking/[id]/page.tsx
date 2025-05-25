@@ -133,7 +133,8 @@ export default function BookingPage(props) {
               </div>
             </div>
             <div className="border-t border-[#f6e9c0] pt-6 text-gray-700 text-base whitespace-pre-line">
-              <div dangerouslySetInnerHTML={{ __html: session.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+              {session.description}
+
             </div>
           </section>
 
