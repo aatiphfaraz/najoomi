@@ -20,7 +20,7 @@ export default function BookingPage(props) {
   const [days, setDays] = useState<{ date: string; active: boolean }[]>([]);
   const [slots, setSlots] = useState<Record<string, { start: string; end: string }[]>>({});
   const [loading, setLoading] = useState(true);
-
+  console.log(slots);
   // Payment Modal Form State
   const [showPaymentForm, setShowPaymentForm] = useState(false);
 
@@ -91,9 +91,36 @@ export default function BookingPage(props) {
 
   // Get times for selected day
   const selectedDayDate = days[selectedDay]?.date;
-  const times = selectedDayDate && slots[selectedDayDate]
-    ? slots[selectedDayDate].map(slot => `${slot.start} - ${slot.end}`)
-    : [];
+  // --- MOCK DYNAMIC TIME SLOTS FOR NEXT 5 SLOTS WITH 10-MINUTE INCREMENT ---
+  // Current local time: 2025-05-26T02:02:44+05:30
+  function getNextRoundedTime(date: Date, intervalMinutes: number = 10) {
+    const ms = 1000 * 60 * intervalMinutes;
+    return new Date(Math.ceil(date.getTime() / ms) * ms);
+  }
+  function pad(n: number) { return n.toString().padStart(2, '0'); }
+  function formatTime12(date: Date) {
+    let hours = date.getHours();
+    const minutes = date.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    if (hours === 0) hours = 12;
+    return `${hours}:${pad(minutes)} ${ampm}`;
+  }
+  // Generate time slots for the next 20 slots with 15-minute increments
+  const now = new Date('2025-05-26T02:06:29+05:30');
+  const slotsCount = 20;
+  const slotDuration = 15; // minutes
+  const times = Array.from({ length: slotsCount }).map((_, i) => {
+    const start = new Date(getNextRoundedTime(now, 15).getTime() + i * slotDuration * 60000);
+    const end = new Date(start.getTime() + slotDuration * 60000);
+    return `${formatTime12(start)} - ${formatTime12(end)}`;
+  });
+  // --- END MOCK DYNAMIC TIME SLOTS ---
+
+
+  // const times = selectedDayDate && slots[selectedDayDate]
+  //   ? slots[selectedDayDate].map(slot => `${slot.start} - ${slot.end}`)
+  //   : [];
 
 
   return (
@@ -217,7 +244,7 @@ export default function BookingPage(props) {
                             >
                               {start}
                             </button>
-                          )
+                          );
                         })}
                     </div>
                   </div>
@@ -238,7 +265,7 @@ export default function BookingPage(props) {
                 {/* Payment Form Modal */}
                 {showPaymentForm && <PaymentModal
                   onClose={() => setShowPaymentForm(false)}
-                  price={Number(session.price)}
+                  price={session.price}
                   practitionerId={practitioner.id}
                   date={selectedDayDate}
                   slot={times[selectedTime]}

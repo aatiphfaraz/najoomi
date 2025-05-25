@@ -28,97 +28,193 @@ enum Services {
 
 export const allServices: Service[] = [
     {
-        icon: <FaBook className="text-2xl text-brand-gold" />, // Ilm-e-Adad (Book = knowledge)
-        title: "Ilm-e-Ramal",
-        description: "Love, career, rishte or faisle - zindagi se jude har sawaal ka jawab paiye or hal jaaniye  ilm e ramal ke zariye",
-        subTitle: "Ramal Se Poochho – Kya Kehte Hain Aapke Raaste?",
+        icon: <FaBook className="text-2xl text-brand-gold" />,
+        title: "Ramal Reading",
+        subTitle: "Love ya career – poochho taqdeer se seedha jawab",
+        description: "Shaadi, job ya life ka koi bada faisla? Ramal ek purana Islami tareeqa hai jo batata hai kya raasta sahi hai aapke liye.",
         href: Services.ILM_E_RAMAL,
     },
     {
-        icon: <FaBook className="text-2xl text-brand-gold" />, // Ilm-e-Adad (Book = knowledge)
-        title: "Ilm-e-Adad",
-        description: "Naam aur date of birth se apki zindagi, challenges aur purpose ko samajhne ka Islami tareeqa",
-        subTitle: "Roohani Raaste Numbers Ke Zariye",
+        icon: <FaBook className="text-2xl text-brand-gold" />,
+        title: "Islamic Numerology",
+        subTitle: "Naam aur DOB ke numbers kuch kehte hain",
+        description: "Aapka naam aur paidaish ki tareekh batate hain aapki personality, challenges aur life purpose. Islamic method se jaaniye.",
         href: Services.ILM_E_ADAD,
     },
     {
-        icon: <FaHandHoldingMedical className="text-2xl text-brand-gold" />, // Rohani Requests (Healing hand)
-        title: "Roohani Requests",
+        icon: <FaHandHoldingMedical className="text-2xl text-brand-gold" />,
+        title: "Roohani Amal",
+        subTitle: "Nazar, fikr, ya gham – Qurani dua se sukoon paayein",
         description: "Duaon aur Qurani ilaj ke zariye roohani dard, nazar aur fikr se paayein shifa aur sukoon",
-        subTitle: "Sukoon aur Hifazat Qurani Ilaj ke Saath",
         href: Services.ROOHANI_REQUESTS,
     },
     {
         icon: <FaQuran className="text-2xl text-brand-gold" />,
-        title: "Quran Khani and Recitation",
-        subTitle: "Har Ayat Mein Barakah",
-        description: "Tilawat ke zariye paayein roohani sukoon aur barkat, personal Quran Khani ka intazam aapke liye",
+        title: "Quran Khani",
+        subTitle: "Tilawat se ghar mein barakah aur sukoon",
+        description: "Personal Quran Khani – aapke ghar ke liye, kisi khaas wajah ya yaad ke liye tilawat ka intazam.",
         href: Services.QURAN_KHANI_AND_RECITATION,
     },
     {
-        icon: <FaLeaf className="text-2xl text-brand-gold" />, // Tibb-e-Nabwi (Leaf = natural healing)
-        title: "Tibb-e-Nabawi",
-        subTitle: "Natural ilaaj se apni sehat ka khayal rakhein",
-        description: "Prophet Muhammad (PBUH) ke ilaj ke tareeqon se roohani aur jismani sehat ko behtar banayein",
+        icon: <FaLeaf className="text-2xl text-brand-gold" />,
+        title: "Prophetic Healing",
+        subTitle: "Natural ilaaj – Sunnat ke nuskhe ke saath",
+        description: "Kalonji, honey, ajwain – Prophet Muhammad (PBUH) ke nuskhe, aaj bhi sehat aur sukoon ke liye.",
         href: Services.TIBB_E_NABWI,
     },
     {
-        icon: <FaUserFriends className="text-2xl text-brand-gold" />, // Baby Naming (Friends = community, new life)
-        title: "Baby Naming",
-        subTitle: "Naye mehman ke liy roohani naam",
-        description: "Qurani aur roohani naam se apne naye mehmaan ki zindagi aur taqdeer ko roshan karein",
+        icon: <FaUserFriends className="text-2xl text-brand-gold" />,
+        title: "Spiritual Baby Names",
+        subTitle: "Naye mehmaan ke liye roohani naam",
+        description: "Qurani aur roohani naam jo aapke baby ki zindagi mein barakah laayein. Naam ek dua hota hai.",
         href: Services.BABY_NAMING,
     },
     {
-        icon: <FaHeart className="text-2xl text-brand-gold" />, // Marriage & Relationship (Heart = love)
-        title: "Marriage & Relationship Guidance",
+        icon: <FaHeart className="text-2xl text-brand-gold" />,
+        title: "Rishta & Shaadi Guidance",
         subTitle: "Behtar rishtay, behtar zindagi",
-        description: "Nikah aur rishtay ki roohani rehnumai se apni zindagi mein mohabbat aur samajhdari laayein",
+        description: "Mohabbat ho ya shaadi ka faisla – roohani guidance se samajh paayein sahi raasta.",
         href: Services.MARRIAGE_AND_RELATIONSHIP_GUIDANCE,
     },
     {
-        icon: <FaHandsHelping className="text-2xl text-brand-gold" />, // Personalised Dua (Helping hands)
-        title: "Personalised Dua & Quranic Healing",
-        subTitle: "Aapke liye, aapki roohani shifa",
-        description: "Har dard aur mushkil ke liye aapki zarurat ke mutabiq tayyar duaayein aur Qurani ilaj",
+        icon: <FaHandsHelping className="text-2xl text-brand-gold" />,
+        title: "Dua & Quranic Healing",
+        subTitle: "Har problem ke liye personal Qurani dua",
+        description: "Aapki need ke hisaab se tayyar ki gayi duaayein aur healing, sirf aapke liye.",
         href: Services.PERSONALISED_DUA_AND_QURANIC_HEALING,
     },
     {
         icon: <FaRegLightbulb className="text-2xl text-brand-gold" />,
         title: "Islamic Counseling",
-        subTitle: "Islamic Hikmat aur Rehnumai ke Zariye Raasta Paaiye",
-        description: "Zehni aur roohani musibat ka hal Qurani hikmat aur Sunnat ke roshni mein, aapke liye, sukoon aur raahdari",
+        subTitle: "Zehni aur roohani sukoon – deen ke zariye",
+        description: "Depression, stress, confusion – Quran aur Sunnat se madad aur mashwara paayein.",
         href: Services.ISLAMIC_COUNSELING,
     },
     {
         icon: <span className="text-2xl" role="img" aria-label="dream">🌙</span>,
-        title: "Islamic Dream Interpretation",
-        subTitle: "Khwabon Ki Zubaan Se Zindagi Ki Manzil Tak",
-        description: "Aapke khwabon ki roohani taabeer, apne khwabon ko samjhiye, aur zindagi ke chhupay hue raaste dhoondhiye",
+        title: "Khwabon Ki Tabeer",
+        subTitle: "Sapno ka matlab samajhna zaroori hai",
+        description: "Ajeeb sapne ya signals mil rahe hain? Islamic dream interpretation se khud ko samjhiye.",
         href: Services.ISLAMIC_DREAM_INTERPRETATION,
     },
-    {
-        icon: <FaQuran className="text-2xl text-brand-gold" />,
-        title: "Ruqyah and Spiritual Cleansing",
-        subTitle: "Jadoo, Nazar Aur Manfi Taqaton Se Hifazat",
-        description: "Qurani ayaton aur roohani tareeqon se apne dil aur rooh ki hifazat karein — har manfi taqat se bachao aur sukoon paaiye",
-        href: Services.RUQYYAH_AND_SPIRITUAL_CLEANSING,
-    },
+    // {
+    //     icon: <FaQuran className="text-2xl text-brand-gold" />,
+    //     title: "Ruqyah & Cleansing",
+    //     subTitle: "Nazar aur jadoo ka Qurani ilaj",
+    //     description: "Qurani ayat se kiya gaya spiritual protection – nazar, jadoo, aur negative energy se bachao.",
+    //     href: Services.RUQYYAH_AND_SPIRITUAL_CLEANSING,
+    // },
     {
         icon: <span className="text-2xl" role="img" aria-label="istikhara">🤲</span>,
         title: "Istikhara Guidance",
-        subTitle: "Faislay mein roshni, Allah ke ishare se paayiye",
-        description: "Faislon mein uljhan ho, toh humse Istikhara karwaiye, Allah ke ishareon se apna raasta paaiye",
+        subTitle: "Confused ho? Allah se raasta poochhiye",
+        description: "Rishta, job, ya koi life decision – Allah se roshni paane ka Islami tareeqa: Istikhara.",
         href: Services.ISTIKHARA_GUIDANCE,
     },
     {
-        icon: <span className="text-2xl" role="img" aria-label="sparkle">✨</span>, // Spiritual Guidance (Sparkle = enlightenment)
-        title: "Spiritual Guidance",
-        subTitle: "Zindagi ke mod par rahnumaai paiye",
-        description: "Quran ki roshni mein apna safar aasaan banaayiye",
+        icon: <span className="text-2xl" role="img" aria-label="sparkle">✨</span>,
+        title: "Religious Advice",
+        subTitle: "Islami Maslo Ka Hal",
+        description: "Quran aur Sunnat ki roshni mein apni life ke mod par sahi guidance lein. Har problem ka spiritual angle.",
         href: Services.SPIRITUAL_GUIDANCE,
     }
 ];
+
+
+
+// export const allServices: Service[] = [
+//     {
+//         icon: <FaBook className="text-2xl text-brand-gold" />, // Ilm-e-Adad (Book = knowledge)
+//         title: "Ilm-e-Ramal",
+//         description: "Love, career, rishte or faisle - zindagi se jude har sawaal ka jawab paiye or hal jaaniye  ilm e ramal ke zariye",
+//         subTitle: "Ramal Se Poochho – Kya Kehte Hain Aapke Raaste?",
+//         href: Services.ILM_E_RAMAL,
+//     },
+//     {
+//         icon: <FaBook className="text-2xl text-brand-gold" />, // Ilm-e-Adad (Book = knowledge)
+//         title: "Ilm-e-Adad",
+//         description: "Naam aur date of birth se apki zindagi, challenges aur purpose ko samajhne ka Islami tareeqa",
+//         subTitle: "Roohani Raaste Numbers Ke Zariye",
+//         href: Services.ILM_E_ADAD,
+//     },
+//     {
+//         icon: <FaHandHoldingMedical className="text-2xl text-brand-gold" />, // Rohani Requests (Healing hand)
+//         title: "Roohani Requests",
+//         description: "Duaon aur Qurani ilaj ke zariye roohani dard, nazar aur fikr se paayein shifa aur sukoon",
+//         subTitle: "Sukoon aur Hifazat Qurani Ilaj ke Saath",
+//         href: Services.ROOHANI_REQUESTS,
+//     },
+//     {
+//         icon: <FaQuran className="text-2xl text-brand-gold" />,
+//         title: "Quran Khani and Recitation",
+//         subTitle: "Har Ayat Mein Barakah",
+//         description: "Tilawat ke zariye paayein roohani sukoon aur barkat, personal Quran Khani ka intazam aapke liye",
+//         href: Services.QURAN_KHANI_AND_RECITATION,
+//     },
+//     {
+//         icon: <FaLeaf className="text-2xl text-brand-gold" />, // Tibb-e-Nabwi (Leaf = natural healing)
+//         title: "Tibb-e-Nabawi",
+//         subTitle: "Natural ilaaj se apni sehat ka khayal rakhein",
+//         description: "Prophet Muhammad (PBUH) ke ilaj ke tareeqon se roohani aur jismani sehat ko behtar banayein",
+//         href: Services.TIBB_E_NABWI,
+//     },
+//     {
+//         icon: <FaUserFriends className="text-2xl text-brand-gold" />, // Baby Naming (Friends = community, new life)
+//         title: "Baby Naming",
+//         subTitle: "Naye mehman ke liy roohani naam",
+//         description: "Qurani aur roohani naam se apne naye mehmaan ki zindagi aur taqdeer ko roshan karein",
+//         href: Services.BABY_NAMING,
+//     },
+//     {
+//         icon: <FaHeart className="text-2xl text-brand-gold" />, // Marriage & Relationship (Heart = love)
+//         title: "Marriage & Relationship Guidance",
+//         subTitle: "Behtar rishtay, behtar zindagi",
+//         description: "Nikah aur rishtay ki roohani rehnumai se apni zindagi mein mohabbat aur samajhdari laayein",
+//         href: Services.MARRIAGE_AND_RELATIONSHIP_GUIDANCE,
+//     },
+//     {
+//         icon: <FaHandsHelping className="text-2xl text-brand-gold" />, // Personalised Dua (Helping hands)
+//         title: "Personalised Dua & Quranic Healing",
+//         subTitle: "Aapke liye, aapki roohani shifa",
+//         description: "Har dard aur mushkil ke liye aapki zarurat ke mutabiq tayyar duaayein aur Qurani ilaj",
+//         href: Services.PERSONALISED_DUA_AND_QURANIC_HEALING,
+//     },
+//     {
+//         icon: <FaRegLightbulb className="text-2xl text-brand-gold" />,
+//         title: "Islamic Counseling",
+//         subTitle: "Islamic Hikmat aur Rehnumai ke Zariye Raasta Paaiye",
+//         description: "Zehni aur roohani musibat ka hal Qurani hikmat aur Sunnat ke roshni mein, aapke liye, sukoon aur raahdari",
+//         href: Services.ISLAMIC_COUNSELING,
+//     },
+//     {
+//         icon: <span className="text-2xl" role="img" aria-label="dream">🌙</span>,
+//         title: "Islamic Dream Interpretation",
+//         subTitle: "Khwabon Ki Zubaan Se Zindagi Ki Manzil Tak",
+//         description: "Aapke khwabon ki roohani taabeer, apne khwabon ko samjhiye, aur zindagi ke chhupay hue raaste dhoondhiye",
+//         href: Services.ISLAMIC_DREAM_INTERPRETATION,
+//     },
+//     {
+//         icon: <FaQuran className="text-2xl text-brand-gold" />,
+//         title: "Ruqyah and Spiritual Cleansing",
+//         subTitle: "Jadoo, Nazar Aur Manfi Taqaton Se Hifazat",
+//         description: "Qurani ayaton aur roohani tareeqon se apne dil aur rooh ki hifazat karein — har manfi taqat se bachao aur sukoon paaiye",
+//         href: Services.RUQYYAH_AND_SPIRITUAL_CLEANSING,
+//     },
+//     {
+//         icon: <span className="text-2xl" role="img" aria-label="istikhara">🤲</span>,
+//         title: "Istikhara Guidance",
+//         subTitle: "Faislay mein roshni, Allah ke ishare se paayiye",
+//         description: "Faislon mein uljhan ho, toh humse Istikhara karwaiye, Allah ke ishareon se apna raasta paaiye",
+//         href: Services.ISTIKHARA_GUIDANCE,
+//     },
+//     {
+//         icon: <span className="text-2xl" role="img" aria-label="sparkle">✨</span>, // Spiritual Guidance (Sparkle = enlightenment)
+//         title: "Spiritual Guidance",
+//         subTitle: "Zindagi ke mod par rahnumaai paiye",
+//         description: "Quran ki roshni mein apna safar aasaan banaayiye",
+//         href: Services.SPIRITUAL_GUIDANCE,
+//     }
+// ];
 
 export const serviceInfo: Article[] = [
     {

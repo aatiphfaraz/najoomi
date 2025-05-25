@@ -18,7 +18,7 @@ const slides = [
         actions: (
             <>
                 <Link href="/booking/a549f587-5e1c-4ad6-9f62-15567b856ba7">
-                    <Button variant="primary">Discover Ilm-e-Ramal</Button>
+                    <Button variant="primary">Get a Ramal Reading</Button>
                 </Link>
                 <Link href="/services">
                     <Button variant="secondary">Explore All Services</Button>
@@ -81,7 +81,7 @@ const slides = [
         actions: (
             <>
                 <Link href="/practitioners/najoomis">
-                    <Button variant="primary">Check Ruqyah</Button>
+                    <Button variant="primary">Check Nazar</Button>
                 </Link>
                 <Link href="/services">
                     <Button variant="secondary">Explore All Services</Button>

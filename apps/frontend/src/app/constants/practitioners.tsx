@@ -28,7 +28,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Ramal", "Naturopathy", "Dream Interpretation", "Marriage & Family"],
         rating: 5,
         price: "700",
-        discountPrice: "1",
+        discountPrice: "Free",
         type: "najoomi",
         duration: "15 minutes",
         description: (
@@ -67,7 +67,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Black Magic", "Evil Eye", "Spiritual Counseling"],
         rating: 5,
         price: "600",
-        discountPrice: "1",
+        discountPrice: "Free",
         type: "najoomi",
         duration: "15 minutes",
         description: (
@@ -105,7 +105,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Spritual Guidance"],
         rating: 5,
         price: "500",
-        discountPrice: "1",
+        discountPrice: "Free",
         type: "najoomi",
         duration: "15 minutes",
         description: (
@@ -155,7 +155,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["CBT", "Anxiety", "Depression"],
         rating: 5,
         price: "1200",
-        discountPrice: "1",
+        discountPrice: "Free",
         type: "therapist",
         starPractitioner: true,
         reviews: [
@@ -203,7 +203,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["CBT", "Anxiety", "Depression"],
         rating: 5,
         price: "800",
-        discountPrice: "1",
+        discountPrice: "Free",
         type: "therapist",
         reviews: [
             { text: "Asifa helped me understand my emotions and find peace through Islamic teachings.", name: "Maryam, Bhopal" },
@@ -236,7 +236,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Anxiety", "Family Therapy", "Behavioral Issues", "Stress Management"],
         rating: 5,
         price: "1200",
-        discountPrice: "1",
+        discountPrice: "Free",
         type: "therapist",
         reviews: [
             { text: "Abdul Rehman’s therapy sessions helped me understand my thoughts and emotions better. He provided practical guidance and spiritual insights that resonated with me.", name: "Neha, Delhi" },
@@ -269,7 +269,7 @@ export const practitioners: Practitioner[] = [
         specialties: ["Anxiety", "Family Therapy", "Relationship Counseling", "Stress Management", "Depression"],
         rating: 5,
         price: "700",
-        discountPrice: "1",
+        discountPrice: "Free",
         type: "therapist",
         reviews: [
             { text: "Dr. Wakeel’s guidance helped me navigate a difficult relationship with wisdom and compassion.", name: "Rashid, Mumbai" },

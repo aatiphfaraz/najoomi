@@ -11,7 +11,7 @@ export default function PractitionersSection() {
     <section className="w-full py-10 md:py-20 px-2 sm:px-4 flex flex-col items-center bg-white">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#15577a] mb-1 sm:mb-2">Our Najoomis</h2>
       <p className="mb-6 sm:mb-10 text-gray-700 text-center max-w-md sm:max-w-2xl text-sm sm:text-base">
-        Meet our team of experienced spiritual guides, qualified in various Islamic disciplines to provide you with authentic guidance and support
+        Meet our expert spiritual guides, trained in Islamic wisdom to offer authentic guidance and support
       </p>
       {/* Mini cards for mobile */}
       <div className="flex flex-col gap-3 w-full max-w-md mx-auto md:hidden">

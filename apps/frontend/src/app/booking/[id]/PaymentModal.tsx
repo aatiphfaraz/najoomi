@@ -5,7 +5,7 @@ import { load } from "@cashfreepayments/cashfree-js";
 
 interface PaymentModalProps {
   onClose: () => void;
-  price: number;
+  price: string;
   practitionerId: string;
   date: string;
   slot: string;
@@ -194,7 +194,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             <div className="border-t border-[#fde68a] my-1" />
             <div className="flex justify-between font-bold text-lg text-[#15577a]">
               <span>Total</span>
-              <span>₹{price + PLATFORM_FEE}</span>
+              <span>₹{price}</span>
             </div>
           </div>
           {error && <div className="text-red-600 text-center mb-2">{error}</div>}

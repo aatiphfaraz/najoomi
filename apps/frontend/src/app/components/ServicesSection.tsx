@@ -53,7 +53,7 @@ export default function ServicesSection() {
     const autoplay = () => {
       timerRef.current = setInterval(() => {
         sliderInstanceRef.next();
-      }, 3500);
+      }, 4000);
     };
     autoplay();
     return () => {
@@ -79,7 +79,7 @@ export default function ServicesSection() {
       </span>
       <h2 className="text-2xl md:text-4xl font-bold text-[#15577a] mb-1 md:mb-2 z-10">Our Services</h2>
       <p className="mb-4 md:mb-10 text-gray-700 text-center max-w-xl md:max-w-2xl text-sm md:text-base z-10">
-        Discover our range of authentic spiritual services designed to provide guidance, healing, and clarity through an Islamic perspective
+        Explore our spiritual services, asli Islamic tareeqe se, guidance, healing aur clarity paayein
       </p>
       {/* Carousel for mobile, grid for md+ */}
       <div className="block md:hidden w-full max-w-xl z-10 relative">
@@ -96,7 +96,7 @@ export default function ServicesSection() {
             <div className="keen-slider__slide px-0.5" key={idx} aria-label={`Service group ${idx + 1}`}>
               <div className="flex gap-2 justify-center">
                 {chunk.map((service) => (
-                  <ServiceCardMini key={service.title} icon={service.icon} title={service.title} href={service.href} />
+                  <ServiceCardMini key={service.title} subtitle={service.subTitle} title={service.title} href={service.href} />
                 ))}
               </div>
             </div>
