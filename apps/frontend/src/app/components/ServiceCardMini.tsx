@@ -21,7 +21,7 @@ export default function ServiceCardMini({ title, subtitle, href }: ServiceCardMi
   return (
     <Link href={`/services/${href}`}>
       <div
-        className="bg-white/80 rounded-xl border border-[#b6894a]/20 shadow p-1.5 flex flex-col items-center justify-between gap-1 w-[110px] sm:w-[120px] min-h-[106px] max-h-[140px] mx-auto hover:shadow-lg transition-all duration-150 relative"
+        className="bg-white/80 rounded-xl border border-[#b6894a]/20 shadow p-1.5 pt-2 flex flex-col items-center justify-between gap-1 w-[110px] sm:w-[120px] min-h-[106px] max-h-[160px] mx-auto hover:shadow-lg transition-all duration-150 relative"
         style={{ boxShadow: '0 2px 8px 0 rgba(180, 137, 74, 0.06)' }}
       >
         {/* Subtle geometric accent */}
