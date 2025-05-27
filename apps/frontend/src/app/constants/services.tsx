@@ -356,7 +356,7 @@ export const serviceInfo: Article[] = [
                                 "name": "Najoomi.in",
                                 "logo": {
                                     "@type": "ImageObject",
-                                    "url": "https://najoomi.in/logo.png"
+                                    "url": "https://najoomi.in/najoomi-logo.png"
                                 }
                             },
                             "mainEntityOfPage": {
@@ -477,10 +477,10 @@ export const serviceInfo: Article[] = [
                         "description": "Book Quran Khani services online with Najoomi.in. Arrange spiritual recitations, Khatam al-Quran, and personalized Surah requests for healing, Isale Sawab, blessings, and protection.",
                         "image": "https://www.najoomi.in/images/qurankhani-cover.jpg",
                         "author": { "@type": "Organization", "name": "Najoomi.in" },
-                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/logo.png" } },
+                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/najoomi-logo.png" } },
                         "datePublished": "2025-05-18",
                         "dateModified": "2025-05-18",
-                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/qurankhani-services" }
+                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/services/qurankhani-services" }
                     })
                 }} />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -610,10 +610,10 @@ export const serviceInfo: Article[] = [
                         "description": "Discover holistic healing through Tibb-e-Nabawi at Najoomi.in. Explore prophetic remedies like black seed, honey, olive oil, and Sunnah-based lifestyle guidance for mind, body, and soul.",
                         "image": "https://www.najoomi.in/images/tibb-e-nabawi-cover.jpg",
                         "author": { "@type": "Organization", "name": "Najoomi.in" },
-                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/logo.png" } },
+                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/najoomi-logo.png" } },
                         "datePublished": "2025-05-18",
                         "dateModified": "2025-05-18",
-                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/tibb-e-nabawi" }
+                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/services/tibb-e-nabawi" }
                     })
                 }} />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -745,10 +745,10 @@ export const serviceInfo: Article[] = [
                         "description": "Explore Islamic marital counseling at Najoomi.in. Get pre-marital advice, conflict resolution, compatibility analysis (Ilm-e-Adad), and spiritual solutions based on Quran and Sunnah.",
                         "image": "https://www.najoomi.in/images/marriage-guidance-cover.jpg",
                         "author": { "@type": "Organization", "name": "Najoomi.in" },
-                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/logo.png" } },
+                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/najoomi-logo.png" } },
                         "datePublished": "2025-05-18",
                         "dateModified": "2025-05-18",
-                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/marriage-guidance" }
+                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/services/marriage-guidance" }
                     })
                 }} />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -875,10 +875,10 @@ export const serviceInfo: Article[] = [
                         "description": "Find spiritually meaningful Islamic names for your newborn at Najoomi.in. Our experts use Ilm-e-Adad and Quranic tradition to offer personalized baby name suggestions and life path guidance.",
                         "image": "https://www.najoomi.in/images/baby-naming-cover.jpg",
                         "author": { "@type": "Organization", "name": "Najoomi.in" },
-                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/logo.png" } },
+                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/najoomi-logo.png" } },
                         "datePublished": "2025-05-18",
                         "dateModified": "2025-05-18",
-                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/baby-naming" }
+                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/services/baby-naming" }
                     })
                 }} />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -1315,10 +1315,10 @@ export const serviceInfo: Article[] = [
                         "description": "Request custom-written duas tailored to your needs at Najoomi.in. Receive Quran-based prayers for healing, protection, guidance, and spiritual growth, all reviewed by qualified scholars.",
                         "image": "https://www.najoomi.in/images/personalized-dua-cover.jpg",
                         "author": { "@type": "Organization", "name": "Najoomi.in" },
-                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/logo.png" } },
+                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/najoomi-logo.png" } },
                         "datePublished": "2025-05-18",
                         "dateModified": "2025-05-18",
-                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/personalized-dua" }
+                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/services/personalized-dua" }
                     })
                 }} />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -1743,12 +1743,12 @@ export const serviceInfo: Article[] = [
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Article",
-                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://najoomi.in/spiritual-guidance" },
+                        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.najoomi.in/services/spiritual-guidance" },
                         "headline": "Spiritual Guidance & Clarity — Navigate Life Through the Light of Faith",
                         "description": "Discover personalized spiritual guidance rooted in Quranic teachings. Najoomi.in offers confidential, faith-based support to help you heal emotionally, reconnect with your purpose, and make life decisions with clarity and peace.",
-                        "image": "https://najoomi.in/assets/images/spiritual-guidance.jpg",
-                        "author": { "@type": "Organization", "name": "Najoomi" },
-                        "publisher": { "@type": "Organization", "name": "Najoomi", "logo": { "@type": "ImageObject", "url": "https://najoomi.in/assets/images/logo.png" } },
+                        "image": "https://www.najoomi.in/images/spiritual-guidance-cover.jpg",
+                        "author": { "@type": "Organization", "name": "Najoomi.in" },
+                        "publisher": { "@type": "Organization", "name": "Najoomi.in", "logo": { "@type": "ImageObject", "url": "https://www.najoomi.in/najoomi-logo.png" } },
                         "datePublished": "2025-05-18",
                         "dateModified": "2025-05-18"
                     })

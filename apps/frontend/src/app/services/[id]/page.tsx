@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
             description: "This service could not be found.",
         };
     }
-    const url = `https://najoomi.in/services/${service.id}`;
+    const url = `https://www.najoomi.in/services/${service.id}`;
     const year = new Date().getFullYear();
     return {
         title: `${service.title} | Najoomi`,
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
             type: "article",
             siteName: "Najoomi",
             locale: "en_US",
-            images: [service.image.startsWith('http') ? service.image : `https://najoomi.in${service.image}`],
+            images: [service.image.startsWith('http') ? service.image : `https://www.najoomi.in${service.image}`],
             publishedTime: year + "-01-01",
             tags: [service.title],
             section: "Spirituality",
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
             card: "summary_large_image",
             title: service.title,
             description: service.description,
-            images: [service.image.startsWith('http') ? service.image : `https://najoomi.in${service.image}`],
+            images: [service.image.startsWith('http') ? service.image : `https://www.najoomi.in${service.image}`],
             site: "@najoomi",
         },
         icons: {
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
                 en: url,
             },
         },
-        metadataBase: new URL("https://najoomi.in"),
+        metadataBase: new URL("https://www.najoomi.in"),
         category: "Religion, Spirituality, Islamic Guidance",
         other: {
             "copyright": `Najoomi © ${year}`,
