@@ -33,13 +33,7 @@ export const practitioners: Practitioner[] = [
         duration: "15 minutes",
         description: (
             <span className="block text-[1.01rem] leading-relaxed text-[#3b2f1e] relative">
-                <span className="inline-flex items-center mb-1">
-                    {/* Crescent moon and geometric accent */}
-                    <svg width="20" height="20" viewBox="0 0 20 20" className="mr-2 inline-block opacity-80" fill="none"><path d="M15 10a5 5 0 1 1-5-5c0 2.761 2.239 5 5 5z" fill="#b6894a" /></svg>
-                    <span className="ml-1 text-brand-gold font-semibold tracking-wide">Dr. Anees Ahmad</span>
-                    <span className="mx-2 text-xs text-[#b6894a]">– Ilm-e-Ramal Specialist | Spiritual Guide</span>
-                </span>
-                <br />
+
                 <span className="italic text-[#5d4a2f]">Kabhi lagta hai zindagi uljhanon se bhari hai?</span> <br />
                 <span className="">Dr. Anees ke <span className="font-semibold text-brand-gold">Ramal readings</span> aapko denge <span className="font-semibold">insight</span> jo sirf future nahi, aapki <span className="underline decoration-brand-gold">rooh tak ko samjhe</span>.</span>
                 <br /><br />
@@ -72,13 +66,7 @@ export const practitioners: Practitioner[] = [
         duration: "15 minutes",
         description: (
             <span className="block text-[1.01rem] leading-relaxed text-[#3b2f1e] relative">
-                <span className="inline-flex items-center mb-1">
-                    {/* Crescent moon and geometric accent */}
-                    <svg width="20" height="20" viewBox="0 0 20 20" className="mr-2 inline-block opacity-80" fill="none"><path d="M15 10a5 5 0 1 1-5-5c0 2.761 2.239 5 5 5z" fill="#b6894a" /></svg>
-                    <span className="ml-1 text-brand-gold font-semibold tracking-wide">Haji Asheqeen</span>
-                    <span className="mx-2 text-xs text-[#b6894a]">– Spiritual Healer | Ruqyah Expert</span>
-                </span>
-                <br />
+
                 <span className="italic text-[#5d4a2f]">Kabhi mehsoos hota hai jaise koi nazar, bandish ya roohani rukawat ho?</span> <br />
                 <span>Haji Aasheqeen ke <span className="font-semibold text-brand-gold">Ruqyah</span> aapko denge insight jo sirf future nahi, aapki <span className="underline decoration-brand-gold">rooh tak ko samjhe</span>.</span>
                 <br /><br />
@@ -110,12 +98,7 @@ export const practitioners: Practitioner[] = [
         duration: "15 minutes",
         description: (
             <span className="block text-[1.01rem] leading-relaxed text-[#3b2f1e] relative">
-                <span className="inline-flex items-center mb-1">
-                    {/* Crescent moon and geometric accent */}
-                    <svg width="20" height="20" viewBox="0 0 20 20" className="mr-2 inline-block opacity-80" fill="none"><path d="M15 10a5 5 0 1 1-5-5c0 2.761 2.239 5 5 5z" fill="#b6894a" /></svg>
-                    <span className="ml-1 text-brand-gold font-semibold tracking-wide">Mufti Saqib</span>
-                    <span className="mx-2 text-xs text-[#b6894a]">– Islamic Scholar</span>
-                </span>
+                <span className="italic text-[#5d4a2f]">Mufti Saqib is a learned scholar with deep expertise in Islamic jurisprudence and spiritual sciences. With years of experience in providing ethical, faith-based guidance, they offer personalized support through spiritual consultations, helping individuals make decisions aligned with divine wisdom and Islamic principles.</span>
                 <br />
                 <span className="italic text-[#5d4a2f]">Mufti Saqib is a learned scholar with deep expertise in Islamic jurisprudence and spiritual sciences. With years of experience in providing ethical, faith-based guidance, they offer personalized support through spiritual consultations, helping individuals make decisions aligned with divine wisdom and Islamic principles.</span>
                 <span className="absolute right-0 bottom-0 opacity-30 pointer-events-none select-none">
@@ -130,18 +113,35 @@ export const practitioners: Practitioner[] = [
         ]
     },
     {
+        id: "coming-soon",
+        name: "Mohammad Riyaz",
+        title: "Islamic Scholar",
+        image: "/practitioners/mohammad-riyaz.jpg",
+        experience: "17+ years",
+        specialties: ["Black Magic", "Evil Eye", "Spiritual Consulting"],
+        rating: 5,
+        price: "500",
+        discountPrice: "Free",
+        type: "najoomi",
+        duration: "15 minutes",
+        description: (
+            <span className="block text-[1.01rem] leading-relaxed text-[#3b2f1e] relative">
+                <span className="italic text-[#5d4a2f]">Aapko lagta hai nazar ya bandish ne zindagi ki raah mein rukawat daal di hai? Ya phir kisi bhi roohani masle ka hal chahiye?</span> <br />
+                <span className="">Mohammad Riyaz sahab, ek tajurbekaar Islamic Scholar hain jo Black Magic, Evil Eye aur Spiritual Consulting mein mahir hain. Unki raahnumayi se na sirf roohani masail ka hal milta hai, balki dil ko sukoon bhi milta hai. Quran aur Sunnat ki roshni mein, aapko milegi asli roohani madad—samajhdaari ke saath, bina kisi dar ke.</span>
+
+            </span>
+        ),
+        reviews: [
+            { text: "Riyaz sahab ne meri family par jo bandish thi, uska hal Quranic tareeqe se nikala. Ab ghar mein barkat aur sukoon hai.", name: "Shabana, Kanpur" },
+            { text: "Black magic ka asar lag raha tha, lekin unki spiritual consulting ne mujhe himmat di aur cheezein behtar ho gayi.", name: "Khaleel, Delhi" }
+        ]
+    },
+    {
         id: "ed867891-a66f-4771-be06-e9d47cddbb80",
         name: "Saleha Visal",
         duration: "45 minutes",
         description: (
             <span className="block text-[1.01rem] leading-relaxed text-[#3b2f1e] relative">
-                <span className="inline-flex items-center mb-1">
-                    {/* Crescent moon and geometric accent */}
-                    <svg width="20" height="20" viewBox="0 0 20 20" className="mr-2 inline-block opacity-80" fill="none"><path d="M15 10a5 5 0 1 1-5-5c0 2.761 2.239 5 5 5z" fill="#b6894a" /></svg>
-                    <span className="ml-1 text-brand-gold font-semibold tracking-wide">Saleha Visal</span>
-                    <span className="mx-2 text-xs text-[#b6894a]">– Islamic Counselor</span>
-                </span>
-                <br />
                 <span className="italic text-[#5d4a2f]">My name is Saleha Visal. I'm a Counselling Psychologist, CBT Practitioner and a Graphologist. I've previously worked with organizations like Cheshire Home (organization for people with disabilities) and National association for blind women (NAB India).My work experience includes preparing case studies of people with various disabilities and providing them counselling therapy accordingly. I've also worked as a Research Psychologist at GoodPsyche (Mental Health Organization). Currently I'm working as a Counselling Psychologist ( private practice) and taking online therapy session. Along with all this I'm conducting workshops with young school going children to raise awareness about Mental Health.</span>
                 <span className="absolute right-0 bottom-0 opacity-30 pointer-events-none select-none">
                     {/* Subtle geometric accent */}
@@ -183,13 +183,7 @@ export const practitioners: Practitioner[] = [
         duration: "45 minutes",
         description: (
             <span className="block text-[1.01rem] leading-relaxed text-[#3b2f1e] relative">
-                <span className="inline-flex items-center mb-1">
-                    {/* Crescent moon and geometric accent */}
-                    <svg width="20" height="20" viewBox="0 0 20 20" className="mr-2 inline-block opacity-80" fill="none"><path d="M15 10a5 5 0 1 1-5-5c0 2.761 2.239 5 5 5z" fill="#b6894a" /></svg>
-                    <span className="ml-1 text-brand-gold font-semibold tracking-wide">Asifa Bano</span>
-                    <span className="mx-2 text-xs text-[#b6894a]">– Islamic Counselor</span>
-                </span>
-                <br />
+
                 <span className="italic text-[#5d4a2f]">As a compassionate islamic psychologist, I provide a safe and non-judgmental space for individuals to explore their thoughts, feelings, and experiences. With empathy and expertise, I help clients navigate life's challenges, build resilience, and foster emotional well-being according to Quran and Sunnah.</span>
                 <span className="absolute right-0 bottom-0 opacity-30 pointer-events-none select-none">
                     {/* Subtle geometric accent */}
@@ -216,13 +210,7 @@ export const practitioners: Practitioner[] = [
         duration: "45 minutes",
         description: (
             <span className="block text-[1.01rem] leading-relaxed text-[#3b2f1e] relative">
-                <span className="inline-flex items-center mb-1">
-                    {/* Crescent moon and geometric accent */}
-                    <svg width="20" height="20" viewBox="0 0 20 20" className="mr-2 inline-block opacity-80" fill="none"><path d="M15 10a5 5 0 1 1-5-5c0 2.761 2.239 5 5 5z" fill="#b6894a" /></svg>
-                    <span className="ml-1 text-brand-gold font-semibold tracking-wide">Abdul Rehman</span>
-                    <span className="mx-2 text-xs text-[#b6894a]">– Islamic Counselor</span>
-                </span>
-                <br />
+
                 <span className="italic text-[#5d4a2f]">Abdul Rehman is a postgraduate in Applied Psychology with a deep interest in faith-integrated counselling. He brings a compassionate, non-judgmental approach rooted in both psychological principles and Islamic values. He aims to support individuals through empathetic listening, practical guidance, and a spiritually grounded perspective.</span>
                 <span className="absolute right-0 bottom-0 opacity-30 pointer-events-none select-none">
                     {/* Subtle geometric accent */}
@@ -249,13 +237,7 @@ export const practitioners: Practitioner[] = [
         duration: "45 minutes",
         description: (
             <span className="block text-[1.01rem] leading-relaxed text-[#3b2f1e] relative">
-                <span className="inline-flex items-center mb-1">
-                    {/* Crescent moon and geometric accent */}
-                    <svg width="20" height="20" viewBox="0 0 20 20" className="mr-2 inline-block opacity-80" fill="none"><path d="M15 10a5 5 0 1 1-5-5c0 2.761 2.239 5 5 5z" fill="#b6894a" /></svg>
-                    <span className="ml-1 text-brand-gold font-semibold tracking-wide">Dr. Wakeel Ahmad</span>
-                    <span className="mx-2 text-xs text-[#b6894a]">– Islamic Counselor</span>
-                </span>
-                <br />
+
                 <span className="italic text-[#5d4a2f]">Dr. Wakeel Ahmad, PhD in Applied Psychology, blends deep psychological expertise with a heartfelt commitment to faith-integrated counseling. Guided by Islamic values and a spirit of compassion, he offers empathetic listening and practical guidance, helping individuals find clarity, healing, and resilience through a harmonious balance of mind, heart, and soul.</span>
                 <span className="absolute right-0 bottom-0 opacity-30 pointer-events-none select-none">
                     {/* Subtle geometric accent */}
@@ -274,6 +256,31 @@ export const practitioners: Practitioner[] = [
         reviews: [
             { text: "Dr. Wakeel’s guidance helped me navigate a difficult relationship with wisdom and compassion.", name: "Rashid, Mumbai" },
             { text: "His sessions are a perfect blend of psychology and Islamic values.", name: "Amir, Ahmedabad" }
+        ]
+        ,
+    },
+    {
+        id: "4e5a2996-1060-4e9a-bf8e-d642322e06ed",
+        name: "Maliha Naaz",
+        duration: "45 minutes",
+        description: (
+            <span className="block text-[1.01rem] leading-relaxed text-[#3b2f1e] relative">
+
+                <span className="italic text-[#5d4a2f]">Maliha Naaz is a compassionate and experienced Islamic Counsellor dedicated to providing faith-based emotional and psychological support. She specializes in integrating Islamic principles with modern counselling techniques to guide individuals and families through personal, spiritual, and relational challenges. Committed to promoting mental well-being within a culturally and religiously sensitive framework.</span>
+
+            </span>
+        ),
+        title: "Islamic Counselor",
+        image: "/practitioners/maliha-naaz.jpg",
+        experience: "2+ years",
+        specialties: ["Faith-based Support", "Family Counselling", "Mental Well-being", "Relational Challenges"],
+        rating: 5,
+        price: "500",
+        discountPrice: "Free",
+        type: "therapist",
+        reviews: [
+            { text: "Maliha’s faith-based approach helped me find peace and clarity during a difficult time. Her guidance is both spiritual and practical.", name: "Ayesha, Lucknow" },
+            { text: "Her sessions beautifully blend Islamic wisdom with modern counselling. I always feel heard and understood.", name: "Imran, Delhi" }
         ]
         ,
     },

@@ -86,6 +86,7 @@ export default function BookingPage(props) {
     duration: practitioner.duration,
     description: practitioner.description,
     reviews: practitioner.reviews,
+    specialties: practitioner.specialties,
   };
 
 
@@ -140,7 +141,7 @@ export default function BookingPage(props) {
                 style={{ background: "#fffbe8" }}
               />
               <div className="flex items-center gap-2 mt-2">
-                <span className="text-gray-600 text-base font-medium">{session.practitioner.name}</span>
+                <span className="text-gray-600 text-base font-bold">{session.practitioner.name}</span>
                 <span className="flex items-center gap-1 bg-[#fff7e0] px-3 py-1 rounded-full text-[#eab308] font-bold text-sm shadow">
                   <span className="text-lg">★</span> {session.practitioner.rating}/5
                 </span>
@@ -159,6 +160,25 @@ export default function BookingPage(props) {
                 <span>{session.duration}</span>
               </div>
             </div>
+
+            {/* Specialties Section */}
+            {session.specialties && session.specialties.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-5 items-center">
+
+                {session.specialties.map((spec: string, idx: number) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1 rounded-full bg-[#fdf6e3] border border-[#fde68a] text-brand-gold font-semibold text-xs shadow-sm flex items-center"
+                    style={{ letterSpacing: '0.01em' }}
+                  >
+                    {spec}
+                  </span>
+                ))}
+                {/* Decorative star accent */}
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="opacity-60"><circle cx="9" cy="9" r="1.2" fill="#FFD700" /><g opacity="0.6"><circle cx="15" cy="3" r="0.7" fill="#E5C07B" /></g></svg>
+              </div>
+            )}
+
             <div className="border-t border-[#f6e9c0] pt-6 text-gray-700 text-base whitespace-pre-line">
               {session.description}
 
