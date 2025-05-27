@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://najoomi.in/najoomi-logo.png",
+        url: "https://www.najoomi.in/najoomi-logo.png",
         width: 512,
         height: 512,
         alt: "Najoomi Logo"
@@ -48,12 +48,10 @@ export const metadata: Metadata = {
     title: "Najoomi | Authentic Islamic Spiritual & Therapy Guidance",
     description:
       "Najoomi connects you to certified Islamic practitioners and therapists for spiritual and mental well-being. Book a consultation for dream interpretation, ruqyah, and more.",
-    images: ["https://najoomi.in/najoomi-logo.png"]
+    images: ["https://www.najoomi.in/najoomi-logo.png"]
   },
-  metadataBase: new URL("https://najoomi.in"),
-  alternates: {
-    canonical: "https://najoomi.in"
-  },
+  metadataBase: new URL("https://www.najoomi.in"),
+
   themeColor: "#fde68a",
   robots: {
     index: true,
