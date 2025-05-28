@@ -97,6 +97,14 @@ export default function RootLayout({
         fbq('init', '473204305855898');
         fbq('track', 'PageView');` }} />
         {/* End Meta Pixel Code */}
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17124744565"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17124744565');`
+        }} />
         {/* Meta Pixel NoScript Fallback */}
         <noscript><img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=473204305855898&ev=PageView&noscript=1" alt="fbpixel" /></noscript>
       </head>
