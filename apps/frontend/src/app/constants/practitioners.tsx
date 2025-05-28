@@ -113,7 +113,7 @@ export const practitioners: Practitioner[] = [
         ]
     },
     {
-        id: "coming-soon",
+        id: "70b2bf3c-626a-488a-ab0c-c6eec0be9610",
         name: "Mohammad Riyaz",
         title: "Islamic Scholar",
         image: "/practitioners/mohammad-riyaz.jpg",
