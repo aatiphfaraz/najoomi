@@ -126,6 +126,22 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
         <form
           className="flex flex-col gap-4"
           onSubmit={e => {
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'PaymentInitiated', {
+                'send_to': 'AW-17124744565/2p2SCPjk_s4aEPW62-U_',
+                'value': 1.0,
+                name,
+                email,
+                phone
+              });
+            }
+            if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+              window.fbq('trackCustom', 'PaymentInitiated', {
+                name,
+                email,
+                phone
+              });
+            }
             e.preventDefault();
             setTouched({ name: true, email: true, phone: true });
             if (isFormValid()) {
