@@ -79,7 +79,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
           name,
           email,
           phone,
-          amount: price + PLATFORM_FEE,
+          amount: Number(price) + PLATFORM_FEE,
           practitioner_id: practitionerId,
           date,
           slot,
@@ -203,14 +203,14 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
               <span>Session Fee</span>
               <span>₹{price}</span>
             </div>
-            {/* <div className="flex justify-between text-gray-600">
+            <div className="flex justify-between text-gray-600">
               <span>Platform Fee</span>
               <span>₹{PLATFORM_FEE}</span>
-            </div> */}
+            </div>
             <div className="border-t border-[#fde68a] my-1" />
             <div className="flex justify-between font-bold text-lg text-[#15577a]">
               <span>Total</span>
-              <span>₹{price}</span>
+              <span>₹{Number(price) + PLATFORM_FEE}</span>
             </div>
           </div>
           {error && <div className="text-red-600 text-center mb-2">{error}</div>}
