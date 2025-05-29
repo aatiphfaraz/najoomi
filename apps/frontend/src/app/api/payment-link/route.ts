@@ -40,26 +40,26 @@ export async function POST(
     const bookings = db.collection(COLLECTION_NAME);
     const booking_id = crypto.randomUUID();
 
-    if (practitioner_id) {
-      const booking = {
-        name,
-        email,
-        phone,
-        amount,
-        practitioner_id,
-        date,
-        slot,
-        booking_id,
-        cashfree_order_id: "order_id",
-        payment_session_id: "payment_session_id",
-        calendly_link: "", // Fetched from scheduling-link API or empty string if failed
-        status: "created",
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      };
-      await bookings.insertOne(booking);
-      return NextResponse.json({ error: "Seems like the practitioner is not available for booking, we will send you an email with the scheduling link as soon as possible" }, { status: 400 });
-    }
+    // if (practitioner_id) {
+    //   const booking = {
+    //     name,
+    //     email,
+    //     phone,
+    //     amount,
+    //     practitioner_id,
+    //     date,
+    //     slot,
+    //     booking_id,
+    //     cashfree_order_id: "order_id",
+    //     payment_session_id: "payment_session_id",
+    //     calendly_link: "", // Fetched from scheduling-link API or empty string if failed
+    //     status: "created",
+    //     createdAt: new Date(),
+    //     updatedAt: new Date(),
+    //   };
+    //   await bookings.insertOne(booking);
+    //   return NextResponse.json({ error: "Seems like the practitioner is not available for booking, we will send you an email with the scheduling link as soon as possible" }, { status: 400 });
+    // }
     // Generate a booking_id for reconciliation with webhook
 
     // 1. Create a Cashfree order

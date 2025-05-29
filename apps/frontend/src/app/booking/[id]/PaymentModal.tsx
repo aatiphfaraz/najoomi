@@ -20,7 +20,7 @@ const initializeSDK = async function () {
 }
 initializeSDK();
 
-const PLATFORM_FEE = 0;
+const PLATFORM_FEE = 10;
 
 const PaymentModal: React.FC<PaymentModalProps> = ({
 
