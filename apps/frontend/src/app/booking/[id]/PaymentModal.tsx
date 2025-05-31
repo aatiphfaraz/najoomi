@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@/app/components/ui/Button";
 import { load } from "@cashfreepayments/cashfree-js";
+import Clarity from '@microsoft/clarity';
 
 
 interface PaymentModalProps {
@@ -126,6 +127,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
         <form
           className="flex flex-col gap-4"
           onSubmit={e => {
+
             if (typeof window.gtag === 'function') {
               window.gtag('event', 'PaymentInitiated', {
                 'send_to': 'AW-17124744565/2p2SCPjk_s4aEPW62-U_',
@@ -141,6 +143,17 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                 email,
                 phone
               });
+            }
+            // Clarity event for payment initiation
+            if (typeof Clarity !== 'undefined') {
+              if (typeof Clarity.setTag === 'function') {
+                Clarity.setTag('user_name', name);
+                Clarity.setTag('user_email', email);
+                Clarity.setTag('user_phone', phone);
+              }
+              if (typeof Clarity.event === 'function') {
+                Clarity.event('PaymentInitiated');
+              }
             }
             e.preventDefault();
             setTouched({ name: true, email: true, phone: true });
