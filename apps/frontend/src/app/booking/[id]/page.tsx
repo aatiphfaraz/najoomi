@@ -22,7 +22,7 @@ export default function BookingPage(props) {
   const [loading, setLoading] = useState(true);
   // Payment Modal Form State
   const [showPaymentForm, setShowPaymentForm] = useState(false);
-
+  console.log("slots", slots)
 
   React.useEffect(() => {
     const fetchAvailability = async () => {
@@ -93,34 +93,34 @@ export default function BookingPage(props) {
   const selectedDayDate = days[selectedDay]?.date;
   // --- MOCK DYNAMIC TIME SLOTS FOR NEXT 5 SLOTS WITH 10-MINUTE INCREMENT ---
   // Current local time: 2025-05-26T02:02:44+05:30
-  // function getNextRoundedTime(date: Date, intervalMinutes: number = 10) {
-  //   const ms = 1000 * 60 * intervalMinutes;
-  //   return new Date(Math.ceil(date.getTime() / ms) * ms);
-  // }
-  // function pad(n: number) { return n.toString().padStart(2, '0'); }
-  // function formatTime12(date: Date) {
-  //   let hours = date.getHours();
-  //   const minutes = date.getMinutes();
-  //   const ampm = hours >= 12 ? 'PM' : 'AM';
-  //   hours = hours % 12;
-  //   if (hours === 0) hours = 12;
-  //   return `${hours}:${pad(minutes)} ${ampm}`;
-  // }
-  // // Generate time slots for the next 20 slots with 15-minute increments
-  // const now = new Date();
-  // const slotsCount = 20;
-  // const slotDuration = 15; // minutes
-  // const times = Array.from({ length: slotsCount }).map((_, i) => {
-  //   const start = new Date(getNextRoundedTime(now, 15).getTime() + i * slotDuration * 60000);
-  //   const end = new Date(start.getTime() + slotDuration * 60000);
-  //   return `${formatTime12(start)} - ${formatTime12(end)}`;
-  // });
+  function getNextRoundedTime(date: Date, intervalMinutes: number = 10) {
+    const ms = 1000 * 60 * intervalMinutes;
+    return new Date(Math.ceil(date.getTime() / ms) * ms);
+  }
+  function pad(n: number) { return n.toString().padStart(2, '0'); }
+  function formatTime12(date: Date) {
+    let hours = date.getHours();
+    const minutes = date.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    if (hours === 0) hours = 12;
+    return `${hours}:${pad(minutes)} ${ampm}`;
+  }
+  // Generate time slots for the next 20 slots with 15-minute increments
+  const now = new Date();
+  const slotsCount = 20;
+  const slotDuration = 15; // minutes
+  const times = Array.from({ length: slotsCount }).map((_, i) => {
+    const start = new Date(getNextRoundedTime(now, 15).getTime() + i * slotDuration * 60000);
+    const end = new Date(start.getTime() + slotDuration * 60000);
+    return `${formatTime12(start)} - ${formatTime12(end)}`;
+  });
   // --- END MOCK DYNAMIC TIME SLOTS ---
 
 
-  const times = selectedDayDate && slots[selectedDayDate]
-    ? slots[selectedDayDate].map(slot => `${slot.start} - ${slot.end}`)
-    : [];
+  // const times = selectedDayDate && slots[selectedDayDate]
+  //   ? slots[selectedDayDate].map(slot => `${slot.start} - ${slot.end}`)
+  //   : [];
 
 
   return (
