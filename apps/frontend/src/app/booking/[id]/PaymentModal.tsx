@@ -184,7 +184,6 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
               value={email}
               onChange={e => setEmail(e.target.value)}
               onBlur={() => setTouched({ ...touched, email: true })}
-              required
             />
           </div>
           <div>
