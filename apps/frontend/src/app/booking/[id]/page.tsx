@@ -17,7 +17,20 @@ export default function BookingPage(props) {
   const [selectedDay, setSelectedDay] = useState(0);
   const [selectedTime, setSelectedTime] = useState(0);
   // Calendly API integration
-  const [days, setDays] = useState<{ date: string; active: boolean }[]>([]);
+  // Mock 5 days starting from today
+  const [days] = useState<{ date: string; active: boolean }[]>(() => {
+    const daysArr = [];
+    const today = new Date();
+    for (let i = 0; i < 5; i++) {
+      const d = new Date(today);
+      d.setDate(today.getDate() + i);
+      const dd = d.getDate().toString().padStart(2, '0');
+      const mm = (d.getMonth() + 1).toString().padStart(2, '0');
+      const yyyy = d.getFullYear();
+      daysArr.push({ date: `${dd}/${mm}/${yyyy}`, active: i === 0 });
+    }
+    return daysArr;
+  });
   const [slots, setSlots] = useState<Record<string, { start: string; end: string }[]>>({});
   const [loading, setLoading] = useState(true);
   // Payment Modal Form State
@@ -32,7 +45,7 @@ export default function BookingPage(props) {
         const data = await res.json();
         if (data.error) throw new Error(data.error);
         const slotDates = Object.keys(data.slots);
-        setDays(slotDates.map((d, i) => ({ date: d, active: i === 0 })));
+        // setDays(slotDates.map((d, i) => ({ date: d, active: i === 0 })));
         setSlots(data.slots);
       } catch (err: unknown) {
         if (err instanceof Error) {
