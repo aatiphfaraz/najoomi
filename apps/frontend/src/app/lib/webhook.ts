@@ -59,14 +59,17 @@ export async function handleWebhook(body: any) {
   const start = parseDateTimeWithMoment(date, slotStart, 'Asia/Kolkata');
   const end = parseDateTimeWithMoment(date, slotEnd, 'Asia/Kolkata');
 
-  const scheduleMeet = await createMeetEvent(start, end, booking.practitioner_email, booking.email);
-  if (!scheduleMeet) {
-    return { status: 'error', message: 'Failed to get scheduling link', statusCode: 500 };
+  if (!booking.meet_link) {
+    const scheduleMeet = await createMeetEvent(start, end, booking.practitioner_email, booking.email);
+    if (!scheduleMeet) {
+      return { status: 'error', message: 'Failed to get scheduling link', statusCode: 500 };
+    }
+    const db = await getMongoDb();
+    const bookings = db.collection(COLLECTION_NAME);
+    await bookings.updateOne({ booking_id: booking.booking_id }, {
+      $set: { meet_link: scheduleMeet, status: 'scheduled', updatedAt: new Date() },
+    });
   }
-  const db = await getMongoDb();
-  const bookings = db.collection(COLLECTION_NAME);
-  await bookings.updateOne({ booking_id: booking.booking_id }, {
-    $set: { meet_link: scheduleMeet, status: 'scheduled', updatedAt: new Date() },
-  });
+
   return { status: 'ok', message: 'Webhook received successfully', statusCode: 200 };
 }

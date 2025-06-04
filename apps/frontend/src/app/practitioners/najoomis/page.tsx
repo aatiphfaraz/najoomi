@@ -47,10 +47,6 @@ export default async function NajoomiPage() {
 
   return (
     <section className="w-full py-12 flex flex-col items-center ">
-      {/* Decorative crescent moon accent */}
-      <div className="flex justify-center mb-2">
-        <svg className="w-12 h-12 text-yellow-400 opacity-70" viewBox="0 0 32 32"><path d="M24 16c0 5-4 9-9 9-1.4 0-2.7-.3-3.9-.9a1 1 0 0 1-.1-1.7A8 8 0 0 0 16 7c.6 0 1.2.1 1.7.2a1 1 0 0 1 .3 1.8A9 9 0 0 0 24 16z" fill="currentColor" /></svg>
-      </div>
       <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8 tracking-tight drop-shadow-lg">Our Najoomis</h1>
       <p className="mb-10 text-gray-700 text-center max-w-2xl">
         Explore our team of certified Najoomis, experts in Islamic spiritual guidance and esoteric sciences
