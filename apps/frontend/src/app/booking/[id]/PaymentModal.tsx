@@ -53,7 +53,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
   const [error, setError] = React.useState<string | null>(null);
   console.log(error);
   function isFormValid(): boolean {
-    return name.trim() !== "" && phone !== "";
+    return name.trim() !== "" && email.trim() !== "" && phone !== "";
   }
 
   async function handlePayment() {
@@ -172,14 +172,18 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             )}
           </div>
           <div>
-            <label className="block text-sm font-semibold text-primary mb-1">Email</label>
+            <label className="block text-sm font-semibold text-primary mb-1">Email <span className="text-red-500">*</span></label>
             <input
-              className={`w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-gold`}
+              className={`w-full px-4 py-2 rounded-lg border ${touched.email && !email ? 'border-red-400' : 'border-gray-200'} focus:outline-none focus:ring-2 focus:ring-brand-gold`}
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
               onBlur={() => setTouched({ ...touched, email: true })}
+              required
             />
+            {touched.email && !email && (
+              <div className="text-xs text-red-500 mt-1">Email is required.</div>
+            )}
           </div>
           <div>
             <label className="block text-sm font-semibold text-primary mb-1">Phone Number <span className="text-red-500">*</span></label>

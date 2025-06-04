@@ -29,6 +29,7 @@ export async function POST(
     } = await req.json();
     if (
       !name ||
+      !email ||
       !phone ||
       !amount ||
       !practitioner_id ||
@@ -58,7 +59,6 @@ export async function POST(
       updatedAt: new Date(),
     };
     await bookings.insertOne(initialBooking);
-
     let payment_session_id = null;
     let order_id = null;
     try {
