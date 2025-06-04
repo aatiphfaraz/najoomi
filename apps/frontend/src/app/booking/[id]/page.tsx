@@ -94,48 +94,48 @@ export default function BookingPage(props) {
   const selectedDayDate = days[selectedDay]?.date;
   // --- MOCK DYNAMIC TIME SLOTS FOR NEXT 5 SLOTS WITH 10-MINUTE INCREMENT ---
   // Current local time: 2025-05-26T02:02:44+05:30
-  function getNextRoundedTime(date: Date, intervalMinutes: number = 10) {
-    const ms = 1000 * 60 * intervalMinutes;
-    return new Date(Math.ceil(date.getTime() / ms) * ms);
-  }
-  function pad(n: number) { return n.toString().padStart(2, '0'); }
-  function formatTime12(date: Date) {
-    let hours = date.getHours();
-    const minutes = date.getMinutes();
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    if (hours === 0) hours = 12;
-    return `${hours}:${pad(minutes)} ${ampm}`;
-  }
-  // Generate time slots for the next 20 slots with 15-minute increments
-  const now = new Date();
-  const slotsCount = 20;
-  const slotDuration = 15; // minutes
-  const times = Array.from({ length: slotsCount }).map((_, i) => {
-    const start = new Date(getNextRoundedTime(now, 15).getTime() + i * slotDuration * 60000);
-    const end = new Date(start.getTime() + slotDuration * 60000);
-    return `${formatTime12(start)} - ${formatTime12(end)}`;
-  });
+  // function getNextRoundedTime(date: Date, intervalMinutes: number = 10) {
+  //   const ms = 1000 * 60 * intervalMinutes;
+  //   return new Date(Math.ceil(date.getTime() / ms) * ms);
+  // }
+  // function pad(n: number) { return n.toString().padStart(2, '0'); }
+  // function formatTime12(date: Date) {
+  //   let hours = date.getHours();
+  //   const minutes = date.getMinutes();
+  //   const ampm = hours >= 12 ? 'PM' : 'AM';
+  //   hours = hours % 12;
+  //   if (hours === 0) hours = 12;
+  //   return `${hours}:${pad(minutes)} ${ampm}`;
+  // }
+  // // Generate time slots for the next 20 slots with 15-minute increments
+  // const now = new Date();
+  // const slotsCount = 20;
+  // const slotDuration = 15; // minutes
+  // const times = Array.from({ length: slotsCount }).map((_, i) => {
+  //   const start = new Date(getNextRoundedTime(now, 15).getTime() + i * slotDuration * 60000);
+  //   const end = new Date(start.getTime() + slotDuration * 60000);
+  //   return `${formatTime12(start)} - ${formatTime12(end)}`;
+  // });
 
-  const mockDays = () => {
-    const daysArr = [];
-    const today = new Date();
-    for (let i = 0; i < 5; i++) {
-      const d = new Date(today);
-      d.setDate(today.getDate() + i);
-      const dd = d.getDate().toString().padStart(2, '0');
-      const mm = (d.getMonth() + 1).toString().padStart(2, '0');
-      const yyyy = d.getFullYear();
-      daysArr.push({ date: `${dd}/${mm}/${yyyy}`, active: i === 0 });
-    }
-    return daysArr;
-  }
+  // const mockDays = () => {
+  //   const daysArr = [];
+  //   const today = new Date();
+  //   for (let i = 0; i < 5; i++) {
+  //     const d = new Date(today);
+  //     d.setDate(today.getDate() + i);
+  //     const dd = d.getDate().toString().padStart(2, '0');
+  //     const mm = (d.getMonth() + 1).toString().padStart(2, '0');
+  //     const yyyy = d.getFullYear();
+  //     daysArr.push({ date: `${dd}/${mm}/${yyyy}`, active: i === 0 });
+  //   }
+  //   return daysArr;
+  // }
   // --- END MOCK DYNAMIC TIME SLOTS ---
 
 
-  // const times = selectedDayDate && slots[selectedDayDate]
-  //   ? slots[selectedDayDate].map(slot => `${slot.start} - ${slot.end}`)
-  //   : [];
+  const times = selectedDayDate && slots[selectedDayDate]
+    ? slots[selectedDayDate].map(slot => `${slot.start} - ${slot.end}`)
+    : [];
 
 
   return (
@@ -239,7 +239,7 @@ export default function BookingPage(props) {
                         ? Array.from({ length: 4 }).map((_, i) => (
                           <div key={i} className="w-full h-10 bg-gray-100 rounded-lg animate-pulse" />
                         ))
-                        : mockDays().map((d, i) => {
+                        : days.map((d, i) => {
                           const [dd, mm, yyyy] = d.date.split('/');
                           const jsDate = new Date(`${yyyy}-${mm}-${dd}`);
                           const weekday = jsDate.toLocaleDateString('en-US', { weekday: 'short' });
