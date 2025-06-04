@@ -1,3 +1,4 @@
+import { Booking } from "@/app/lib/booking";
 import { getMongoDb } from "@/app/lib/mongo";
 import { CFEnvironment, Cashfree } from 'cashfree-pg';
 import { NextRequest, NextResponse } from "next/server";
@@ -24,6 +25,7 @@ export async function POST(
       practitioner_id,
       date,
       slot,
+      practitioner_email
     } = await req.json();
     if (
       !name ||
@@ -31,7 +33,8 @@ export async function POST(
       !amount ||
       !practitioner_id ||
       !date ||
-      !slot
+      !slot ||
+      !practitioner_email
     ) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
@@ -39,51 +42,8 @@ export async function POST(
     const bookings = db.collection(COLLECTION_NAME);
     const booking_id = crypto.randomUUID();
 
-    if (practitioner_id) {
-      const booking = {
-        name,
-        email,
-        phone,
-        amount,
-        practitioner_id,
-        date,
-        slot,
-        booking_id,
-        cashfree_order_id: "order_id",
-        payment_session_id: "payment_session_id",
-        calendly_link: "", // Fetched from scheduling-link API or empty string if failed
-        status: "created",
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      };
-      await bookings.insertOne(booking);
-      return NextResponse.json({ error: "Seems like the practitioner is not available for booking, we will send you an email with the scheduling link as soon as possible" }, { status: 400 });
-    }
-    // Generate a booking_id for reconciliation with webhook
-
-    // 1. Create a Cashfree order
-    const orderRequest = {
-      order_amount: amount,
-      order_currency: "INR",
-      customer_details: {
-        customer_id: booking_id,
-        customer_name: name,
-        customer_email: email,
-        customer_phone: phone,
-      },
-      order_meta: {
-        return_url: `${isSandbox ? "http://localhost:3000" : "https://najoomi.in"}/booking/success/${booking_id}`,
-        notify_url: `https://najoomi.vercel.app/api/cashfree-webhook`,
-      },
-      order_note: "Najoomi Booking Payment",
-    };
-
-    const response = await cashfree.PGCreateOrder(orderRequest);
-    const { payment_session_id, order_id } = response.data;
-
-    // 2. Store booking in MongoDB with all required fields for webhook reconciliation
-
-    const booking = {
+    // Insert booking attempt first with status 'initiated'
+    const initialBooking: Partial<Booking> = {
       name,
       email,
       phone,
@@ -92,16 +52,66 @@ export async function POST(
       date,
       slot,
       booking_id, // Used for webhook reconciliation
-      cashfree_order_id: order_id,
-      payment_session_id,
-      calendly_link: "", // Fetched from scheduling-link API or empty string if failed
-      status: "created",
+      status: "initiated",
+      practitioner_email,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
-    await bookings.insertOne(booking);
+    await bookings.insertOne(initialBooking);
 
-    return new Response(JSON.stringify({ payment_session_id, booking_id }), { status: 200 });
+    let payment_session_id = null;
+    let order_id = null;
+    try {
+      // 1. Create a Cashfree order
+      const orderRequest = {
+        order_amount: amount,
+        order_currency: "INR",
+        customer_details: {
+          customer_id: booking_id,
+          customer_name: name,
+          customer_email: email,
+          customer_phone: phone,
+        },
+        order_meta: {
+          return_url: `${isSandbox ? "http://localhost:3000" : "https://najoomi.in"}/booking/success/${booking_id}`,
+          notify_url: `https://najoomi.vercel.app/api/cashfree-webhook`,
+        },
+        order_note: "Najoomi Booking Payment",
+      };
+
+      const response = await cashfree.PGCreateOrder(orderRequest);
+      payment_session_id = response.data.payment_session_id;
+      order_id = response.data.order_id;
+
+      // Update booking with payment info and status 'created'
+      await bookings.updateOne(
+        { booking_id },
+        {
+          $set: {
+            cashfree_order_id: order_id,
+            payment_session_id,
+            status: "created",
+            updatedAt: new Date(),
+          },
+        }
+      );
+
+      return new Response(JSON.stringify({ payment_session_id, booking_id }), { status: 200 });
+    } catch (err: any) {
+      // Update booking with status 'failed' and optionally error info
+      await bookings.updateOne(
+        { booking_id },
+        {
+          $set: {
+            status: "failed",
+            error: err?.response?.data || err?.message || String(err),
+            updatedAt: new Date(),
+          },
+        }
+      );
+      console.error("Payment API error:", err?.response?.data || err);
+      return new Response(JSON.stringify({ error: "Payment initialization failed. Please check your details and try again." }), { status: 500 });
+    }
   } catch (err: any) {
     console.error("Payment API error:", err?.response?.data || err);
     return new Response(JSON.stringify({ error: "Internal server error" }), { status: 500 });

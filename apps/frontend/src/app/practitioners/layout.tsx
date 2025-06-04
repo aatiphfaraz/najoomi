@@ -31,22 +31,19 @@ export const metadata: Metadata = {
     description:
       "Meet Najoomi's certified practitioners for dream interpretation, ruqyah, and Islamic spiritual counseling. Book a session with trusted scholars and healers.",
     images: ["https://najoomi.in/najoomi-logo.png"]
-  },
-  alternates: {
-    canonical: "https://najoomi.in/practitioners"
   }
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <main className="relative min-h-screen bg-gradient-to-br from-white to-[#F1E1C6] pb-20 overflow-x-hidden px-4 flex flex-col items-center">
-            {children}
-            <PractitionerStandardsGrid />
-        </main>
+  return (
+    <main className="relative min-h-screen bg-gradient-to-br from-white to-[#F1E1C6] pb-20 overflow-x-hidden px-4 flex flex-col items-center">
+      {children}
+      <PractitionerStandardsGrid />
+    </main>
 
-    );
+  );
 }

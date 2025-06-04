@@ -31,9 +31,6 @@ export const metadata: Metadata = {
         images: ["https://najoomi.in/seo-resources-banner.png"]
     },
     metadataBase: new URL("https://najoomi.in"),
-    alternates: {
-        canonical: "https://najoomi.in/resources"
-    },
     themeColor: "#fde68a"
 };
 

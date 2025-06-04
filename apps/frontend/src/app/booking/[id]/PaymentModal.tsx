@@ -10,6 +10,7 @@ interface PaymentModalProps {
   practitionerId: string;
   date: string;
   slot: string;
+  practitionerEmail: string;
 }
 
 let cashfree: { checkout: (arg0: { paymentSessionId: string; redirectTarget: string; }) => void; };
@@ -23,51 +24,45 @@ initializeSDK();
 
 const PLATFORM_FEE = 10;
 
-const PaymentModal: React.FC<PaymentModalProps> = ({
+// Phone validation function for Indian and international formats
+function validatePhone(phone: string) {
+  // Remove spaces, dashes, parentheses
+  const sanitized = phone.replace(/[\s\-()]/g, "");
+  // Indian: +91XXXXXXXXXX, 91XXXXXXXXXX, or XXXXXXXXXX (10 digits, may start with 0)
+  const indian = /^(\+91|91)?[6-9]\d{9}$/;
+  // International: +<countrycode><number> (min 10 digits after +)
+  const intl = /^\+\d{10,15}$/;
+  return indian.test(sanitized) || intl.test(sanitized);
+}
 
+const PaymentModal: React.FC<PaymentModalProps> = ({
   onClose,
   price,
   practitionerId,
   date,
   slot,
+  practitionerEmail,
 }) => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = React.useState("");
 
-  // Phone validation: Accepts Indian (+91XXXXXXXXXX, XXXXXXXXXX) and International (+<countrycode><number>)
-  // function isPhoneValid(phone: string): boolean {
-  //   // Remove spaces, dashes, parentheses
-  //   const sanitized = phone.replace(/[\s\-()]/g, "");
-  //   // Indian: +91XXXXXXXXXX or XXXXXXXXXX (10 digits, may start with 0)
-  //   const indian = /^(\+91)?[6-9]\d{9}$/;
-  //   // International: +<countrycode><number> (min 10 digits after +)
-  //   const intl = /^\+\d{10,15}$/;
-  //   return indian.test(sanitized) || intl.test(sanitized);
-  // }
-
-  // Optionally sanitize phone before sending to backend
-  // function sanitizePhone(phone: string): string {
-  //   return phone.replace(/[\s\-()]/g, "");
-  // }
   const [touched, setTouched] = React.useState<{ name: boolean; email: boolean; phone: boolean }>({ name: false, email: false, phone: false });
 
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
-
-  // function isEmailValid(email: string): boolean {
-  //   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  // }
+  console.log(error);
   function isFormValid(): boolean {
     return name.trim() !== "" && phone !== "";
   }
 
   async function handlePayment() {
     setLoading(true);
-    // Sanitize phone before sending
-    // const safePhone = sanitizePhone(phone);
-    // if (!isPhoneValid(safePhone)) {
-    //   setError("Please enter a valid phone number. Example: +919090407368, 9090407368, or +16014635923");
+    setError("");
+    // Phone validation
+    // if (!validatePhone(phone)) {
+    //   setTouched(t => ({ ...t, phone: true }));
+    //   // setError("Please enter a valid phone number (e.g. 9090407368, +919090407368, or +16014635923)");
     //   setLoading(false);
     //   return;
     // }
@@ -84,6 +79,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
           practitioner_id: practitionerId,
           date,
           slot,
+          practitioner_email: practitionerEmail,
           // Add other required fields if needed
         }),
       });
@@ -157,9 +153,8 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             }
             e.preventDefault();
             setTouched({ name: true, email: true, phone: true });
-            if (isFormValid()) {
-              handlePayment();
-            }
+            isFormValid()
+            handlePayment();
           }}
         >
           <div>
@@ -199,9 +194,9 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
             {touched.phone && !phone && (
               <div className="text-xs text-red-500 mt-1">Phone number is required.</div>
             )}
-            {/* {touched.phone && phone && !isPhoneValid(phone) && (
+            {touched.phone && phone && !validatePhone(phone) && (
               <div className="text-xs text-red-500 mt-1">Please enter a valid phone number. Example: +919090407368, 9090407368, or +16014635923</div>
-            )} */}
+            )}
           </div>
           {/* Price Summary Card */}
           <div className="bg-[#fffde6] rounded-xl p-4 shadow border border-[#fde68a] flex flex-col gap-2 mt-2">
@@ -219,7 +214,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
               <span>₹{Number(price) + PLATFORM_FEE}</span>
             </div>
           </div>
-          {error && <div className="text-red-600 text-center mb-2">{error}</div>}
+          {/* {error && <div className="text-red-600 text-center mb-2">{error}</div>} */}
           <Button
             variant="primary"
             className="w-full mt-4 text-lg font-bold"

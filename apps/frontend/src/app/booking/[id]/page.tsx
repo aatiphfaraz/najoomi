@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import PaymentModal from "./PaymentModal";
-import { practitioners } from "../../constants/practitioners";
+import { Practitioner } from "../../constants/practitioners";
+
 import Button from "@/app/components/ui/Button";
 import PractitionerStandardsGrid from "@/app/components/PractitionerStandardsGrid";
 import Link from "next/link";
@@ -13,7 +14,65 @@ export default function BookingPage(props) {
   type Params = { id: string };
   const params = React.use<Params>(props.params);
   const { id } = params;
-  const practitioner = practitioners.find((p) => p.id === id);
+
+  const [practitioner, setPractitioner] = useState<Practitioner | null>(null);
+  const [loadingPractitioner, setLoadingPractitioner] = useState(true);
+
+  React.useEffect(() => {
+    let isMounted = true;
+    setLoadingPractitioner(true);
+    setLoading(true);
+
+    const practitionerPromise = fetch('/api/practitioners')
+      .then(res => res.json())
+      .then(data => {
+        if (isMounted && data.practitioners) {
+          const found = data.practitioners.find((p: Practitioner) => p._id === id);
+          setPractitioner(found || null);
+          return found;
+        } else {
+          if (isMounted) setPractitioner(null);
+          return null;
+        }
+      })
+      .catch(() => {
+        if (isMounted) setPractitioner(null);
+        return null;
+      })
+      .finally(() => {
+        if (isMounted) setLoadingPractitioner(false);
+      });
+
+    const availabilityPromise = fetch(`/api/practitioners/availability?userId=${encodeURIComponent(id || '')}`)
+      .then(res => res.json())
+      .then(data => {
+        if (isMounted) {
+          if (data.error || !data.slots) throw new Error(data.error || 'No availability data');
+          const slotDates = Object.keys(data.slots);
+          setDays(slotDates.map((d, i) => ({ date: d, active: i === 0 })));
+          setSlots(data.slots);
+        }
+      })
+      .catch((err: unknown) => {
+        if (isMounted) {
+          setDays([]);
+          setSlots({});
+          if (err instanceof Error) {
+            console.error(err.message);
+          } else {
+            console.error(err);
+          }
+        }
+      })
+      .finally(() => {
+        if (isMounted) setLoading(false);
+      });
+
+    Promise.all([practitionerPromise, availabilityPromise]);
+
+    return () => { isMounted = false; };
+  }, [id]);
+
   const [selectedDay, setSelectedDay] = useState(0);
   const [selectedTime, setSelectedTime] = useState(0);
   // Calendly API integration
@@ -23,33 +82,9 @@ export default function BookingPage(props) {
   const [loading, setLoading] = useState(true);
   // Payment Modal Form State
   const [showPaymentForm, setShowPaymentForm] = useState(false);
-  console.log("slots", slots)
-
-  React.useEffect(() => {
-    const fetchAvailability = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(`/api/calendly/availability?userId=${practitioner?.id}`);
-        const data = await res.json();
-        if (data.error) throw new Error(data.error);
-        const slotDates = Object.keys(data.slots);
-        setDays(slotDates.map((d, i) => ({ date: d, active: i === 0 })));
-        setSlots(data.slots);
-      } catch (err: unknown) {
-        if (err instanceof Error) {
-          console.error(err.message);
-        } else {
-          console.error(err);
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchAvailability();
-  }, [practitioner?.id]);
 
 
-  if (!practitioner) {
+  if (!practitioner && !loadingPractitioner) {
     return (
       <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-[#F1E1C6] relative overflow-hidden">
         {/* Sparkles - subtle, magical */}
@@ -76,17 +111,17 @@ export default function BookingPage(props) {
 
   const session = {
     practitioner: {
-      name: practitioner.name,
-      image: practitioner.image,
-      rating: practitioner.rating,
+      name: practitioner?.name,
+      image: practitioner?.image,
+      rating: practitioner?.rating,
     },
-    title: practitioner.title,
-    originalPrice: practitioner.price !== practitioner.discountPrice ? practitioner.price : undefined,
-    price: practitioner.discountPrice || practitioner.price,
-    duration: practitioner.duration,
-    description: practitioner.description,
-    reviews: practitioner.reviews,
-    specialties: practitioner.specialties,
+    title: practitioner?.title,
+    originalPrice: practitioner?.price !== practitioner?.discountPrice ? practitioner?.price : undefined,
+    price: practitioner?.discountPrice || practitioner?.price,
+    duration: practitioner?.duration,
+    description: practitioner?.description,
+    reviews: practitioner?.reviews,
+    specialties: practitioner?.specialties,
   };
 
 
@@ -140,82 +175,109 @@ export default function BookingPage(props) {
 
   return (
     <main className=" bg-gradient-to-br from-white to-[#F1E1C6] flex flex-col items-center justify-center py-14 px-2">
-      <div className="max-w-6xl flex flex-col items-center">
-        <div className="flex flex-col md:flex-row gap-10 max-w-6xl">
+      <div className="max-w-6xl w-full flex flex-col items-center">
+        <div className="flex flex-col md:flex-row gap-10 max-w-6xl w-full">
           {/* Left Card */}
           <section className="bg-white/95 rounded-2xl shadow-2xl border border-[#e7e4dc] flex-1 min-w-[340px]  p-8 flex flex-col relative animate-fade-in flex-1">
-            <div className="flex flex-col items-center mb-3 relative">
-
-              <Image
-                src={session.practitioner.image}
-                alt={session.practitioner.name}
-                width={100}
-                height={100}
-                className="relative z-10 rounded-full border-4 border-[#fde68a] shadow-lg aspect-square object-cover"
-                style={{ background: "#fffbe8" }}
-              />
-              <div className="flex items-center gap-2 mt-2">
-                <span className="text-gray-600 text-base font-bold">{session.practitioner.name}</span>
-                <span className="flex items-center gap-1 bg-[#fff7e0] px-3 py-1 rounded-full text-[#eab308] font-bold text-sm shadow">
-                  <span className="text-lg">★</span> {session.practitioner.rating}/5
-                </span>
+            {loadingPractitioner ? (
+              <div className="flex flex-col items-center justify-center mb-3 relative">
+                {/* Magical/Islamic shimmer accent */}
+                <div className="flex flex-col items-center justify-center w-full">
+                  <div className="w-24 h-24 bg-[#fffbe8] rounded-full mb-4 animate-pulse border-4 border-[#fde68a] shadow-lg" />
+                  <div className="h-6 w-32 bg-[#fde68a]/30 rounded mb-2 animate-pulse" />
+                  <div className="h-4 w-24 bg-[#fde68a]/20 rounded mb-2 animate-pulse" />
+                  <div className="h-4 w-16 bg-[#fde68a]/20 rounded mb-4 animate-pulse" />
+                  <div className="h-8 w-36 bg-[#fde68a]/10 rounded mb-2 animate-pulse" />
+                  <div className="h-4 w-20 bg-[#fde68a]/10 rounded animate-pulse" />
+                </div>
+                <div className="flex flex-wrap gap-2 mb-5 items-center">
+                  {Array.from({ length: 3 }).map((_, i) => (
+                    <span key={i} className="px-3 py-1 rounded-full bg-[#fdf6e3] border border-[#fde68a] text-brand-gold font-semibold text-xs shadow-sm flex items-center animate-pulse opacity-60">
+                      &nbsp;
+                    </span>
+                  ))}
+                  {/* Decorative star accent */}
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="opacity-40 animate-pulse"><circle cx="9" cy="9" r="1.2" fill="#FFD700" /><g opacity="0.6"><circle cx="15" cy="3" r="0.7" fill="#E5C07B" /></g></svg>
+                </div>
+                <div className="border-t border-[#f6e9c0] pt-6 text-gray-300 text-base whitespace-pre-line animate-pulse">
+                  &nbsp;
+                </div>
               </div>
-            </div>
-            <h2 className="text-2xl font-bold text-[#15577a] mb-3 leading-tight">{session.title}</h2>
-            <div className="flex items-center gap-6 mb-6">
-              <div className="flex items-center gap-2">
-                {session.originalPrice && (
-                  <span className="line-through text-gray-400 text-base mr-1">₹{session.originalPrice}</span>
+            ) : (
+              <>
+                <div className="flex flex-col items-center mb-3 relative">
+
+                  <Image
+                    src={session?.practitioner?.image || ""}
+                    alt={session?.practitioner?.name || ""}
+                    width={100}
+                    height={100}
+                    className="relative z-10 rounded-full border-4 border-[#fde68a] shadow-lg aspect-square object-cover"
+                    style={{ background: "#fffbe8" }}
+                  />
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className="text-gray-600 text-base font-bold">{session.practitioner.name}</span>
+                    <span className="flex items-center gap-1 bg-[#fff7e0] px-3 py-1 rounded-full text-[#eab308] font-bold text-sm shadow">
+                      <span className="text-lg">★</span> {session.practitioner.rating}/5
+                    </span>
+                  </div>
+                  {/* Experience visual badge - now on its own row */}
+                </div>
+                <div className="flex items-center gap-6 mb-6">
+                  <h2 className="text-2xl font-bold text-[#15577a] leading-tight">{session.title}</h2>
+                  {practitioner?.experience && (
+                    <div className="flex items-center mt-2 mb-1">
+                      <span className="flex items-center gap-1 bg-[#fffbe8] border border-[#fde68a] rounded-full px-3 py-1 text-[#b68900] font-semibold text-xs shadow-sm animate-fade-in" title="Years of Experience">
+                        {/* <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mr-1"><g filter="url(#glow)"><circle cx="12" cy="12" r="7" fill="#fde68a" opacity="0.7"/></g><path d="M12 5.5L13.9 9.2L18 9.7L15 12.7L15.8 17L12 15L8.2 17L9 12.7L6 9.7L10.1 9.2L12 5.5Z" fill="#eab308" stroke="#b68900" strokeWidth="0.7"/><circle cx="18" cy="6" r="0.7" fill="#FFD700"/><circle cx="6" cy="18" r="0.5" fill="#E5C07B"/><defs><filter id="glow" x="2" y="2" width="20" height="20" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="2.5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs></svg> */}
+                        {practitioner.experience}+ years
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="flex items-center gap-2">
+                    {session.originalPrice && (
+                      <span className="line-through text-gray-400 text-base mr-1">₹{session.originalPrice}</span>
+                    )}
+                    <span className="text-lg font-extrabold text-brand-gold bg-[#fffde6] px-3 py-1 rounded-full shadow border border-[#fde68a]">₹{session.price}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M8 2v2M16 2v2M3 8.5h18M4 6h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Zm0 0V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" stroke="#217ebd" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    <span>{session.duration} mins</span>
+                  </div>
+                </div>
+
+                {/* Specialties Section */}
+                {session.specialties && session.specialties.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-5 items-center">
+
+                    {session.specialties.map((spec: string, idx: number) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 rounded-full bg-[#fdf6e3] border border-[#fde68a] text-brand-gold font-semibold text-xs shadow-sm flex items-center"
+                        style={{ letterSpacing: '0.01em' }}
+                      >
+                        {spec}
+                      </span>
+                    ))}
+                    {/* Decorative star accent */}
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="opacity-60"><circle cx="9" cy="9" r="1.2" fill="#FFD700" /><g opacity="0.6"><circle cx="15" cy="3" r="0.7" fill="#E5C07B" /></g></svg>
+                  </div>
                 )}
-                <span className="text-lg font-extrabold text-brand-gold bg-[#fffde6] px-3 py-1 rounded-full shadow border border-[#fde68a]">₹{session.price}</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-600">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M8 2v2M16 2v2M3 8.5h18M4 6h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Zm0 0V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" stroke="#217ebd" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span>{session.duration}</span>
-              </div>
-            </div>
 
-            {/* Specialties Section */}
-            {session.specialties && session.specialties.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-5 items-center">
-
-                {session.specialties.map((spec: string, idx: number) => (
-                  <span
-                    key={idx}
-                    className="px-3 py-1 rounded-full bg-[#fdf6e3] border border-[#fde68a] text-brand-gold font-semibold text-xs shadow-sm flex items-center"
-                    style={{ letterSpacing: '0.01em' }}
-                  >
-                    {spec}
-                  </span>
-                ))}
-                {/* Decorative star accent */}
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="opacity-60"><circle cx="9" cy="9" r="1.2" fill="#FFD700" /><g opacity="0.6"><circle cx="15" cy="3" r="0.7" fill="#E5C07B" /></g></svg>
-              </div>
+                <div className="border-t border-[#f6e9c0] pt-6 text-gray-700 text-base whitespace-pre-line">
+                  {/* Rendered as HTML for rich content. Ensure content is sanitized upstream. */}
+                  <span dangerouslySetInnerHTML={{ __html: session?.description || '' }} />
+                </div>
+              </>
             )}
 
-            <div className="border-t border-[#f6e9c0] pt-6 text-gray-700 text-base whitespace-pre-line">
-              {session.description}
-
-            </div>
           </section>
 
           {/* Right Booking Panel */}
           <section className="bg-white/95 rounded-2xl shadow-2xl border border-[#e7e4dc] flex-1 p-8 flex flex-col animate-fade-in">
-            {/* Coming Soon State */}
-            {practitioner.id === 'coming-soon' ? (
-              <div className="flex flex-col items-center justify-center h-full min-h-[300px]">
-                {/* Magical/Islamic accent */}
-                <svg width="54" height="54" viewBox="0 0 54 54" fill="none" className="mb-4 animate-pulse">
-                  <path d="M40 27c0 7.18-5.82 13-13 13a13 13 0 1 1 0-26c.37 0 .74.015 1.11.045A11 11 0 1 0 40 27z" fill="#FDE68A" />
-                  <polygon points="42,19 44,23 48,23 45,26 46,30 42,28 38,30 39,26 36,23 40,23" fill="#E5C07B" />
-                  <circle cx="10" cy="44" r="1.5" fill="#FDE68A" opacity=".5" />
-                  <circle cx="48" cy="10" r="1" fill="#E5C07B" opacity=".7" />
-                </svg>
-                <div className="text-2xl font-bold text-brand-gold mb-2">Coming Soon</div>
-                <div className="text-gray-700 text-base text-center max-w-xs mb-4">This practitioner will be available for bookings soon, insha'Allah. Please check back later or explore other practitioners in the meantime.</div>
-                <Link href="/practitioners" className="mt-2 text-primary font-semibold underline underline-offset-2 hover:text-brand-gold transition">Browse Practitioners</Link>
-              </div>
-            ) : days.length === 0 && !loading ? (
+            {/* No Available Slots State */}
+            {days.length === 0 && !loading ? (
               <div className="flex flex-col items-center justify-center h-full min-h-[300px]">
                 {/* Magical/Islamic accent */}
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" className="mb-4 animate-pulse">
@@ -299,8 +361,9 @@ export default function BookingPage(props) {
                 {/* Payment Form Modal */}
                 {showPaymentForm && <PaymentModal
                   onClose={() => setShowPaymentForm(false)}
-                  price={session.price}
-                  practitionerId={practitioner.id}
+                  price={session?.price || ""}
+                  practitionerId={practitioner?._id || ""}
+                  practitionerEmail={practitioner?.email || ""}
                   date={selectedDayDate}
                   slot={times[selectedTime]}
                 />}
@@ -324,7 +387,7 @@ export default function BookingPage(props) {
           <p className="text-gray-700 text-base md:text-lg text-center max-w-2xl">Real stories of healing, clarity, and transformation from our Najoomi family. Your journey to peace and purpose can begin here, too.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
-          {practitioner.reviews && practitioner.reviews.length > 0 ? (
+          {practitioner?.reviews && practitioner.reviews.length > 0 ? (
             practitioner.reviews.map((review, idx) => (
               <div key={idx} className="bg-white/90 border border-[#fde68a] rounded-xl shadow-lg p-6 flex flex-col items-start relative">
                 {/* Subtle geometric/star accent */}

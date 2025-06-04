@@ -48,12 +48,6 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
         icons: {
             icon: "/favicon.ico",
         },
-        alternates: {
-            canonical: url,
-            languages: {
-                en: url,
-            },
-        },
         metadataBase: new URL("https://najoomi.in"),
         category: "Religion, Spirituality, Islamic Guidance",
         other: {

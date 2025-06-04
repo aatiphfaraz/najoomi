@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PractitionerCard from "../../components/PractitionerCard";
-import { practitioners } from "../../constants/practitioners";
+import { Practitioner } from "../../constants/practitioners";
 
 export const metadata: Metadata = {
   title: "Najoomi Therapists | Licensed Islamic Therapists & Counselors",
@@ -31,33 +31,36 @@ export const metadata: Metadata = {
     description:
       "Meet our licensed therapists, dedicated to your mental and emotional well-being with a blend of modern and spiritual techniques. Book a session for faith-based therapy and counseling.",
     images: ["https://najoomi.in/najoomi-logo.png"]
-  },
-  alternates: {
-    canonical: "https://najoomi.in/practitioners/therapists"
   }
 };
 
-export default function TherapistsPage() {
-  const therapists = practitioners
-    .filter((p) => p.type === "therapist")
-    .sort((a, b) => {
-      if ((b.starPractitioner ? 1 : 0) !== (a.starPractitioner ? 1 : 0)) {
-        return (b.starPractitioner ? 1 : 0) - (a.starPractitioner ? 1 : 0);
-      }
-      return (b.rating || 0) - (a.rating || 0);
-    });
+export default async function TherapistsPage() {
+  // Fetch therapists from API (server component)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/practitioners?type=therapist`, { cache: 'no-store' });
+  const data = await res.json();
+  const therapists = (data?.practitioners || []).sort((a: any, b: any) => {
+    if ((b.starPractitioner ? 1 : 0) !== (a.starPractitioner ? 1 : 0)) {
+      return (b.starPractitioner ? 1 : 0) - (a.starPractitioner ? 1 : 0);
+    }
+    return (b.rating || 0) - (a.rating || 0);
+  });
 
   return (
     <section className="w-full py-12 flex flex-col items-center">
+      {/* Decorative crescent moon accent */}
+      <div className="flex justify-center mb-2">
+        <svg className="w-12 h-12 text-yellow-400 opacity-70" viewBox="0 0 32 32"><path d="M24 16c0 5-4 9-9 9-1.4 0-2.7-.3-3.9-.9a1 1 0 0 1-.1-1.7A8 8 0 0 0 16 7c.6 0 1.2.1 1.7.2a1 1 0 0 1 .3 1.8A9 9 0 0 0 24 16z" fill="currentColor" /></svg>
+      </div>
       <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8 tracking-tight drop-shadow-lg">Our Therapists</h1>
       <p className="mb-10 text-gray-700 text-center max-w-2xl">
         Meet our licensed therapists, dedicated to your mental and emotional well-being with a blend of modern and spiritual techniques
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-        {therapists.map((p) => (
-          <PractitionerCard key={p.name} {...p} />
+        {therapists.map((p: Practitioner) => (
+          <PractitionerCard key={p._id || p.name} {...p} />
         ))}
       </div>
     </section>
   );
 }
+

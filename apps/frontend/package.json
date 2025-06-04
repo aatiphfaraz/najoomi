@@ -10,16 +10,20 @@
   },
   "dependencies": {
     "@cashfreepayments/cashfree-js": "^1.0.5",
+    "@headlessui/react": "^2.2.4",
     "@microsoft/clarity": "^1.0.0",
     "cashfree-pg": "^5.0.8",
     "clsx": "^2.1.1",
+    "googleapis": "^149.0.0",
     "keen-slider": "^6.8.6",
+    "moment-timezone": "^0.6.0",
     "mongodb": "^6.16.0",
     "next": "15.3.2",
     "nodemailer": "^7.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "twilio": "^5.7.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

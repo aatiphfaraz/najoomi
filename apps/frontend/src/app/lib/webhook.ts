@@ -3,6 +3,8 @@ import { getBookingById } from '@/app/lib/booking';
 import { getCalendlySchedulingLink } from '@/app/lib/calendly';
 import { sendNajoomiSchedulingEmail } from '@/app/lib/email';
 import { getMongoDb } from '@/app/lib/mongo';
+import { createMeetEvent } from './google-calendar';
+import { parseDateTimeWithMoment } from './datetime-util';
 
 export function extractBookingId(body: any): string | null {
   return body?.data?.customer_details?.customer_id || null;
@@ -48,10 +50,23 @@ export async function handleWebhook(body: any) {
   if (!booking) {
     return { status: 'error', message: 'Booking not found', statusCode: 404 };
   }
-  // Ensure Calendly link exists and update booking if needed
-  const calendly_link = await ensureCalendlyLink(booking);
-  if (!calendly_link) {
+
+  // booking.slot: "02:00 PM - 02:30 PM"
+  // booking.date: "24/05/2025"
+  const [slotStart, slotEnd] = booking.slot.split('-').map((s: string) => s.trim());
+  const date = booking.date; // e.g. '24/05/2025'
+
+  const start = parseDateTimeWithMoment(date, slotStart, 'Asia/Kolkata');
+  const end = parseDateTimeWithMoment(date, slotEnd, 'Asia/Kolkata');
+
+  const scheduleMeet = await createMeetEvent(start, end, booking.practitioner_email, booking.email);
+  if (!scheduleMeet) {
     return { status: 'error', message: 'Failed to get scheduling link', statusCode: 500 };
   }
+  const db = await getMongoDb();
+  const bookings = db.collection(COLLECTION_NAME);
+  await bookings.updateOne({ booking_id: booking.booking_id }, {
+    $set: { meet_link: scheduleMeet, status: 'scheduled', updatedAt: new Date() },
+  });
   return { status: 'ok', message: 'Webhook received successfully', statusCode: 200 };
 }

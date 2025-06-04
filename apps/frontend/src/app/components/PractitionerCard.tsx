@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface PractitionerCardProps {
-  id?: string;
+  _id: string;
   image: string;
   name: string;
   title: string;
@@ -16,12 +16,12 @@ interface PractitionerCardProps {
   starPractitioner?: boolean;
 }
 
-const PractitionerCard: React.FC<PractitionerCardProps> = ({ id, image, name, title, experience, specialties, rating, price, discountPrice, starPractitioner }) => {
-  const isComingSoon = id === "coming-soon";
+const PractitionerCard: React.FC<PractitionerCardProps> = ({ _id, image = "/missions.png", name, title, experience, specialties, rating, price, discountPrice, starPractitioner }) => {
+  const isComingSoon = _id === "coming-soon";
   return (
 
     <div className={`bg-white rounded-2xl shadow-xl border border-[#fde68a]/40 flex flex-col overflow-hidden min-h-[390px] relative transition-transform hover:scale-[1.025] hover:shadow-2xl group`}>
-      <Link href={`/booking/${id}`} className={`flex flex-col h-full`}>
+      <Link href={`/booking/${_id}`} className={`flex flex-col h-full`}>
         <div className="relative h-44 bg-[#fafafa] flex items-center justify-center overflow-hidden rounded-t-2xl">
           {/* Floating magical accent */}
           {starPractitioner && (
@@ -83,7 +83,7 @@ const PractitionerCard: React.FC<PractitionerCardProps> = ({ id, image, name, ti
             </div>
             <div className="font-semibold text-[#15577a] text-[1.04rem] font-display tracking-wide">{name}</div>
             <div className="text-xs text-[#217ebd] font-medium">{title}</div>
-            <div className="text-xs text-gray-400">Experience: {experience}</div>
+            <div className="text-xs text-gray-400">Experience: {experience}+ years</div>
           </div>
           {/* Divider */}
           <div className="border-t border-[#fde68a]/30 my-2" />

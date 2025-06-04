@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
   }
   // Only return relevant fields
   return NextResponse.json({
-    calendly_link: booking.calendly_link,
+    meet_link: booking.meet_link,
     status: booking.status,
     booking_id: booking.booking_id,
     name: booking.name,

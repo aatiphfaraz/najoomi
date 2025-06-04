@@ -5,7 +5,7 @@ import Button from "./ui/Button";
 import SpecialtiesTooltip from "./ui/SpecialtiesTooltip";
 
 interface PractitionerCardMiniProps {
-  id?: string;
+  _id: string;
   image: string;
   name: string;
   title: string;
@@ -19,10 +19,10 @@ interface PractitionerCardMiniProps {
 
 
 
-const PractitionerCardMini: React.FC<PractitionerCardMiniProps> = ({ id, image, name, title, experience, specialties, rating, price, discountPrice, starPractitioner }) => {
-  const isComingSoon = id === "coming-soon";
+const PractitionerCardMini: React.FC<PractitionerCardMiniProps> = ({ _id, image = "/missions.png", name, title, experience, specialties, rating, price, discountPrice, starPractitioner }) => {
+  const isComingSoon = _id === "coming-soon";
   return (
-    <Link href={`/booking/${id}`} className="bg-white rounded-xl shadow border border-[#fde68a]/30 flex flex-row items-center gap-3 px-2 py-2 sm:py-3 w-full min-h-[92px] relative overflow-hidden">
+    <Link href={`/booking/${_id}`} className="bg-white rounded-xl shadow border border-[#fde68a]/30 flex flex-row items-center gap-3 px-2 py-2 sm:py-3 w-full min-h-[92px] relative overflow-hidden">
       {/* Price badge */}
       {(price || discountPrice) && (
         <div className="absolute top-2 right-2 z-10">
@@ -74,7 +74,7 @@ const PractitionerCardMini: React.FC<PractitionerCardMiniProps> = ({ id, image, 
           </span>
         </div>
         <div className="text-xs text-[#217ebd] truncate">{title}</div>
-        <div className="text-[10px] text-gray-400 truncate">{experience}</div>
+        <div className="text-[10px] text-gray-400 truncate">{experience}+ years</div>
         <div className="flex flex-wrap gap-0.5 mt-0.5 items-center">
           {specialties.slice(0, 2).map((s) => (
             <span key={s} className="bg-[#fffde6] text-[#b68900] px-1.5 py-0.5 rounded-full text-[10px] font-semibold border border-[#fde68a] shadow-sm truncate">

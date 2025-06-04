@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next";
 import { articles } from "./constants/articles";
 import { allServices } from "./constants/services";
-import { practitioners } from "./constants/practitioners";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -52,16 +51,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: article.date ? new Date(article.date).toISOString() : new Date().toISOString(),
   }));
 
-  const bookingRoutes = practitioners.map((pract) => ({
-    url: `https://www.najoomi.in/booking/${pract.id}`,
-    lastModified: new Date().toISOString(),
-  }));
-
   // Service detail routes
   const serviceRoutes = allServices.map((service) => ({
     url: `https://www.najoomi.in/services/${service.href}`,
     lastModified: new Date().toISOString(),
   }));
 
-  return [...staticRoutes, ...resourceRoutes, ...serviceRoutes, ...bookingRoutes];
+  return [...staticRoutes, ...resourceRoutes, ...serviceRoutes,];
 }
