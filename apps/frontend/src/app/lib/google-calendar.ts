@@ -20,6 +20,7 @@ export const createMeetEvent = async (start: string, end: string, practitionerEm
       sendUpdates: 'all', // This will send email invitations to all attendees
       requestBody: {
         summary: 'Meeting with Najoomi',
+        description: `Assalamu Alaikum!\n\nThis is your spiritual session with Najoomi.\n\n✨ May blessings, guidance, and a sprinkle of magic be with you. ✨\n\nJoin via Google Meet: (link will appear above)`,
         start: { dateTime: start },
         end: { dateTime: end },
         attendees: [{ email: userEmail }, { email: practitionerEmail }],
@@ -30,7 +31,7 @@ export const createMeetEvent = async (start: string, end: string, practitionerEm
         }
       }
     });
-    await sendNajoomiSchedulingEmail(userEmail, response.data.hangoutLink || '');
+    await sendNajoomiSchedulingEmail(userEmail, practitionerEmail, response.data.hangoutLink || '', start, end);
     return response.data.hangoutLink || "";
 
   } catch (error) {

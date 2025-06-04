@@ -1,7 +1,6 @@
 import { COLLECTION_NAME } from '@/app/constants/schema';
 import { getBookingById } from '@/app/lib/booking';
 import { getCalendlySchedulingLink } from '@/app/lib/calendly';
-import { sendNajoomiSchedulingEmail } from '@/app/lib/email';
 import { getMongoDb } from '@/app/lib/mongo';
 import { createMeetEvent } from './google-calendar';
 import { parseDateTimeWithMoment } from './datetime-util';
@@ -20,11 +19,11 @@ export async function ensureCalendlyLink(booking: any): Promise<string | null> {
   try {
     calendly_link = await getCalendlySchedulingLink(practitioner_id, CALENDLY_TOKEN);
     if (booking.email) {
-      try {
-        await sendNajoomiSchedulingEmail(booking.email, calendly_link);
-      } catch (e) {
-        console.warn('Failed to send email with Calendly link:', e);
-      }
+      // try {
+      //   await sendNajoomiSchedulingEmail(booking.email, calendly_link);
+      // } catch (e) {
+      //   console.warn('Failed to send email with Calendly link:', e);
+      // }
     }
   } catch (e) {
     console.warn('Failed to fetch Calendly link', e);

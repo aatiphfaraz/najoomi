@@ -1,4 +1,4 @@
-import { WeeklyAvailability } from "../admin/components/AvailabilityManager";
+import { WeeklyAvailability } from "../random-key/components/AvailabilityManager";
 
 // Types for practitioners
 export type PractitionerType = 'najoomi' | 'therapist';

@@ -20,14 +20,8 @@ export async function GET(req: NextRequest) {
   }
   const slotsByDate = getSlotsByDate(practitioner as unknown as Practitioner);
 
-  // Get date range (next 7 days)
-  const now = moment().tz(IST);
-  const fromDate = now.format('DD/MM/YYYY');
-  const toDate = now.clone().add(6, 'days').format('DD/MM/YYYY');
-
   // Fetch real bookings for this practitioner in the next 7 days
-  const bookings = await getBookingsForPractitionerInRange(practitioner.id, fromDate, toDate);
-
+  const bookings = await getBookingsForPractitionerInRange(practitioner._id.toString());
   // Remove booked slots for this practitioner
   Object.keys(slotsByDate).forEach(dateKey => {
     const bookingsForDate = bookings.filter(

@@ -1,6 +1,6 @@
 import moment from 'moment-timezone';
 import { Practitioner } from '@/app/constants/practitioners';
-import { DayAvailability, WeeklyAvailability } from '@/app/admin/components/AvailabilityManager';
+import { DayAvailability, WeeklyAvailability } from '@/app/random-key/components/AvailabilityManager';
 import { Slot } from '@/app/lib/calendly';
 
 export type SlotsByDate = { [date: string]: Slot[] };
