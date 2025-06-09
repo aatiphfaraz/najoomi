@@ -72,7 +72,7 @@ export default function Footer() {
           <div className="font-semibold mb-3 text-brand-gold">Services</div>
           <ul className="space-y-1 text-sm">
             <li>
-              <Link href="/services/dream-interpretation" className="hover:text-[#eab308] transition">• Dream Interpretation</Link>
+              <Link href="/services/islamic-dream-interpretation" className="hover:text-[#eab308] transition">• Dream Interpretation</Link>
             </li>
             <li>
               <Link href="/services/spiritual-guidance" className="hover:text-[#eab308] transition">• Spiritual Counseling</Link>
