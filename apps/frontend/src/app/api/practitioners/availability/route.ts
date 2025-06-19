@@ -49,6 +49,13 @@ export async function GET(req: NextRequest) {
     }
   });
 
+  // Remove dates with zero slots
+  Object.keys(slotsByDate).forEach(dateKey => {
+    if (!slotsByDate[dateKey] || slotsByDate[dateKey].length === 0) {
+      delete slotsByDate[dateKey];
+    }
+  });
+
   const response: AvailabilityAPIResponse = { slots: slotsByDate };
   return new Response(JSON.stringify(response), { status: 200 });
 }
