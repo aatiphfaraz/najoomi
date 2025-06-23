@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     const db = await getMongoDb();
     const collection = db.collection<Practitioner>("practitioner");
     const body = await req.json();
-    if (!body || !body.id || !body.name) {
+    if (!body || !body.name) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
     }
     await collection.insertOne(body as Practitioner);
