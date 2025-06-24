@@ -7,7 +7,7 @@ export type SlotsByDate = { [date: string]: Slot[] };
 
 export const INTERVAL_NEXT_START = 10;
 export const OVERLAP_MINUTES = 5;
-export const MINIMUM_NEXT_START = 0;
+export const MINIMUM_NEXT_START = 30;
 export const IST = 'Asia/Kolkata';
 export const DAY_KEYS: (keyof WeeklyAvailability)[] = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
