@@ -55,8 +55,8 @@ export async function handleWebhook(body: any) {
   const [slotStart, slotEnd] = booking.slot.split('-').map((s: string) => s.trim());
   const date = booking.date; // e.g. '24/05/2025'
 
-  const start = parseDateTimeWithMoment(date, slotStart, 'Asia/Kolkata');
-  const end = parseDateTimeWithMoment(date, slotEnd, 'Asia/Kolkata');
+  const start = parseDateTimeWithMoment(date, slotStart);
+  const end = parseDateTimeWithMoment(date, slotEnd);
 
   if (!booking.meet_link) {
     const scheduleMeet = await createMeetEvent(start, end, booking.practitioner_email, booking.email);
