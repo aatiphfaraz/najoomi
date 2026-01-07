@@ -4,11 +4,11 @@ import {
   FaRegLightbulb,
   FaHandHoldingMedical,
   FaBook,
-  FaUserFriends,
-  FaQuran,
+  // FaUserFriends,
+  // FaQuran,
   FaHeart,
   FaHandsHelping,
-  FaLeaf,
+  // FaLeaf,
 } from "react-icons/fa";
 
 export interface Service {
